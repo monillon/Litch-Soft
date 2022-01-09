@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="127.0" prefWidth="701.0" style="-fx-border-color: black; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="sampleOrgLoc" layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poumons - Bronches" wrappingWidth="448.314453125">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="addManipButton" layoutX="486.0" layoutY="36.0" mnemonicParsing="false" onAction="#addManip" style="-fx-background-color: rgb(126,217,87);" text="Ajout manipulation" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fx:id="localisation" layoutX="17.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="466.58116912841797">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="modifLocation" layoutX="14.0" layoutY="92.0" mnemonicParsing="false" onAction="#goToSampleLocation" prefHeight="25.0" prefWidth="161.0" style="-fx-background-color: grey;" text="Modifier l'emplacement" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

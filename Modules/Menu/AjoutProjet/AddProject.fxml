@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(92,225, 230);">
+         <children>
+            <Text fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un projet" textAlignment="RIGHT" wrappingWidth="1060.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <Button fx:id="home" layoutY="14.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../IMG/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
+      <Text layoutX="362.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code du Projet" wrappingWidth="148.9999999999999">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="projectCode" layoutX="540.0" layoutY="304.0">
+         <tooltip>
+            <Tooltip text="8 caractères maximum" />
+         </tooltip></TextField>
+      <Text layoutX="287.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom complet du projet">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="fullNameProject" layoutX="540.0" layoutY="348.0" />
+      <Text fx:id="verif" fill="RED" layoutX="1.0" layoutY="596.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="1080.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="addProjectButton" layoutX="466.0" layoutY="459.0" mnemonicParsing="false" onAction="#addNewProjectBDD" prefHeight="31.0" prefWidth="149.0" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter le projet" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="293.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" textAlignment="RIGHT" wrappingWidth="207.96875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="addImg" layoutX="541.0" layoutY="390.0" mnemonicParsing="false" onAction="#uploadImg" prefHeight="25.0" prefWidth="119.0" text="Ajouter une Image" textOverrun="CLIP" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(92,225, 230);">
+            <children>
+                <Text fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout d'un prélèvement" textAlignment="RIGHT" wrappingWidth="1060.0">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <Button fx:id="home" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../IMG/house.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <GridPane layoutX="25.0" layoutY="176.0" prefHeight="407.0" prefWidth="999.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="99.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant sujet" textAlignment="RIGHT" wrappingWidth="233.74609375">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Organe" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tissu" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.rowIndex="2">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date et heure de prélèvement" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation frigo" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.columnIndex="2">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation étagère" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation boîte" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Emplacement" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Text>
+                <ChoiceBox fx:id="organList" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ChoiceBox fx:id="tissueList" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="subjectCodeToModify" disable="true" editable="false" prefHeight="25.0" prefWidth="224.0" GridPane.columnIndex="1" />
+                <ComboBox fx:id="boxList" onAction="#setLocationList" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <ComboBox fx:id="shelfList" onAction="#setRackList" prefHeight="25.0" prefWidth="262.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <ComboBox fx:id="fridgeList" onAction="#setLocationList" prefHeight="25.0" prefWidth="329.0" GridPane.columnIndex="3" />
+                <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="sampleHour" promptText="HH:MM:SS" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="sampleDate" prefHeight="26.0" prefWidth="253.0" GridPane.rowIndex="1" />
+                    </children>
+                </GridPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation rack" textAlignment="RIGHT" wrappingWidth="233.74609375" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="rackList" onAction="#setBoxList" prefHeight="25.0" prefWidth="262.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <ComboBox fx:id="locationList" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+        <Button fx:id="addSampleButton" layoutX="433.0" layoutY="644.0" mnemonicParsing="false" onAction="#addSampleToBdd" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter le prélèvement" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+      <Text fx:id="error" fill="RED" layoutX="23.0" layoutY="702.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="1039.13671875" />
+    </children>
+</AnchorPane>

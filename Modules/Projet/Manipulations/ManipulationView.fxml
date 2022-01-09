@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(246,141, 76);">
+         <children>
+            <Text fx:id="currentProjectNameView" fill="WHITE" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projet Muco" textAlignment="RIGHT" wrappingWidth="1052.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <Button fx:id="home" layoutY="13.0" mnemonicParsing="false" onAction="#goHome" prefHeight="54.0" prefWidth="75.0" style="-fx-background-color: rgb(246,141, 76);" textFill="RED">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../IMG/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="previousButton" layoutX="95.0" layoutY="12.0" mnemonicParsing="false" onAction="#retour" prefHeight="62.0" prefWidth="47.0" style="-fx-background-color: rgb(246,141, 76);">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../IMG/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
+      <ScrollPane layoutX="20.0" layoutY="211.0" prefHeight="487.0" prefWidth="256.0" style="-fx-border-color: rgb(115,115,115); -fx-border-width: 5px;">
+         <content>
+            <VBox fx:id="vboxSubject" prefHeight="478.0" prefWidth="231.0" style="-fx-background-color: rgb(217,217,217);" />
+         </content>
+      </ScrollPane>
+      <Pane layoutX="20.0" layoutY="105.0" prefHeight="110.0" prefWidth="256.0" style="-fx-background-color: rgb(115,115,115); -fx-background-radius: 15px15px 0 0;">
+         <children>
+            <Text layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des manipulations du groupe" textAlignment="CENTER" wrappingWidth="256.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField layoutX="14.0" layoutY="71.0" prefHeight="25.0" prefWidth="97.0" promptText="rechercher" />
+            <MenuButton layoutX="147.0" layoutY="71.0" mnemonicParsing="false" text="Trier par">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                  <MenuItem mnemonicParsing="false" text="Action 2" />
+               </items>
+            </MenuButton>
+         </children>
+      </Pane>
+      <Pane layoutX="292.0" layoutY="115.0" prefHeight="140.0" prefWidth="779.0" style="-fx-background-radius: 20px; -fx-background-color: rgb(217,217,217);">
+         <children>
+            <Text fx:id="subjectCodeView" layoutX="20.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code patient :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectSexView" layoutX="20.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexe : ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectAgeView" layoutX="21.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age : ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectPreopDataView" layoutX="20.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Données pré-opératoires : ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectPathoView" layoutX="350.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Co-morbidité :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectPrescriView" layoutX="350.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prescription : ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="codePatientField" layoutX="110.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.80343627929688" />
+            <Text fx:id="sexeField" layoutX="66.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.80343627929688" />
+            <Text fx:id="ageField" layoutX="55.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.80343627929688" />
+            <ComboBox fx:id="preopDataList" layoutX="181.0" layoutY="105.0" prefWidth="150.0" />
+            <ComboBox fx:id="pathoList" layoutX="445.0" layoutY="9.0" prefWidth="150.0" />
+            <ComboBox fx:id="prescriList" layoutX="445.0" layoutY="41.0" prefWidth="150.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneSampleDetails" layoutX="286.0" layoutY="272.0" prefHeight="425.0" prefWidth="779.0" style="-fx-background-radius: 20px; -fx-background-color: rgb(217,217,217);">
+         <children>
+            <Text fx:id="subjectCodeView1" layoutX="20.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prélèvement :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectSexView1" layoutX="20.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modèle de manipulation :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectAgeView1" layoutX="21.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commentaires :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fx:id="subjectPreopDataView1" layoutX="14.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faite par :">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Button fx:id="add_commentaire" layoutX="631.0" layoutY="139.0" mnemonicParsing="false" onAction="#updateCommentaireManipulation" text="Ajout commentaire" />
+            <Text fx:id="prelevDetailsField" layoutX="109.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="640.0000305175781" />
+            <Text fx:id="modeleManipField" layoutX="174.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="574.0000305175781" />
+            <Text fx:id="utilisateurField" layoutX="80.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="675.8034362792966" />
+            <Text fx:id="donneesBrutesField" layoutX="119.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="646.6668395996094" />
+            <Text fx:id="resultatField" layoutX="121.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="646.6668395996094" />
+            <ScrollPane layoutX="119.0" layoutY="77.0" prefHeight="53.0" prefWidth="647.0">
+               <content>
+                  <TextArea fx:id="commentairesField" prefHeight="53.0" prefWidth="633.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

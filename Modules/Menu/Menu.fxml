@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(92,225, 230);">
+         <children>
+            <ImageView fitHeight="89.0" fitWidth="170.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../IMG/logo%20LitCh%5B369%5D.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="welcome" fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue [admin]" textAlignment="RIGHT" wrappingWidth="1060.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <FlowPane fx:id="menu" layoutX="27.0" layoutY="100.0" prefHeight="534.0" prefWidth="1044.0" />
+   </children>
+</AnchorPane>

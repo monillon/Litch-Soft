@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(255,87,87);">
+         <children>
+            <Text fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des boîtes" textAlignment="RIGHT" wrappingWidth="1060.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <Button fx:id="home" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../IMG/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <GridPane layoutX="8.0" layoutY="158.0" prefHeight="407.0" prefWidth="500.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="250.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation frigo" textAlignment="CENTER" wrappingWidth="233.74609375">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation étagère" textAlignment="CENTER" wrappingWidth="233.74609375" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation boîte" textAlignment="CENTER" wrappingWidth="233.74609375" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="boxListAdd" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="shelfListAdd" onAction="#setBoxListAdd" prefHeight="25.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="fridgeListAdd" onAction="#setShelfListAdd" prefHeight="25.0" prefWidth="329.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="addBoxButton" layoutX="299.0" layoutY="572.0" mnemonicParsing="false" onAction="#addSampleToBdd" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter la boîte" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="666.0" layoutY="157.0" prefHeight="407.0" prefWidth="250.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="250.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ComboBox fx:id="boxListRemove" prefHeight="25.0" prefWidth="317.0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="shelfListRemove" onAction="#setBoxListRemove" prefHeight="25.0" prefWidth="262.0" GridPane.rowIndex="1" />
+            <ComboBox fx:id="fridgeListRemove" onAction="#setShelfListRemove" prefHeight="25.0" prefWidth="329.0" />
+         </children>
+      </GridPane>
+      <Pane layoutX="578.0" layoutY="206.0" prefHeight="310.0" prefWidth="7.0" style="-fx-background-color: black;" />
+      <Text layoutX="278.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout d'une boîte">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="685.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Retrait d'une boîte">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="removeBoxButton" layoutX="716.0" layoutY="572.0" mnemonicParsing="false" onAction="#popUpRemove" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Retirer la boîte" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fx:id="errorAdd" fill="RED" layoutX="209.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="336.13671875" y="10.0" />
+      <Text fx:id="errorRemove" fill="RED" layoutX="623.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="336.13671875" y="10.0" />
+   </children>
+</AnchorPane>
