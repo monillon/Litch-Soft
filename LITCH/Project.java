@@ -52,6 +52,7 @@ public class Project {
         if (newID < 0) throw new IllegalArgumentException("Un ID ne peut être negatif");
         if (newCode==null ||newCode.length() <1) throw new IllegalArgumentException("un string ne doit pas etre vide");
         if (newName==null ||newName.length() <1) throw new IllegalArgumentException("un string ne doit pas etre vide");
+        if (newImageUrl == null || newImageUrl.length() < 1 ) throw new IllegalArgumentException("un string ne doit pas etre vide");
         idProject = newID;
         codeProject = newCode;
         nameProject = newName;
