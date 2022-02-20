@@ -171,7 +171,7 @@ public class MenuModel {
         for (JSONObject object : DataBase.getAllProjectRequest()) {
             if (object.getString("NOM_PROJET").equals(projectName)) {
                 main.setCurrentProject(null);
-                currentProject = new Project(object.getInt("ID_PROJET"), object.getString("CODE_PROJET"), object.getString("NOM_PROJET"), object.get("IMG_PROJET").toString());
+                currentProject = new Project(object.getInt("ID_PROJET"), object.getString("CODE_PROJET"), Tools.underscoreToSpace(object.getString("NOM_PROJET")), object.get("IMG_PROJET").toString());
                 main.setCurrentProject(currentProject);
             }
         }
