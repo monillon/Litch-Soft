@@ -48,7 +48,8 @@ public class ConnexionModelTest {
      */
     @Test
     public void testBonIds() throws IOException, SQLException {
-       for( JSONObject object :DataBase.connexionRequest("ALA", "TEST")) {
+        // un utilisateur "test" doit être présent dans la BDD pour que cela fonctionne
+       for( JSONObject object :DataBase.connexionRequest("TESTCO", "TESTCO")) {
             if (object.has("message") == false) {
                 assertTrue(true);
             } else assertTrue(false);
