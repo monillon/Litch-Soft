@@ -2,6 +2,7 @@ package LITCH;
 
 /**
  * Classe Unit pour renseigner les différentes unités des différents paramètres de l'application
+ *
  * @author ben14
  */
 public class Unit {
@@ -24,12 +25,13 @@ public class Unit {
 
     /**
      * Constructeur de l'Unit
-     * @param newIdUnit l'ID de l'unité
-     * @param newNameUnit le nom de l'unité
+     *
+     * @param newIdUnit          l'ID de l'unité
+     * @param newNameUnit        le nom de l'unité
      * @param newDescriptionUnit la description de l'unité
      * @throws IllegalArgumentException si l'ID est null ou négatif
      */
-    public Unit(int newIdUnit, String newNameUnit, String newDescriptionUnit){
+    public Unit(int newIdUnit, String newNameUnit, String newDescriptionUnit) {
         if (newIdUnit <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
         idUnit = newIdUnit;
         nameUnit = newNameUnit;
@@ -38,6 +40,7 @@ public class Unit {
 
     /**
      * Getter de l'ID de l'unité
+     *
      * @return idUnit
      */
     public int getIdUnit() {
@@ -46,6 +49,7 @@ public class Unit {
 
     /**
      * Getter du nom de l'Unit
+     *
      * @return nameUnit
      */
     public String getNameUnit() {
@@ -54,6 +58,7 @@ public class Unit {
 
     /**
      * Setter du nom de l'Unit
+     *
      * @param nameUnit le nouveau nom
      */
     public void setNameUnit(String nameUnit) {
@@ -62,6 +67,7 @@ public class Unit {
 
     /**
      * Getter de la description de l'unité
+     *
      * @return descriptionUnit
      */
     public String getDescriptionUnit() {
@@ -70,6 +76,7 @@ public class Unit {
 
     /**
      * Setter de la description de l'Unit
+     *
      * @param descriptionUnit la nouvelle description
      */
     public void setDescriptionUnit(String descriptionUnit) {

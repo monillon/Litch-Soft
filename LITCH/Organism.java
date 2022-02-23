@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package LITCH;
 
 /**
- *  Un organisme est défini par un identifiant et un nom d'organimse
+ * Un organisme est défini par un identifiant et un nom d'organimse
+ *
  * @author ben14
  */
 public class Organism {
@@ -26,13 +22,13 @@ public class Organism {
     /**
      * Organism Constructor
      *
-     * @param newIdOrganism Permet de stocker l'id de l'Organisme.
+     * @param newIdOrganism   Permet de stocker l'id de l'Organisme.
      * @param newNameOrganism Le nom de l'organisme
      * @throws IllegalArgumentException si les contraintes des attributs sont violées.
      */
-    public Organism(int newIdOrganism, String newNameOrganism){
+    public Organism(int newIdOrganism, String newNameOrganism) {
         if (newIdOrganism <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
-        if (newNameOrganism.length() <1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (newNameOrganism.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
         idOrganism = newIdOrganism;
         nameOrganism = newNameOrganism;
     }
@@ -60,8 +56,8 @@ public class Organism {
      * @throws IllegalArgumentException si le nom est vide ou null
      */
     public void setNameOrganism(String nameOrganism) {
-        if (nameOrganism.length() <1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (nameOrganism.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
         this.nameOrganism = nameOrganism;
     }
-    
+
 }

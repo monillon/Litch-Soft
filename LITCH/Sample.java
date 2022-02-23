@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package LITCH;
 
 import java.util.Date;
 
 /**
- *  Un organisme est défini par un identifiant et un nom d'un échantillon
+ * Un organisme est défini par un identifiant et un nom d'un échantillon
+ *
  * @author ben14
  */
 public class Sample {
@@ -20,7 +16,7 @@ public class Sample {
     /**
      * Date à laquelle l'échantillon a été reçu, ne peut pas être null
      */
-    private Date time; // Date and hour of sample
+    private Date time;
     /**
      * Type d'organe auquel l'échantillon correspond
      */
@@ -28,23 +24,23 @@ public class Sample {
     /**
      * Localistion de l'échantillon dans le laboratoire
      */
-    private String sampleLocalization; // Localization of the sample
+    private String sampleLocalization;
     /**
      * Commentaire concernant l'échantillon
      */
-    private String sampleCommentary; // Comments
+    private String sampleCommentary;
 
 
     /**
      * Sample Constructor
      *
-     * @param newIdSample Permet de stocker l'id de l'échantillon.
-     * @param newSampleOrgan Le nom de l'échantillon
-     * @param newTime date de l'échantillon
+     * @param newIdSample           Permet de stocker l'id de l'échantillon.
+     * @param newSampleOrgan        Le nom de l'échantillon
+     * @param newTime               date de l'échantillon
      * @param newSampleLocalization Le nom de l'organisme
      * @throws IllegalArgumentException si les contraintes des attributs sont violées.
      */
-    public Sample(int newIdSample, String newSampleLocalization, String newSampleOrgan, Date newTime, String newSampleCommentary){
+    public Sample(int newIdSample, String newSampleLocalization, String newSampleOrgan, Date newTime, String newSampleCommentary) {
         if (newIdSample <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
 
         idSample = newIdSample;
@@ -69,7 +65,7 @@ public class Sample {
      * @throws IllegalArgumentException si le nom est vide ou null
      */
     public void setIdSample(int idSample) {
-        if (idSample<= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
+        if (idSample <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
         this.idSample = idSample;
     }
 
@@ -124,8 +120,8 @@ public class Sample {
      * @throws IllegalArgumentException si le nom est vide ou null
      */
     public void setSampleLocalization(String sampleLocalization) {
-        if (sampleLocalization != null){
-        this.sampleLocalization = sampleLocalization;
+        if (sampleLocalization != null) {
+            this.sampleLocalization = sampleLocalization;
         }
     }
 
@@ -146,5 +142,5 @@ public class Sample {
     public void setSampleCommentary(String sampleCommentary) {
         this.sampleCommentary = sampleCommentary;
     }
-    
+
 }

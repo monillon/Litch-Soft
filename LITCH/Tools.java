@@ -1,8 +1,6 @@
 package LITCH;
 
 
-
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -30,7 +28,7 @@ public class Tools {
     private Main main;
     private Scene previousScene;
 
-    public Tools(Main newMain){
+    public Tools(Main newMain) {
         main = newMain;
     }
 
@@ -43,7 +41,7 @@ public class Tools {
         stage.show();
     }
 
-    public void previous(Stage stage){
+    public void previous(Stage stage) {
         stage.setScene(previousScene);
         stage.show();
     }
@@ -56,43 +54,43 @@ public class Tools {
     }
 
 
-    public static String spaceToUnderscore(String textToTransform){
+    public static String spaceToUnderscore(String textToTransform) {
         String textTransform = textToTransform;
-        for (int i =0; i < textToTransform.length(); i++){
+        for (int i = 0; i < textToTransform.length(); i++) {
 
-            if (textToTransform.charAt(i) == ' '){
-                textTransform = textTransform.substring(0,i)+'_'+textTransform.substring(i+1);
+            if (textToTransform.charAt(i) == ' ') {
+                textTransform = textTransform.substring(0, i) + '_' + textTransform.substring(i + 1);
             }
         }
         return textTransform;
     }
 
 
-    public static String underscoreToSpace(String textToTransform){
+    public static String underscoreToSpace(String textToTransform) {
         String textTransform = textToTransform;
-        for (int i =0; i < textToTransform.length(); i++){
+        for (int i = 0; i < textToTransform.length(); i++) {
 
-            if (textToTransform.charAt(i) == '_'){
-                textTransform = textTransform.substring(0,i)+' '+textTransform.substring(i+1);
+            if (textToTransform.charAt(i) == '_') {
+                textTransform = textTransform.substring(0, i) + ' ' + textTransform.substring(i + 1);
             }
         }
         return textTransform;
     }
 
-    public ArrayList<JSONObject> splitResultQuery(String objectToSplit){
+    public ArrayList<JSONObject> splitResultQuery(String objectToSplit) {
 
         ArrayList<JSONObject> jsonList = new ArrayList<JSONObject>();
         int pos1 = 0;
         int pos2 = 0;
-        for (int i =0; i < objectToSplit.length(); i++){
+        for (int i = 0; i < objectToSplit.length(); i++) {
 
             JSONObject newJsonObject = null;
 
-            if (objectToSplit.charAt(i) == '{'){
+            if (objectToSplit.charAt(i) == '{') {
                 pos1 = i;
-            }else if(objectToSplit.charAt(i) == '}'){
-                pos2 = i+1;
-                newJsonObject = new JSONObject(objectToSplit.substring(pos1,pos2));
+            } else if (objectToSplit.charAt(i) == '}') {
+                pos2 = i + 1;
+                newJsonObject = new JSONObject(objectToSplit.substring(pos1, pos2));
                 jsonList.add(newJsonObject);
             }
         }
@@ -113,7 +111,8 @@ public class Tools {
         String inputLine;
 
         while ((inputLine = in.readLine()) != null) {
-            String output = inputLine.replace("[", "").replace("]", "");;
+            String output = inputLine.replace("[", "").replace("]", "");
+            ;
             listOfResults = splitResultQuery(output);
         }
         return listOfResults;
@@ -126,21 +125,21 @@ public class Tools {
     }
 
 
-    public boolean intToBoolean(int newInt){
+    public boolean intToBoolean(int newInt) {
         Boolean result = null;
-        if (newInt == 0){
+        if (newInt == 0) {
             result = false;
-        }else{
+        } else {
             result = true;
         }
         return result;
     }
 
-    public static String sexBooleanToString(boolean sex){
+    public static String sexBooleanToString(boolean sex) {
         String sexString = "";
-        if (sex){
+        if (sex) {
             sexString = "Femelle";
-        }else {
+        } else {
             sexString = "Mâle";
         }
         return sexString;
@@ -149,13 +148,14 @@ public class Tools {
 
     /**
      * It return an empty string if the entered JsonObject's field is null
+     *
      * @param object
      * @param key
      * @return
      */
-    public String checkStringIsNull(JSONObject object, String key){
+    public String checkStringIsNull(JSONObject object, String key) {
         String result = "";
-        if (!object.isNull(key)){
+        if (!object.isNull(key)) {
             result = object.getString(key);
         }
         return result;
@@ -173,13 +173,12 @@ public class Tools {
     }
 
 
-
     public Unit searchForUnit(String unitName) throws IOException {
         Unit unit = null;
         String request = "http://litch-dev.geniephy.net/API/unite/read_all.php";
         for (JSONObject object : main.tools.sendRequest(request)) {
             if (object.getString("NOM_UNITE").equals(unitName))
-           unit = new Unit(object.getInt("ID_UNITE"), object.getString("NOM_UNITE"), object.getString("DESCRIPTION_UNITE"));
+                unit = new Unit(object.getInt("ID_UNITE"), object.getString("NOM_UNITE"), object.getString("DESCRIPTION_UNITE"));
         }
         return unit;
     }
@@ -219,10 +218,11 @@ public class Tools {
 
     /**
      * les lignes suivantes permettent d'appliquer les modifications des interfaces liées aux droits de l'utilisateur.
+     *
      * @param pane
      * @param button
      */
-    public void applyRoles(Pane pane, Button button){
+    public void applyRoles(Pane pane, Button button) {
         pane.getChildren().remove(button);
     }
 

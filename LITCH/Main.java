@@ -50,7 +50,7 @@ public class Main extends Application {
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
 
     @Override
-    public void init(){
+    public void init() {
         connexionController = new ConnexionController(this);
         menuController = new MenuController(this);
         projectScreenController = new ProjectScreenController(this);
@@ -74,7 +74,7 @@ public class Main extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         FXMLLoader newFXML = new FXMLLoader(getClass().getResource("/Modules/Connexion/connexion.fxml"));
         newFXML.setController(connexionController);
         Parent root = (Parent) newFXML.load();
@@ -87,13 +87,12 @@ public class Main extends Application {
     }
 
 
-
     public static void main(String[] args) {
         launch(args);
     }
 
 
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         return currentUser;
     }
 

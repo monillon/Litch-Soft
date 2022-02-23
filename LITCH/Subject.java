@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package LITCH;
 
 import java.util.ArrayList;
 
 /**
  * Classe Subject pour renseigner les différents sujets des groupes de projets
+ *
  * @author ben14
  */
 public class Subject {
@@ -51,31 +47,32 @@ public class Subject {
      */
     private ArrayList<Phenotype> phenotype;
     /**
-     * Echantillons relatifs au Subject
+     * Liste d'echantillons relatifs au Subject
      */
-    private ArrayList<Sample> sampleList; // list of subject's samples
+    private ArrayList<Sample> sampleList;
 
     /**
      * Constructeur d'un Subject
-     * @param newIdSubject l'ID du sujet
-     * @param newCodeSubject le code du sujet
-     * @param newAgeSubject l'âge du sujet
-     * @param newAgeUnit l'unité de l'âge
-     * @param newSexeSubject le sexe du sujet
-     * @param newWeightSubject le poids du sujet
-     * @param newWeightUnit l'unité du poids du sujet
+     *
+     * @param newIdSubject      l'ID du sujet
+     * @param newCodeSubject    le code du sujet
+     * @param newAgeSubject     l'âge du sujet
+     * @param newAgeUnit        l'unité de l'âge
+     * @param newSexeSubject    le sexe du sujet
+     * @param newWeightSubject  le poids du sujet
+     * @param newWeightUnit     l'unité du poids du sujet
      * @param newCommentSubject un commentaire nécessaire facultatif
      * @throws IllegalArgumentException si l'age, l'ID ou le poids du Subject sont nul ou négatif, si le code ou les unités
-     * de l'âge et du poids du Subject sont null ou si le code du Subject est vide
+     *                                  de l'âge et du poids du Subject sont null ou si le code du Subject est vide
      */
-    public Subject(int newIdSubject, String newCodeSubject, int newAgeSubject, Unit newAgeUnit,boolean newSexeSubject, int newWeightSubject, Unit newWeightUnit, String newCommentSubject){
+    public Subject(int newIdSubject, String newCodeSubject, int newAgeSubject, Unit newAgeUnit, boolean newSexeSubject, int newWeightSubject, Unit newWeightUnit, String newCommentSubject) {
         if (newAgeSubject <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
         if (newIdSubject <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
         if (newWeightSubject <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
-        if (newCodeSubject == null)  throw new IllegalArgumentException("Ne peut pas être null");
-        if (newAgeUnit == null)  throw new IllegalArgumentException("Ne peut pas être null");
-        if (newWeightUnit == null)  throw new IllegalArgumentException("Ne peut pas être null");
-        if (newCodeSubject.length() <1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (newCodeSubject == null) throw new IllegalArgumentException("Ne peut pas être null");
+        if (newAgeUnit == null) throw new IllegalArgumentException("Ne peut pas être null");
+        if (newWeightUnit == null) throw new IllegalArgumentException("Ne peut pas être null");
+        if (newCodeSubject.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
 
 
         idSubject = newIdSubject;
@@ -92,20 +89,21 @@ public class Subject {
 
     /**
      * Constructeur sans l'ID dans le cas où on prépare le sujet à l'ajout à la base de données
-     * @param newCodeSubject le code du sujet
-     * @param newAgeSubject l'âge du sujet
-     * @param newAgeUnit l'unité de l'âge du sujet
-     * @param newSexeSubject le sexe du sujet
-     * @param newWeightSubject le poids du sujet
-     * @param newWeightUnit l'unité du poids du sujet
-     * @param newCommentSubject  le commentaire (facultatif)
+     *
+     * @param newCodeSubject    le code du sujet
+     * @param newAgeSubject     l'âge du sujet
+     * @param newAgeUnit        l'unité de l'âge du sujet
+     * @param newSexeSubject    le sexe du sujet
+     * @param newWeightSubject  le poids du sujet
+     * @param newWeightUnit     l'unité du poids du sujet
+     * @param newCommentSubject le commentaire (facultatif)
      * @throws IllegalArgumentException si l'age du Subject est nul ou négatif, si le code ou les unités
-     * de l'âge et du poids du Subject sont null ou si le code du Subject est vide
+     *                                  de l'âge et du poids du Subject sont null ou si le code du Subject est vide
      */
-    public Subject(String newCodeSubject, int newAgeSubject, Unit newAgeUnit, boolean newSexeSubject, int newWeightSubject, Unit newWeightUnit, String newCommentSubject){
-        if (newCodeSubject.length() <1) throw new IllegalArgumentException("Ne peut pas être vide");
-        if (newCodeSubject == null)  throw new IllegalArgumentException("Ne peut pas être null");
-        if (newAgeUnit == null)  throw new IllegalArgumentException("Ne peut pas être null");
+    public Subject(String newCodeSubject, int newAgeSubject, Unit newAgeUnit, boolean newSexeSubject, int newWeightSubject, Unit newWeightUnit, String newCommentSubject) {
+        if (newCodeSubject.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (newCodeSubject == null) throw new IllegalArgumentException("Ne peut pas être null");
+        if (newAgeUnit == null) throw new IllegalArgumentException("Ne peut pas être null");
         if (newAgeSubject <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
 
 
@@ -122,14 +120,16 @@ public class Subject {
 
     /**
      * Getter de l'ID du sujet
+     *
      * @return idSubject
      */
-    public int getIdSubject(){
+    public int getIdSubject() {
         return idSubject;
     }
 
     /**
      * Getter du code du sujet
+     *
      * @return the codeSubject
      */
     public String getCodeSubject() {
@@ -138,17 +138,19 @@ public class Subject {
 
     /**
      * Setter du code du sujet
+     *
      * @param codeSubject the codeSubject to set
      * @throws IllegalArgumentException si le code du Subject est null ou vide
      */
     public void setCodeSubject(String codeSubject) {
-        if (codeSubject == null)  throw new IllegalArgumentException("Ne peut pas être null");
-        if (codeSubject.length() <1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (codeSubject == null) throw new IllegalArgumentException("Ne peut pas être null");
+        if (codeSubject.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
         this.codeSubject = codeSubject;
     }
 
     /**
      * Getter de l'âge du sujet
+     *
      * @return the ageSubject
      */
     public int getAgeSubject() {
@@ -157,6 +159,7 @@ public class Subject {
 
     /**
      * Setter de l'âge du sujet
+     *
      * @param ageSubject the ageSubject to set
      * @throws IllegalArgumentException si l'âge du Subject est nul ou négatif
      */
@@ -167,6 +170,7 @@ public class Subject {
 
     /**
      * Getter de l'unité de l'age du sujet
+     *
      * @return ageUnit
      */
     public Unit getAgeUnit() {
@@ -175,6 +179,7 @@ public class Subject {
 
     /**
      * Setter de l'unité de l'age du sujet
+     *
      * @param ageUnit la nouvelle unité
      */
     public void setAgeUnit(Unit ageUnit) {
@@ -183,6 +188,7 @@ public class Subject {
 
     /**
      * Getter du sexe du sujet
+     *
      * @return the sexeSubject
      */
     public boolean getSexeSubject() {
@@ -191,6 +197,7 @@ public class Subject {
 
     /**
      * Setter du sexe du sujet
+     *
      * @param sexeSubject the sexeSubject to set
      */
     public void setSexeSubject(boolean sexeSubject) {
@@ -199,6 +206,7 @@ public class Subject {
 
     /**
      * Getter du poids du sujet
+     *
      * @return the weightSubject
      */
     public int getWeightSubject() {
@@ -207,6 +215,7 @@ public class Subject {
 
     /**
      * Setter du poids du sujet
+     *
      * @param weightSubject the weightSubject to set
      * @throws IllegalArgumentException si le poids du Subject est nul ou négatif
      */
@@ -217,6 +226,7 @@ public class Subject {
 
     /**
      * Getter du commentaire associé au sujet
+     *
      * @return the commentSubject
      */
     public String getCommentSubject() {
@@ -225,6 +235,7 @@ public class Subject {
 
     /**
      * Setter du commentaire associé au sujet
+     *
      * @param commentSubject the commentSubject to set
      */
     public void setCommentSubject(String commentSubject) {
@@ -233,6 +244,7 @@ public class Subject {
 
     /**
      * Getter du phénotype du sujet
+     *
      * @return phenotype
      */
     public ArrayList<Phenotype> getPhenotype() {
@@ -241,6 +253,7 @@ public class Subject {
 
     /**
      * Setter du phenotype du sujet
+     *
      * @param phenotype le nouveau phénotype
      */
     public void setPhenotype(Phenotype phenotype) {
@@ -249,6 +262,7 @@ public class Subject {
 
     /**
      * Getter de la liste d'échantillons associés au sujet
+     *
      * @return sampleList
      */
     public ArrayList<Sample> getSampleList() {
@@ -257,30 +271,34 @@ public class Subject {
 
     /**
      * Setter de la liste d'échantillons associés au sujet
+     *
      * @param sampleList la nouvelle sampleList
      */
     public void setSampleList(ArrayList<Sample> sampleList) {
         this.sampleList = sampleList;
     }
-    
+
     /**
      * Add a new sample in the list
+     *
      * @param newSample l'échantillon à ajouter
      */
-    public void addSample(Sample newSample){
+    public void addSample(Sample newSample) {
         sampleList.add(newSample);
     }
-    
+
     /**
      * Remove a new sample from the list
+     *
      * @param newSample l'échantillon à retirer
      */
-    public void removeSample(Sample newSample){
+    public void removeSample(Sample newSample) {
         sampleList.remove(newSample);
     }
 
     /**
      * Getter de l'unité du poids
+     *
      * @return weightUnit
      */
     public Unit getWeightUnit() {
@@ -289,6 +307,7 @@ public class Subject {
 
     /**
      * Setter de l'unité du poids
+     *
      * @param weightUnit
      */
     public void setWeightUnit(Unit weightUnit) {
@@ -297,6 +316,7 @@ public class Subject {
 
     /**
      * Setter de l'ID du sujet
+     *
      * @param id_sujet le nouvel ID
      * @throws IllegalArgumentException si l'ID est ou négatif
      */

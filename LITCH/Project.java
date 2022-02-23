@@ -1,32 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package LITCH;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-
-import javax.tools.Tool;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
  * Un projet est défini par un id, un code, un nom ainsi qu'une image, ce projet possède une liste de groupes participant au projet
+ *
  * @author ben14
  */
 public class Project {
@@ -41,18 +19,21 @@ public class Project {
 
     /**
      * Constructeur d'objets de classe Projet
-     * @param newID Id du projet stocké dansla base de données
-     * @param newCode code du projet
-     * @param newName nom du projet
+     *
+     * @param newID       Id du projet stocké dansla base de données
+     * @param newCode     code du projet
+     * @param newName     nom du projet
      * @param newImageUrl url de l'image, peut être null
-     * ListOfGroups : ArrayList des groupes participant au projet
+     *                    ListOfGroups : ArrayList des groupes participant au projet
      */
-    public Project(int newID, String newCode, String newName, String newImageUrl)
-    {
+    public Project(int newID, String newCode, String newName, String newImageUrl) {
         if (newID < 0) throw new IllegalArgumentException("Un ID ne peut être negatif");
-        if (newCode==null ||newCode.length() <1) throw new IllegalArgumentException("un string ne doit pas etre vide");
-        if (newName==null ||newName.length() <1) throw new IllegalArgumentException("un string ne doit pas etre vide");
-        if (newImageUrl == null || newImageUrl.length() < 1 ) throw new IllegalArgumentException("un string ne doit pas etre vide");
+        if (newCode == null || newCode.length() < 1)
+            throw new IllegalArgumentException("un string ne doit pas etre vide");
+        if (newName == null || newName.length() < 1)
+            throw new IllegalArgumentException("un string ne doit pas etre vide");
+        if (newImageUrl == null || newImageUrl.length() < 1)
+            throw new IllegalArgumentException("un string ne doit pas etre vide");
         idProject = newID;
         codeProject = newCode;
         nameProject = newName;
@@ -60,7 +41,7 @@ public class Project {
         ListOfGroups = new ArrayList<Group>();
     }
 
-    public Project(){
+    public Project() {
 
     }
 
@@ -68,25 +49,23 @@ public class Project {
     /**
      * @return : return the ID of the project
      */
-    public int getidProject(){
+    public int getidProject() {
         return idProject;
     }
-    
 
-    
+
     /**
      * @return : return the Code of the project
      */
-    public String getcodeProject(){
+    public String getcodeProject() {
         return codeProject;
     }
-    
 
-    
+
     /**
      * @return : return the Name of the project
      */
-    public String getnameProject(){
+    public String getnameProject() {
         return nameProject;
     }
 
@@ -102,28 +81,26 @@ public class Project {
     /**
      * @Param Group : prends toutes les informations necessaire à la création d'un groupe pour lui assigné directement sur le projet
      */
-    public void addGroup(int newID, String newCode, String newName, boolean patho, boolean treated, int newNbMembers, Organism newOrganism){
+    public void addGroup(int newID, String newCode, String newName, boolean patho, boolean treated, int newNbMembers, Organism newOrganism) {
         ListOfGroups.add(new Group(newID, newCode, newName, patho, treated, newNbMembers, newOrganism));
     }
 
 
     /**
-     *
      * @return la liste des groupes appartenant au projet
      */
-    public ArrayList<Group> getListOfGroup(){
+    public ArrayList<Group> getListOfGroup() {
         return ListOfGroups;
     }
 
     /**
-     *
      * @param groupId
      * @return l'objet groupe trouvé grâce à son id
      */
-    public Group searchGroupById(int groupId){
+    public Group searchGroupById(int groupId) {
         Group theGroup = null;
-        for (Group group : ListOfGroups){
-            if (group.getIdGroup() == groupId){
+        for (Group group : ListOfGroups) {
+            if (group.getIdGroup() == groupId) {
                 theGroup = group;
             }
         }
