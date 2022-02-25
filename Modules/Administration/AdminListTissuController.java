@@ -47,7 +47,9 @@ public class AdminListTissuController {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
     }
 
-
-
+    public void goBackSettings(ActionEvent e ) throws IOException {
+        Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+        main.tools.switchScene(stage ,"Administration/AdminPage.fxml", main.getAdminPageController());
+    }
 
 }
