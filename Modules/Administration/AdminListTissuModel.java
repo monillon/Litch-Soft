@@ -17,7 +17,7 @@ public class AdminListTissuModel {
     }
 
     /**
-     * Permet de faire la requête des tissus dans la BDD et de l'ajouter dans la liste
+     * Permet de faire la requête des tissus dans la BDD et de l'ajouter dans la ListView
      * @param theListView
      */
     public void addItemList(ListView theListView) throws IOException {
@@ -27,6 +27,11 @@ public class AdminListTissuModel {
     }
 
 
+    /**
+     * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
+     * @param theListView
+     * @param leTissu le tissu à supprimer
+     */
     public void removeItemList(ListView theListView, Tissue leTissu) throws IOException {
         DataBase.deleteTissuRequest(leTissu.getIdTissue());
         theListView.getItems().remove(leTissu);
