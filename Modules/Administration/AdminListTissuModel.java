@@ -3,6 +3,7 @@ package Modules.Administration;
 import LITCH.DataBase;
 import LITCH.Main;
 import LITCH.Tissue;
+import LITCH.Tools;
 import javafx.scene.control.ListView;
 import org.json.JSONObject;
 
@@ -22,7 +23,7 @@ public class AdminListTissuModel {
      */
     public void addItemList(ListView theListView) throws IOException {
         for (JSONObject i : DataBase.getAllTissuRequest()) {
-            theListView.getItems().add(new Tissue(i.getInt("ID_TISSU"), i.getString("NOM_TISSU")));
+            theListView.getItems().add(new Tissue(i.getInt("ID_TISSU"), Tools.underscoreToSpace(i.getString("NOM_TISSU"))));
         }
     }
 

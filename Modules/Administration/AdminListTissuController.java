@@ -2,10 +2,12 @@ package Modules.Administration;
 
 import LITCH.Main;
 import LITCH.Tissue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -38,6 +40,11 @@ public class AdminListTissuController {
         } else {
             errorTissu.setText("Aucun élément n'a été sélectionné");
         }
+    }
+
+    public void addNewTissu(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
     }
 
 
