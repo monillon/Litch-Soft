@@ -76,4 +76,14 @@ public class TissueTest {
         catch(IllegalArgumentException ise){}
 
     }
+
+    /**
+     * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom du tissu
+     * Condition nécessaire pour module suppression
+     */
+    @Test
+    public void testToSting() {
+        assertEquals("test", good.toString());
+        assertEquals(good.getNameTissue(), good.toString());
+    }
 }
