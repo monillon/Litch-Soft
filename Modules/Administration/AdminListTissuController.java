@@ -35,8 +35,8 @@ public class AdminListTissuController {
 
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
-        adminListTissuModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem());
         errorTissu.setText("");
+        adminListTissuModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem(), errorTissu);
         } else {
             errorTissu.setText("Aucun élément n'a été sélectionné");
         }

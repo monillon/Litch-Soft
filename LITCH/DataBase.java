@@ -830,4 +830,15 @@ public class DataBase {
         insertRequest(request);
     }
 
+    /**
+     * Permet de faire une requête pour récupérer un tissu grâce à son id
+     * @param id_tissu l'id du tissu
+     * @return l'objet tissu de BDD
+     */
+    public static ArrayList<JSONObject> getOneTissu(int id_tissu) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/tissu/read_one.php?id_tissu=" + id_tissu;
+        return sendRequest(request);
+    }
+
+
 }
