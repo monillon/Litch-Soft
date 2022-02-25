@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="connexionPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(255,87,87);">
          <children>
@@ -84,6 +84,15 @@
                         <Text fx:id="text15" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MODELE DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
                               <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListTissu" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text16" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste tissus" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
                            </font>
                         </Text>
                      </graphic>

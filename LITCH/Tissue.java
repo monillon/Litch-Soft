@@ -46,4 +46,13 @@ public class Tissue {
     public String getNameTissue() {
         return nameTissue;
     }
+
+
+    /**
+     * La méthode toString est override pour retourner le nom du tissu
+     * @return le nom du tissu
+     */
+    public String toString() {
+        return nameTissue;
+    }
 }

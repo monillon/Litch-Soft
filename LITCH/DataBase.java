@@ -819,4 +819,15 @@ public class DataBase {
         String request = "http://litch-dev.geniephy.net/API/manipulation/update_commentaire.php?commentaire_manipulation=" + commentaire_manipulation + "&id_manipulation=" + id_manipulation;
         insertRequest(request);
     }
+
+    /**
+     * Method deleteTissuRequest
+     * Requête qui permet de supprimer dans la bdd un tissu
+     * @param id_tissu id de la bdd correspondant au tissu
+     */
+    public static void deleteTissuRequest(int id_tissu) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/tissu/delete_tissu.php?id_tissu=" + id_tissu;
+        insertRequest(request);
+    }
+
 }

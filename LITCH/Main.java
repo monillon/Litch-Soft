@@ -45,6 +45,7 @@ public class Main extends Application {
     private ManipulationViewController manipulationViewController;
     private SearchPageController searchPageController;
     private FridgeManagementController fridgeManagementController;
+    private AdminListTissuController adminListTissuController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -70,6 +71,7 @@ public class Main extends Application {
         manipulationViewController = new ManipulationViewController(this);
         searchPageController = new SearchPageController(this);
         fridgeManagementController = new FridgeManagementController(this);
+        adminListTissuController = new AdminListTissuController(this);
         tools = new Tools(this);
     }
 
@@ -250,6 +252,10 @@ public class Main extends Application {
 
     public void setFridgeManagementController(FridgeManagementController fridgeManagementController) {
         this.fridgeManagementController = fridgeManagementController;
+    }
+
+    public AdminListTissuController getAdminListTissuController() {
+        return adminListTissuController;
     }
 }
 
