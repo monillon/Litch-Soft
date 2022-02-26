@@ -60,4 +60,17 @@ public class AdminListTissuModel {
         }
     }
 
+    public void showDetails(Tissue leTissu, Text affichage) throws IOException {
+        ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(leTissu.getIdTissue());
+
+        if (retour.get(0).isNull("message")) {
+            // Le tissu est lié à des prélèvements afficher les prélèvements
+            affichage.setText("Le tissu est lié à " + retour.size() + " prélèvements, il ne peut pas être supprimé");
+        } else {
+            // pas de prélèvement lié
+            affichage.setText("Ce tissu n'est pas lié à des prélèvements, il peut être supprimé");
+        }
+
+    }
+
 }
