@@ -60,6 +60,11 @@ public class AdminListTissuModel {
         }
     }
 
+    /**
+     * Permet d'aller chercher en BDD si le tissu est lié à un ou plusieurs prélèvements et d'afficher un message.
+     * @param leTissu le tissu à rechercher
+     * @param affichage le lieu de l'affichage pour le message d'erreur
+     */
     public void showDetails(Tissue leTissu, Text affichage) throws IOException {
         ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(leTissu.getIdTissue());
 
