@@ -39,6 +39,7 @@ public class AdminListTissuController {
         errorTissu.setText("");
         textDetails.setText("");
         adminListTissuModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem(), errorTissu);
+        laListe.getSelectionModel().clearSelection();
         } else {
             errorTissu.setText("Aucun élément n'a été sélectionné");
         }
