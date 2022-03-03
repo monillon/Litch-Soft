@@ -1,8 +1,8 @@
 package LITCH;
 
 import Modules.Administration.*;
-import Modules.Administration.NewTissu.AdminNewTissuController;
-import Modules.Administration.NewTissu.AdminNewTissuModel;
+import Modules.Administration.Listing.Tissu.AdminListTissuController;
+import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Connexion.ConnexionController;
 import Modules.ManagementFrigo.FridgeManagementController;
 import Modules.Menu.AjoutProjet.AddProjectController;

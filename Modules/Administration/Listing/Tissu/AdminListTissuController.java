@@ -1,4 +1,4 @@
-package Modules.Administration;
+package Modules.Administration.Listing.Tissu;
 
 import LITCH.Main;
 import LITCH.Tissue;
@@ -47,7 +47,7 @@ public class AdminListTissuController {
 
     public void addNewTissu(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

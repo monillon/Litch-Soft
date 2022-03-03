@@ -1,7 +1,6 @@
-package Modules.Administration.NewTissu;
+package Modules.Administration.Listing.Tissu.NewTissu;
 
 import LITCH.Main;
-import Modules.Administration.AdminOrganModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
