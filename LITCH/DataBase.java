@@ -850,5 +850,15 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Permet de faire une requête pour récupérer les sujets liés à un prélèvement grâce à l'id du tissu
+     * @param id_tissu l'id du tissu
+     * @return l'objet prélèvement de BDD
+     */
+    public static ArrayList<JSONObject> getSujetLiePrelevment(int id_tissu) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/sujet/read_sujetLinkedPrelev.php?id_tissu=" + id_tissu;
+        return sendRequest(request);
+    }
+
 
 }

@@ -19,7 +19,7 @@ public class AdminListTissuController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorTissu;
-    @FXML private Text textDetails;
+    @FXML private Text textDetails, textDetailsPrelev;
 
     public AdminListTissuController(Main newMain){
         main = newMain;
@@ -38,6 +38,7 @@ public class AdminListTissuController {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorTissu.setText("");
         textDetails.setText("");
+        textDetailsPrelev.setText("");
         adminListTissuModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem(), errorTissu);
         laListe.getSelectionModel().clearSelection();
         } else {
@@ -58,8 +59,9 @@ public class AdminListTissuController {
 
     public void getDetails() throws IOException {
         textDetails.setText("");
+        textDetailsPrelev.setText("");
         if (laListe.getSelectionModel().getSelectedItem() != null) {
-            adminListTissuModel.showDetails((Tissue) laListe.getSelectionModel().getSelectedItem(), textDetails);
+            adminListTissuModel.showDetails((Tissue) laListe.getSelectionModel().getSelectedItem(), textDetails, textDetailsPrelev);
         } else {
             textDetails.setText("Aucun élément n'a été sélectionné");
         }
