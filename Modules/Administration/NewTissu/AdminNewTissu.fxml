@@ -40,11 +40,16 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="addTissueButton" layoutX="490.0" layoutY="516.0" mnemonicParsing="false" onAction="#addNewTissue" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter le tissu" textFill="WHITE">
+      <Button fx:id="addTissueButton" layoutX="483.0" layoutY="458.0" mnemonicParsing="false" onAction="#addNewTissue" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter le tissu" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Text fx:id="errorTissue" fill="RED" layoutX="291.0" layoutY="596.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="536.0" />
+      <Button layoutX="513.0" layoutY="515.0" mnemonicParsing="false" onAction="#goListBack" style="-fx-background-color: rgb(255,100,100); -fx-background-radius: 10px;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

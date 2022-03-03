@@ -2,10 +2,12 @@ package Modules.Administration.NewTissu;
 
 import LITCH.Main;
 import Modules.Administration.AdminOrganModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -30,6 +32,11 @@ public class AdminNewTissuController {
 
     public void addNewTissue() throws IOException {
         adminNewTissuModel.addNewTissue(newTissueName, addTissueButton, errorTissue);
+    }
+
+    public void goListBack(ActionEvent e) {
+        Button leBouton = (Button) e.getSource();
+        main.tools.previous((Stage) leBouton.getScene().getWindow());
     }
 
 }
