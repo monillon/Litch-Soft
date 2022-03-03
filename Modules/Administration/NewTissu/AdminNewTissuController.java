@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -37,6 +39,13 @@ public class AdminNewTissuController {
     public void goListBack(ActionEvent e) {
         Button leBouton = (Button) e.getSource();
         main.tools.previous((Stage) leBouton.getScene().getWindow());
+    }
+
+    public void onEnter(KeyEvent ke) throws IOException {
+        if (ke.getCode().equals(KeyCode.ENTER))
+        {
+            this.addNewTissue();
+        }
     }
 
 }
