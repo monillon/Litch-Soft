@@ -73,6 +73,8 @@ public class AdminListTissuModel {
             // Le tissu est lié à des prélèvements afficher les prélèvements
             affichage.setText("Le tissu est lié à " + retour.size() + " prélèvements, il ne peut pas être supprimé");
             ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(leTissu.getIdTissue());
+
+            // permet d'afficher les 5 premiers sujets où le tissu est utilisé.
             int parcours;
             if (details.size() >= 5 ) {
                 parcours = 5;
@@ -82,10 +84,9 @@ public class AdminListTissuModel {
 
             String texte = "";
             for (int i = 0; i < parcours; i++) {
-                texte += details.get(i).toString() + ", ";
+                texte += details.get(i).getString("CODE_SUJET") + " ";
             }
-            detailsPrelev.setText(texte);
-
+            detailsPrelev.setText("Ce tissu est utilisé pour les sujets : " + texte);
 
         } else {
             // pas de prélèvement lié
