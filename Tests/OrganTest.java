@@ -78,4 +78,10 @@ private Organ good;
         catch(IllegalArgumentException ise){}
 
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("test", good.toString());
+        assertEquals(good.getNameOrgan(), good.toString());
+    }
 }

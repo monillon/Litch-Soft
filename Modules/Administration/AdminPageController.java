@@ -64,4 +64,10 @@ public class AdminPageController {
         main.getAdminListTissuController().addElementList();
     }
 
+    public void goToListOrgan(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Organe/AdminListOrgane.fxml", main.getAdminListOrganeController());
+        main.getAdminListOrganeController().addElementList();
+    }
+
 }

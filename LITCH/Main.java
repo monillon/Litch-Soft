@@ -1,6 +1,7 @@
 package LITCH;
 
 import Modules.Administration.*;
+import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Connexion.ConnexionController;
@@ -50,6 +51,7 @@ public class Main extends Application {
     private FridgeManagementController fridgeManagementController;
     private AdminListTissuController adminListTissuController;
     private AdminNewTissuController adminNewTissuController;
+    private AdminListOrganeController adminListOrganeController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -77,6 +79,7 @@ public class Main extends Application {
         fridgeManagementController = new FridgeManagementController(this);
         adminListTissuController = new AdminListTissuController(this);
         adminNewTissuController = new AdminNewTissuController(this);
+        adminListOrganeController = new AdminListOrganeController(this);
         tools = new Tools(this);
     }
 
@@ -265,6 +268,10 @@ public class Main extends Application {
 
     public AdminNewTissuController getAdminNewTissuController() {
         return adminNewTissuController;
+    }
+
+    public AdminListOrganeController getAdminListOrganeController() {
+        return adminListOrganeController;
     }
 }
 

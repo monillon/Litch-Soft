@@ -47,5 +47,9 @@ public class Organ {
         return nameOrgan;
     }
 
+    public String toString() {
+        return this.nameOrgan;
+    }
+
 
 }

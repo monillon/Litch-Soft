@@ -861,4 +861,34 @@ public class DataBase {
     }
 
 
+    /**
+     * Method deleteTissuRequest
+     * Requête qui permet de supprimer dans la bdd un organe
+     * @param id_organe id de la bdd correspondant à l'organe
+     */
+    public static void deleteOrganeRequest(int id_organe) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/organe/delete_organe.php?id_organe=" + id_organe;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer un organe grâce à son id
+     * @param id_organe l'id de l'organe
+     * @return l'objet organe de BDD
+     */
+    public static ArrayList<JSONObject> getOneOrgane(int id_organe) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/organe/read_one.php?id_organe=" + id_organe;
+        return sendRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer les prélèvements liés à un organe grâce à son id
+     * @param id_organe l'id du tissu
+     * @return l'objet prélèvement de BDD
+     */
+    public static ArrayList<JSONObject> getPrelevementLieOrgane(int id_organe) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/prelevement/read_organe.php?id_organe=3" + id_organe;
+        return sendRequest(request);
+    }
+
 }

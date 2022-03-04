@@ -97,6 +97,15 @@
                         </Text>
                      </graphic>
                   </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListOrgan" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text161" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ORGANES" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
                </children>
             </FlowPane>
          </content>
