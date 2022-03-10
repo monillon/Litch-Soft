@@ -73,8 +73,6 @@ public class AdminListOrganeModel {
             // pas de prélèvement lié
             affichage.setText("Ce tissu n'est pas lié à des prélèvements, il peut être supprimé");
         }
-        //TODO: afficher les prélèvements qui utilisent cet organe dans les détails
-
     }
 
 }

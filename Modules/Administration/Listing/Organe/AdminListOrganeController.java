@@ -48,7 +48,7 @@ public class AdminListOrganeController {
 
     public void addNewOrgan(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Organe/NewOrgane/AdminNewOrgane.fxml", main.getAdminNewOrganeController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {
