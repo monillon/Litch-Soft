@@ -61,4 +61,14 @@ public class Pathology {
         if (namePathology.length() < 1) throw new IllegalArgumentException("un string ne doit pas etre vide");
         this.namePathology = namePathology;
     }
+
+    /**
+     * Retourne le nom de la pathologie
+     * Nécessaire pour les listes
+     * @return le string nom de la pathologie
+     */
+    public String toString() {
+        return namePathology;
+    }
+
 }
