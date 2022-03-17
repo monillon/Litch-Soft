@@ -17,7 +17,7 @@ public class AdminListPathologieModel {
     }
 
     /**
-     * Permet de faire la requête des tissus dans la BDD et de l'ajouter dans la ListView
+     * Permet de faire la requête des pathologies dans la BDD et de l'ajouter dans la ListView
      * @param theListView
      */
     public void addItemList(ListView theListView) throws IOException {
@@ -42,7 +42,7 @@ public class AdminListPathologieModel {
     }
 
     /**
-     * Permet de vérifier si un tissu à bien été supprimé de la BDD en cas de clef étrangère
+     * Permet de vérifier si une pathologie à bien été supprimée de la BDD en cas de clef étrangère
      * @param id_patho qui est supprimé
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
