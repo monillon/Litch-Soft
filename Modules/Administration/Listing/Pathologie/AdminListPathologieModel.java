@@ -1,9 +1,6 @@
 package Modules.Administration.Listing.Pathologie;
 
-import LITCH.DataBase;
-import LITCH.Main;
-import LITCH.Tissue;
-import LITCH.Tools;
+import LITCH.*;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import org.json.JSONObject;
@@ -24,8 +21,8 @@ public class AdminListPathologieModel {
      * @param theListView
      */
     public void addItemList(ListView theListView) throws IOException {
-        for (JSONObject i : DataBase.getAllTissuRequest()) {
-            theListView.getItems().add(new Tissue(i.getInt("ID_TISSU"), Tools.underscoreToSpace(i.getString("NOM_TISSU"))));
+        for (JSONObject i : DataBase.getAllPathoRequest()) {
+            theListView.getItems().add(new Pathology(i.getInt("ID_PATHOLOGIE"), Tools.underscoreToSpace(i.getString("NOM_PATHOLOGIE"))));
         }
     }
 
@@ -33,24 +30,25 @@ public class AdminListPathologieModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param leTissu le tissu à supprimer
+     * @param laPathologie le tissu à supprimer
      */
-    public void removeItemList(ListView theListView, Tissue leTissu, Text errorText) throws IOException {
-        DataBase.deleteTissuRequest(leTissu.getIdTissue());
-        if (checkTissuDeleted(leTissu.getIdTissue())) {
-            theListView.getItems().remove(leTissu);
+    public void removeItemList(ListView theListView, Pathology laPathologie, Text errorText) throws IOException {
+        DataBase.deletePathologie(laPathologie.getIdPathology());
+        if (checkTissuDeleted(laPathologie.getIdPathology())) {
+            theListView.getItems().remove(laPathologie);
         } else {
-            errorText.setText("Elément non supprimé, ce tissu est encore lié à des prélèvements");
+            errorText.setText("Elément non supprimé, cette pathologie est encore liée à des mutations");
         }
     }
 
     /**
      * Permet de vérifier si un tissu à bien été supprimé de la BDD en cas de clef étrangère
-     * @param id_tissu qui est supprimé
+     * @param id_patho qui est supprimé
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
-    public boolean checkTissuDeleted(int id_tissu) throws IOException {
-        ArrayList<JSONObject> retour =  DataBase.getOneTissu(id_tissu);
+    public boolean checkTissuDeleted(int id_patho) throws IOException {
+        //TODO: vérifier ces fichiers
+        ArrayList<JSONObject> retour =  DataBase.getOnePathologie(id_patho);
         if (retour.get(0).isNull("message")) {
             // erreur lors de la suppression, l'élément toujours présent dans la BDD
             return false;

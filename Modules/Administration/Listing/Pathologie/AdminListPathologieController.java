@@ -1,6 +1,7 @@
 package Modules.Administration.Listing.Pathologie;
 
 import LITCH.Main;
+import LITCH.Pathology;
 import LITCH.Tissue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +40,7 @@ public class AdminListPathologieController {
         errorTissu.setText("");
         textDetails.setText("");
         textDetailsPrelev.setText("");
-        adminListTissuModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem(), errorTissu);
+        adminListTissuModel.removeItemList(laListe, (Pathology) laListe.getSelectionModel().getSelectedItem(), errorTissu);
         laListe.getSelectionModel().clearSelection();
         } else {
             errorTissu.setText("Aucun élément n'a été sélectionné");
