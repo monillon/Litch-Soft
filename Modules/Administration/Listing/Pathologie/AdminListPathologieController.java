@@ -49,7 +49,7 @@ public class AdminListPathologieController {
 
     public void addNewTissu(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Pathologie/NewPathologie/AdminNewPathologie.fxml", main.getAdminNewPathologieController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

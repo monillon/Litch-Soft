@@ -18,14 +18,14 @@ public class AdminNewPathologieModel {
     }
 
 
-    public void addNewTissue(TextField newTissueName, Button addTissueButton, Text errorTissue) throws IOException {
-        if (!newTissueName.getText().isEmpty()) {
-            DataBase.createTissueRequest(main.tools.spaceToUnderscore(newTissueName.getText().toUpperCase()));
-            main.tools.switchScene((Stage) addTissueButton.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
-            main.getAdminListTissuController().addElementList();
+    public void addNewPathology(TextField newPathologyName, Button addPathologyButton, Text errorPathology) throws IOException {
+        if (!newPathologyName.getText().isEmpty()) {
+            DataBase.createPathoRequest(main.tools.spaceToUnderscore(newPathologyName.getText().toUpperCase()));
+            main.tools.switchScene((Stage) addPathologyButton.getScene().getWindow(), "Administration/Listing/Pathologie/AdminListPathologie.fxml", main.getAdminListPathologieController());
+            main.getAdminListPathologieController().addElementList();
 
         }else{
-            errorTissue.setText("Veuillez renseigner le nom d'un tissu");
+            errorPathology.setText("Veuillez renseigner le nom d'un tissu");
         }
     }
 

@@ -47,7 +47,6 @@ public class AdminListPathologieModel {
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
     public boolean checkTissuDeleted(int id_patho) throws IOException {
-        //TODO: vérifier ces fichiers
         ArrayList<JSONObject> retour =  DataBase.getOnePathologie(id_patho);
         if (retour.get(0).isNull("message")) {
             // erreur lors de la suppression, l'élément toujours présent dans la BDD
