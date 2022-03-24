@@ -16,23 +16,23 @@ import java.sql.SQLException;
 public class AdminNewPreOpController {
 
     private Main main;
-    private AdminNewPreOpModel adminNewTissuModel;
+    private AdminNewPreOpModel adminNewPreOpModel;
     @FXML private Button home;
-    @FXML private Button addTissueButton;
-    @FXML private Text errorTissue;
-    @FXML private TextField newTissueName;
+    @FXML private Button addPreOpButton;
+    @FXML private Text errorPreOp;
+    @FXML private TextField newPreOpName;
 
     public AdminNewPreOpController(Main newMain){
         main = newMain;
-        adminNewTissuModel = new AdminNewPreOpModel(newMain);
+        adminNewPreOpModel = new AdminNewPreOpModel(newMain);
     }
 
     public void goHome() throws IOException, SQLException {
         main.tools.goHome(home);
     }
 
-    public void addNewTissue() throws IOException {
-        adminNewTissuModel.addNewTissue(newTissueName, addTissueButton, errorTissue);
+    public void addNewPreOp() throws IOException {
+        adminNewPreOpModel.addNewPreOp(newPreOpName, addPreOpButton, errorPreOp);
     }
 
     public void goListBack(ActionEvent e) {
@@ -43,8 +43,7 @@ public class AdminNewPreOpController {
     public void onEnter(KeyEvent ke) throws IOException {
         if (ke.getCode().equals(KeyCode.ENTER))
         {
-            this.addNewTissue();
+            this.addNewPreOp();
         }
     }
-
 }

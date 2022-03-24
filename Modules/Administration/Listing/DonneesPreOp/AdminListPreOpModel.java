@@ -17,12 +17,12 @@ public class AdminListPreOpModel {
     }
 
     /**
-     * Permet de faire la requête des tissus dans la BDD et de l'ajouter dans la ListView
+     * Permet de faire la requête des données pré-opératoires dans la BDD et de l'ajouter dans la ListView
      * @param theListView
      */
     public void addItemList(ListView theListView) throws IOException {
         for (JSONObject i : DataBase.getAllPreopDataRequest()) {
-            theListView.getItems().add(new Tissue(i.getInt("ID_PREOP"), Tools.underscoreToSpace(i.getString("NOM_PREOP"))));
+            theListView.getItems().add(new PreopData(i.getInt("ID_PREOP"), Tools.underscoreToSpace(i.getString("NOM_PREOP"))));
         }
     }
 
@@ -30,7 +30,7 @@ public class AdminListPreOpModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param laDonnee la donnée à supprimer
+     * @param laDonnee la donnée pré-opératoire à supprimer
      */
     public void removeItemList(ListView theListView, PreopData laDonnee, Text errorText) throws IOException {
         DataBase.deletePreopDataRequest(laDonnee.getIdPreop());
@@ -38,12 +38,12 @@ public class AdminListPreOpModel {
         if (checkPreopDataDeleted(laDonnee.getIdPreop())) {
             theListView.getItems().remove(laDonnee);
         } else {
-            errorText.setText("Elément non supprimé, ce tissu est encore lié à des prélèvements");
+            errorText.setText("Elément non supprimé, cette donnée pré-opératoire est encore liée à des prélèvements");
         }
     }
 
     /**
-     * Permet de vérifier si une donnée préopératoire à bien été supprimée de la BDD en cas de clef étrangère
+     * Permet de vérifier si une donnée pré-opératoire à bien été supprimée de la BDD en cas de clef étrangère
      * @param id_preopData qui est supprimé
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
@@ -59,20 +59,20 @@ public class AdminListPreOpModel {
     }
 
     /**
-     * Permet d'aller chercher en BDD si le tissu est lié à un ou plusieurs prélèvements et d'afficher un message.
-     * @param leTissu le tissu à rechercher
+     * Permet d'aller chercher en BDD si la donnée pré-opératoire est liée à un ou plusieurs prélèvements et d'afficher un message.
+     * @param LaDonnee la donnée pré-opératoire à rechercher
      * @param affichage le lieu de l'affichage pour le message d'erreur
      * @param detailsPrelev le lieu d'affiche de la liste des prélèvements
      */
-    public void showDetails(Tissue leTissu, Text affichage, Text detailsPrelev) throws IOException {
-        ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(leTissu.getIdTissue());
+    public void showDetails(PreopData LaDonnee, Text affichage, Text detailsPrelev) throws IOException {
+        ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(LaDonnee.getIdPreop());
 
         if (retour.get(0).isNull("message")) {
-            // Le tissu est lié à des prélèvements afficher les prélèvements
-            affichage.setText("Le tissu est lié à " + retour.size() + " prélèvements, il ne peut pas être supprimé");
-            ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(leTissu.getIdTissue());
+            // La donnée pré-opératoire est liée à des prélèvements : afficher les prélèvements
+            affichage.setText("La donnée pré-opératoire est liée à " + retour.size() + " prélèvements, elle ne peut pas être supprimée");
+            ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(LaDonnee.getIdPreop());
 
-            // permet d'afficher les 5 premiers sujets où le tissu est utilisé.
+            // permet d'afficher les 5 premiers sujets où la donnée pré-opératoire est utilisée.
             int parcours;
             if (details.size() >= 5 ) {
                 parcours = 5;
@@ -84,11 +84,11 @@ public class AdminListPreOpModel {
             for (int i = 0; i < parcours; i++) {
                 texte += details.get(i).getString("CODE_SUJET") + " ";
             }
-            detailsPrelev.setText("Ce tissu est utilisé pour les sujets : " + texte);
+            detailsPrelev.setText("Cette donnée pré-opératoire est utilisée pour les sujets : " + texte);
 
         } else {
             // pas de prélèvement lié
-            affichage.setText("Ce tissu n'est pas lié à des prélèvements, il peut être supprimé");
+            affichage.setText("Cette donnée pré-opératoire n'est pas liée à des prélèvements, elle peut être supprimée");
             detailsPrelev.setText("");
         }
 

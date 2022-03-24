@@ -2,7 +2,7 @@ package Modules.Administration.Listing.DonneesPreOp;
 
 import LITCH.Main;
 import LITCH.PreopData;
-import LITCH.Tissue;
+//import LITCH.Tissue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -49,7 +49,7 @@ public class AdminListPreOpController {
 
     public void addNewPreOp(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/DonneesPreOp/NewPreOp/AdminNewPreOp.fxml", main.getAdminNewPreOpController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {
@@ -62,7 +62,7 @@ public class AdminListPreOpController {
         textDetails.setText("");
         textDetailsPrelev.setText("");
         if (laListe.getSelectionModel().getSelectedItem() != null) {
-            adminListPreOpModel.showDetails((Tissue) laListe.getSelectionModel().getSelectedItem(), textDetails, textDetailsPrelev);
+            adminListPreOpModel.showDetails((PreopData) laListe.getSelectionModel().getSelectedItem(), textDetails, textDetailsPrelev);
         } else {
             textDetails.setText("Aucun élément n'a été sélectionné");
         }

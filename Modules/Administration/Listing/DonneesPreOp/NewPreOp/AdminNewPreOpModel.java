@@ -2,6 +2,7 @@ package Modules.Administration.Listing.DonneesPreOp.NewPreOp;
 
 import LITCH.DataBase;
 import LITCH.Main;
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -18,14 +19,14 @@ public class AdminNewPreOpModel {
     }
 
 
-    public void addNewTissue(TextField newTissueName, Button addTissueButton, Text errorTissue) throws IOException {
-        if (!newTissueName.getText().isEmpty()) {
-            DataBase.createTissueRequest(main.tools.spaceToUnderscore(newTissueName.getText().toUpperCase()));
-            main.tools.switchScene((Stage) addTissueButton.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
-            main.getAdminListTissuController().addElementList();
+    public void addNewPreOp(TextField newPreOpName, Button addPreOpButton, Text errorPreOp) throws IOException {
+        if (!newPreOpName.getText().isEmpty()) {
+            DataBase.createPreopDataRequest(main.tools.spaceToUnderscore(newPreOpName.getText().toUpperCase()));
+            main.tools.switchScene((Stage) addPreOpButton.getScene().getWindow(), "Administration/Listing/DonneesPreOp/AdminListPreOp.fxml", main.getAdminListPreOpController());
+            main.getAdminListPreOpController().addElementList();
 
         }else{
-            errorTissue.setText("Veuillez renseigner le nom d'un tissu");
+            errorPreOp.setText("Veuillez renseigner le nom de la nouvelle donnée pré-opératoire");
         }
     }
 

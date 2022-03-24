@@ -897,9 +897,8 @@ public class DataBase {
      * @param id_PreopData id de la bdd correspondant à la donnée
      */
     public static void deletePreopDataRequest(int id_PreopData) throws IOException {
-//        String request = "https://litch-dev.geniephy.net/API/tissu/delete_tissu.php?id_tissu=" + id_PreopData;
-//        insertRequest(request);
-        System.out.println("Suppression de la data " + id_PreopData);
+        String request = "https://litch-dev.geniephy.net/API/donnees_preop/delete_preopData.php?id_preop=" + id_PreopData;
+        insertRequest(request);
     }
 
     /**
@@ -908,10 +907,21 @@ public class DataBase {
      * @return l'objet tissu de BDD
      */
     public static ArrayList<JSONObject> getOnePreopData(int id_PreopData) throws IOException {
-//        String request = "https://litch-dev.geniephy.net/API/tissu/read_one.php?id_tissu=" + id_PreopData;
-//        return sendRequest(request);
-        System.out.println("Je vérifie si il y a toujours l'id dans la bdd " + id_PreopData);
-        return new ArrayList<JSONObject>(); // a retirer après
+        String request = "https://litch-dev.geniephy.net/API/donnees_preop/read_one.php?id_preop=" + id_PreopData;
+        return sendRequest(request);
+    }
+    /**
+     * Permet de faire une requête pour récupérer les prélèvements liés à une donnée pré-opératoire grâce à son id
+     * @param id_preopData l'id de la donnée pré-opératoire
+     * @return l'objet prélèvement de BDD
+     */
+    public static ArrayList<JSONObject> getPrelevementLiePreOpData(int id_preopData) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/prelevement/read_tissu.php?id_tissu=" + id_preopData;
+        return sendRequest(request);
+        // TODO : regarde ici Maxime !
     }
 
 }
+
+
+ 
