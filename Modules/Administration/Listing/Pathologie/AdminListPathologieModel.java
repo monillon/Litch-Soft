@@ -64,6 +64,7 @@ public class AdminListPathologieModel {
      * @param detailsPrelev le lieu d'affiche de la liste des prélèvements
      */
     public void showDetails(Tissue leTissu, Text affichage, Text detailsPrelev) throws IOException {
+        //TODO: reste à faire le show details
         ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(leTissu.getIdTissue());
 
         if (retour.get(0).isNull("message")) {
