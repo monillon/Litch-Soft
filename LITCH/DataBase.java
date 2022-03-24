@@ -914,4 +914,15 @@ public class DataBase {
         String request = "https://litch-dev.geniephy.net/API/unite/read_one.php?id_unite=" + ID_UNITE;
         return sendRequest(request);
     }
+
+    /**
+     * Permet de faire une requête pour récupérer les sujets et les phénotypes liés à un prélèvement grâce à l'id de l'unité
+     * @param ID_UNITE l'id de l'unité
+     * @return l'objet prélèvement de BDD
+     */
+    public static ArrayList<JSONObject> getUtilisationUnit(int ID_UNITE) throws IOException {
+        String request = "" + ID_UNITE;
+        return sendRequest(request);
+    }
+
 }
