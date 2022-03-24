@@ -901,7 +901,7 @@ public class DataBase {
      * @param ID_UNITE id de la bdd correspondant à l'unit"
      */
     public static void deleteUnitRequest(int ID_UNITE) throws IOException {
-        String request ="https://litch-dev.geniephy.net/API/unite/delete_unite.php?id_unite=27" + ID_UNITE;
+        String request ="https://litch-dev.geniephy.net/API/unite/delete_unite.php?id_unite=" + ID_UNITE;
         insertRequest(request);
     }
 
@@ -911,7 +911,7 @@ public class DataBase {
      * @return l'objet unité de BDD
      */
     public static ArrayList<JSONObject> getOneUnit(int ID_UNITE) throws IOException {
-        String request = "https://litch-dev.geniephy.net/API/unite/read_one.php?id_unite=1" + ID_UNITE;
+        String request = "https://litch-dev.geniephy.net/API/unite/read_one.php?id_unite=" + ID_UNITE;
         return sendRequest(request);
     }
 }
