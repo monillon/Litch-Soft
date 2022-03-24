@@ -5,6 +5,8 @@ import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
+import Modules.Administration.Listing.Unit.AdminListUnitController;
+import Modules.Administration.Listing.Unit.NewUnit.AdminNewUnitController;
 import Modules.Connexion.ConnexionController;
 import Modules.ManagementFrigo.FridgeManagementController;
 import Modules.Menu.AjoutProjet.AddProjectController;
@@ -54,6 +56,8 @@ public class Main extends Application {
     private AdminNewTissuController adminNewTissuController;
     private AdminListOrganeController adminListOrganeController;
     private AdminNewOrganeController adminNewOrganeController;
+    private AdminListUnitController adminListUnitController;
+    private AdminNewUnitController adminNewUnitController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -83,6 +87,8 @@ public class Main extends Application {
         adminNewTissuController = new AdminNewTissuController(this);
         adminListOrganeController = new AdminListOrganeController(this);
         adminNewOrganeController = new AdminNewOrganeController(this);
+        adminListUnitController = new AdminListUnitController(this);
+        adminNewUnitController = new AdminNewUnitController(this);
         tools = new Tools(this);
     }
 
@@ -280,5 +286,10 @@ public class Main extends Application {
     public AdminNewOrganeController getAdminNewOrganeController() {
         return adminNewOrganeController;
     }
-}
+
+    public AdminListUnitController getAdminListUnitController() { return adminListUnitController; }
+
+    public AdminNewUnitController getAdminNewUnitController() { return adminNewUnitController; }
+    }
+
 
