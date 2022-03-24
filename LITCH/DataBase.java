@@ -891,4 +891,27 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method deletePreopDataRequest
+     * Requête qui permet de supprimer dans la bdd une donnée préopératoire
+     * @param id_PreopData id de la bdd correspondant à la donnée
+     */
+    public static void deletePreopDataRequest(int id_PreopData) throws IOException {
+//        String request = "https://litch-dev.geniephy.net/API/tissu/delete_tissu.php?id_tissu=" + id_PreopData;
+//        insertRequest(request);
+        System.out.println("Suppression de la data " + id_PreopData);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer un tissu grâce à son id
+     * @param id_PreopData l'id du tissu
+     * @return l'objet tissu de BDD
+     */
+    public static ArrayList<JSONObject> getOnePreopData(int id_PreopData) throws IOException {
+//        String request = "https://litch-dev.geniephy.net/API/tissu/read_one.php?id_tissu=" + id_PreopData;
+//        return sendRequest(request);
+        System.out.println("Je vérifie si il y a toujours l'id dans la bdd " + id_PreopData);
+        return new ArrayList<JSONObject>(); // a retirer après
+    }
+
 }
