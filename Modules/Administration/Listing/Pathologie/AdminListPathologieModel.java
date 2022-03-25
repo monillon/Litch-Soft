@@ -37,7 +37,7 @@ public class AdminListPathologieModel {
         if (checkTissuDeleted(laPathologie.getIdPathology())) {
             theListView.getItems().remove(laPathologie);
         } else {
-            errorText.setText("Elément non supprimé, cette pathologie est encore liée à des mutations");
+            errorText.setText("Elément non supprimé, cette pathologie est encore liée à des mutations ou phénotypes");
         }
     }
 
