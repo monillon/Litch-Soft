@@ -900,6 +900,13 @@ public class DataBase {
         insertRequest(request);
     }
 
+    /**
+     * Méthode getOnePathologie
+     * Permet de récupérer les informations de la BDD grâce à l'id de la pathologie
+     * @param id_patho l'id de la pathologie dans la BDD
+     * @return l'objet de BDD
+     * @throws IOException
+     */
     public static ArrayList<JSONObject> getOnePathologie(int id_patho) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/pathologie/read_one.php?id_patho=" + id_patho;
         return sendRequest(request);
