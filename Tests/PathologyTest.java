@@ -87,4 +87,13 @@ private Pathology pathology;
         catch(IllegalArgumentException ise){}
         assertEquals("test",pathology.getNamePathology());
     }
+
+    /**
+     * Test le to string, il est nécessaire pour la visualisation des listes de pathologie
+     */
+    @Test
+    public void testToString() {
+        assertEquals("test", pathology.toString());
+        assertEquals(pathology.getNamePathology(), pathology.toString());
+    }
 }

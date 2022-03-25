@@ -70,4 +70,10 @@ public class AdminPageController {
         main.getAdminListOrganeController().addElementList();
     }
 
+    public void goToListPathology(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Pathologie/AdminListPathologie.fxml", main.getAdminListPathologieController());
+        main.getAdminListPathologieController().addElementList();
+    }
+
 }

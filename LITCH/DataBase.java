@@ -891,4 +891,26 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method deletePathologie
+     * Permet de supprimer une pathologie de la base de données
+     */
+    public static void deletePathologie(int id_pathologie) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/pathologie/delete_patho.php?id_patho=" + id_pathologie;
+        insertRequest(request);
+    }
+
+    /**
+     * Méthode getOnePathologie
+     * Permet de récupérer les informations de la BDD grâce à l'id de la pathologie
+     * @param id_patho l'id de la pathologie dans la BDD
+     * @return l'objet de BDD
+     * @throws IOException
+     */
+    public static ArrayList<JSONObject> getOnePathologie(int id_patho) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/pathologie/read_one.php?id_patho=" + id_patho;
+        return sendRequest(request);
+    }
+
+
 }

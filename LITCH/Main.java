@@ -3,6 +3,8 @@ package LITCH;
 import Modules.Administration.*;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
+import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
+import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Connexion.ConnexionController;
@@ -54,6 +56,8 @@ public class Main extends Application {
     private AdminNewTissuController adminNewTissuController;
     private AdminListOrganeController adminListOrganeController;
     private AdminNewOrganeController adminNewOrganeController;
+    private AdminListPathologieController adminListPathologieController;
+    private AdminNewPathologieController adminNewPathologieController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -83,6 +87,8 @@ public class Main extends Application {
         adminNewTissuController = new AdminNewTissuController(this);
         adminListOrganeController = new AdminListOrganeController(this);
         adminNewOrganeController = new AdminNewOrganeController(this);
+        adminListPathologieController = new AdminListPathologieController(this);
+        adminNewPathologieController = new AdminNewPathologieController(this);
         tools = new Tools(this);
     }
 
@@ -279,6 +285,14 @@ public class Main extends Application {
 
     public AdminNewOrganeController getAdminNewOrganeController() {
         return adminNewOrganeController;
+    }
+
+    public AdminListPathologieController getAdminListPathologieController() {
+        return adminListPathologieController;
+    }
+
+    public AdminNewPathologieController getAdminNewPathologieController() {
+        return adminNewPathologieController;
     }
 }
 
