@@ -90,7 +90,6 @@ public class Main extends Application {
         adminListUnitController = new AdminListUnitController(this);
         adminNewUnitController = new AdminNewUnitController(this);
         tools = new Tools(this);
-        // ajout d'un commentaire
     }
 
     @Override
