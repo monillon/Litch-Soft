@@ -890,6 +890,30 @@ public class DataBase {
         String request = "https://litch-dev.geniephy.net/API/prelevement/read_organe.php?id_organe=3" + id_organe;
         return sendRequest(request);
     }
+/**
+    public static Iterable<? extends JSONObject> getAllUnitRequest() {
+    }
+ */
+
+    /**
+     * Method deleteUnitRequest
+     * Requête qui permet de supprimer dans la bdd une unité
+     * @param ID_UNITE id de la bdd correspondant à l'unit"
+     */
+    public static void deleteUnitRequest(int ID_UNITE) throws IOException {
+        String request ="https://litch-dev.geniephy.net/API/unite/delete_unite.php?id_unite=" + ID_UNITE;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une unité grâce à son id
+     * @param ID_UNITE l'id de l'unité
+     * @return l'objet unité de BDD
+     */
+    public static ArrayList<JSONObject> getOneUnit(int ID_UNITE) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/unite/read_one.php?id_unite=" + ID_UNITE;
+        return sendRequest(request);
+    }
 
     /**
      * Method deletePathologie
