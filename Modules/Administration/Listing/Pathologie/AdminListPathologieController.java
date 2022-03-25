@@ -19,7 +19,7 @@ public class AdminListPathologieController {
     private AdminListPathologieModel adminListTissuModel;
     @FXML private Button home;
     @FXML private ListView laListe;
-    @FXML private Text errorTissu;
+    @FXML private Text errorPatho;
     @FXML private Text textDetails, textDetailsPrelev;
 
     public AdminListPathologieController(Main newMain){
@@ -37,17 +37,17 @@ public class AdminListPathologieController {
 
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
-        errorTissu.setText("");
+        errorPatho.setText("");
         textDetails.setText("");
         textDetailsPrelev.setText("");
-        adminListTissuModel.removeItemList(laListe, (Pathology) laListe.getSelectionModel().getSelectedItem(), errorTissu);
+        adminListTissuModel.removeItemList(laListe, (Pathology) laListe.getSelectionModel().getSelectedItem(), errorPatho);
         laListe.getSelectionModel().clearSelection();
         } else {
-            errorTissu.setText("Aucun élément n'a été sélectionné");
+            errorPatho.setText("Aucun élément n'a été sélectionné");
         }
     }
 
-    public void addNewTissu(ActionEvent e) throws IOException {
+    public void addNewPatho(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Pathologie/NewPathologie/AdminNewPathologie.fxml", main.getAdminNewPathologieController());
     }
