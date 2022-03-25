@@ -148,4 +148,11 @@ public class UnitTest {
         unit.setDescriptionUnit("test2");
         assertEquals("test2", unit.getDescriptionUnit());
     }
+
+    @Test
+    public void testToString() {
+        assertEquals("unit - description", unit.toString());
+        assertEquals(unit.getNameUnit() + " - " + unit.getDescriptionUnit(), unit.toString());
+    }
+
 }
