@@ -149,6 +149,10 @@ public class UnitTest {
         assertEquals("test2", unit.getDescriptionUnit());
     }
 
+    /**
+     * Méthode testToString, permet de tester les valeurs de retours de la méthode ToString
+     * Nécéssaire pour les lists views
+     */
     @Test
     public void testToString() {
         assertEquals("unit - description", unit.toString());
