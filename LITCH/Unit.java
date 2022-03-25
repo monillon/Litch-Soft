@@ -82,4 +82,6 @@ public class Unit {
     public void setDescriptionUnit(String descriptionUnit) {
         this.descriptionUnit = descriptionUnit;
     }
+
+    public String toString(){return nameUnit + " - " + descriptionUnit;}
 }
