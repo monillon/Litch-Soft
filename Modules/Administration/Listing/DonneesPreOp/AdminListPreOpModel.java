@@ -38,7 +38,7 @@ public class AdminListPreOpModel {
         if (checkPreopDataDeleted(laDonnee.getIdPreop())) {
             theListView.getItems().remove(laDonnee);
         } else {
-            errorText.setText("Elément non supprimé, cette donnée pré-opératoire est encore liée à des prélèvements");
+            errorText.setText("Elément non supprimé, cette donnée pré-opératoire est encore liée à des phénotypes");
         }
     }
 
