@@ -6,6 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -146,6 +147,16 @@ class PreopDataTest {
             fail("exception");}
         catch(IllegalArgumentException ise){}
         assertEquals("preop",preop.getNamePreop());
+    }
+
+    /**
+     * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom du de la donnée préop
+     * Condition nécessaire pour module suppression
+     */
+    @Test
+    public void testToSting() {
+        assertEquals("preop", preop.toString());
+        assertEquals(preop.getNamePreop(), preop.toString());
     }
 
 }

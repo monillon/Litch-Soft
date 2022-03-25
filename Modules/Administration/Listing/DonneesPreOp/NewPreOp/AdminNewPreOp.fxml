@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(255,87,87);">
+         <children>
+            <Text fx:id="welcome" fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AJOUTER UNE DONNEE PRE-OPERATOIRE" textAlignment="RIGHT" wrappingWidth="1060.0">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Text>
+            <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../IMG/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Text layoutX="334.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AJOUTER UNE DONNEE PRE-OPERATOIRE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <TextField fx:id="newPreOpName" layoutX="559.0" layoutY="339.0" onKeyPressed="#onEnter" />
+      <Text layoutX="274.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de la donnée pré-opératoire">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="addPreOpButton" layoutX="409.0" layoutY="461.0" mnemonicParsing="false" onAction="#addNewPreOp" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter la donnée pré-opératoire" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Text fx:id="errorPreOp" fill="RED" layoutX="291.0" layoutY="596.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="536.0" />
+      <Button fx:id="leBouton" layoutX="513.0" layoutY="515.0" mnemonicParsing="false" onAction="#goListBack" style="-fx-background-color: rgb(255,100,100); -fx-background-radius: 10px;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

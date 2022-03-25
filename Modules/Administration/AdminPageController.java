@@ -70,6 +70,12 @@ public class AdminPageController {
         main.getAdminListOrganeController().addElementList();
     }
 
+    public void goToListPreopData(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/DonneesPreOp/AdminListPreOp.fxml", main.getAdminListPreOpController());
+        main.getAdminListPreOpController().addElementList();
+    }
+  
     public void goToListUnit(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Unit/AdminListUnit.fxml", main.getAdminListUnitController());

@@ -1,6 +1,8 @@
 package LITCH;
 
 import Modules.Administration.*;
+import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
+import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
@@ -58,10 +60,13 @@ public class Main extends Application {
     private AdminNewTissuController adminNewTissuController;
     private AdminListOrganeController adminListOrganeController;
     private AdminNewOrganeController adminNewOrganeController;
+    private AdminListPreOpController adminListPreOpController;
+    private AdminNewPreOpController adminNewPreOpController;
     private AdminListUnitController adminListUnitController;
     private AdminNewUnitController adminNewUnitController;
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
+
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -91,6 +96,8 @@ public class Main extends Application {
         adminNewTissuController = new AdminNewTissuController(this);
         adminListOrganeController = new AdminListOrganeController(this);
         adminNewOrganeController = new AdminNewOrganeController(this);
+        adminListPreOpController = new AdminListPreOpController(this);
+        adminNewPreOpController = new AdminNewPreOpController(this);
         adminListUnitController = new AdminListUnitController(this);
         adminNewUnitController = new AdminNewUnitController(this);
         adminListPathologieController = new AdminListPathologieController(this);
@@ -293,6 +300,14 @@ public class Main extends Application {
         return adminNewOrganeController;
     }
 
+    public AdminListPreOpController getAdminListPreOpController() {
+        return adminListPreOpController;
+    }
+
+    public AdminNewPreOpController getAdminNewPreOpController() {
+        return adminNewPreOpController;
+    }
+  
     public AdminListUnitController getAdminListUnitController() { 
       return adminListUnitController; 
     }
@@ -308,5 +323,6 @@ public class Main extends Application {
     public AdminNewPathologieController getAdminNewPathologieController() {
         return adminNewPathologieController;
     }
+  
 }
 
