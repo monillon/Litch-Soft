@@ -150,10 +150,10 @@ class PreopDataTest {
     }
 
     /**
-     * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom du tissu
+     * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom du de la donnée préop
      * Condition nécessaire pour module suppression
      */
-    @org.junit.Test
+    @Test
     public void testToSting() {
         assertEquals("preop", preop.toString());
         assertEquals(preop.getNamePreop(), preop.toString());
