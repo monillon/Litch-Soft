@@ -30,7 +30,7 @@
          </children>
       </Pane>
       <ListView fx:id="laListe" layoutX="103.0" layoutY="134.0" prefHeight="488.0" prefWidth="548.0" />
-      <Button layoutX="781.0" layoutY="339.0" mnemonicParsing="false" onAction="#delSelectedItem" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Supprimer" textFill="WHITE">
+      <Button layoutX="781.0" layoutY="395.0" mnemonicParsing="false" onAction="#delSelectedItem" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -45,17 +45,10 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="794.0" layoutY="236.0" mnemonicParsing="false" onAction="#addNewPreOp" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter" textFill="WHITE">
+      <Button layoutX="794.0" layoutY="292.0" mnemonicParsing="false" onAction="#addNewPreOp" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="797.0" layoutY="441.0" mnemonicParsing="false" onAction="#getDetails" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Détails" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Button>
-      <Text fx:id="textDetails" layoutX="667.0" layoutY="566.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="388.66668701171875" />
-      <Text fx:id="textDetailsPrelev" layoutX="658.0" layoutY="599.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="388.66668701171875" />
    </children>
 </AnchorPane>

@@ -58,40 +58,4 @@ public class AdminListPreOpModel {
         }
     }
 
-    /**
-     * Permet d'aller chercher en BDD si la donnée pré-opératoire est liée à un ou plusieurs prélèvements et d'afficher un message.
-     * @param LaDonnee la donnée pré-opératoire à rechercher
-     * @param affichage le lieu de l'affichage pour le message d'erreur
-     * @param detailsPrelev le lieu d'affiche de la liste des prélèvements
-     */
-    public void showDetails(PreopData LaDonnee, Text affichage, Text detailsPrelev) throws IOException {
-        ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(LaDonnee.getIdPreop());
-
-        if (retour.get(0).isNull("message")) {
-            // La donnée pré-opératoire est liée à des prélèvements : afficher les prélèvements
-            affichage.setText("La donnée pré-opératoire est liée à " + retour.size() + " prélèvements, elle ne peut pas être supprimée");
-            ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(LaDonnee.getIdPreop());
-
-            // permet d'afficher les 5 premiers sujets où la donnée pré-opératoire est utilisée.
-            int parcours;
-            if (details.size() >= 5 ) {
-                parcours = 5;
-            } else {
-                parcours = details.size();
-            }
-
-            String texte = "";
-            for (int i = 0; i < parcours; i++) {
-                texte += details.get(i).getString("CODE_SUJET") + " ";
-            }
-            detailsPrelev.setText("Cette donnée pré-opératoire est utilisée pour les sujets : " + texte);
-
-        } else {
-            // pas de prélèvement lié
-            affichage.setText("Cette donnée pré-opératoire n'est pas liée à des prélèvements, elle peut être supprimée");
-            detailsPrelev.setText("");
-        }
-
-    }
-
 }

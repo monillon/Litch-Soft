@@ -910,16 +910,6 @@ public class DataBase {
         String request = "https://litch-dev.geniephy.net/API/donnees_preop/read_one.php?id_preop=" + id_PreopData;
         return sendRequest(request);
     }
-    /**
-     * Permet de faire une requête pour récupérer les prélèvements liés à une donnée pré-opératoire grâce à son id
-     * @param id_preopData l'id de la donnée pré-opératoire
-     * @return l'objet prélèvement de BDD
-     */
-    public static ArrayList<JSONObject> getPrelevementLiePreOpData(int id_preopData) throws IOException {
-        String request = "https://litch-dev.geniephy.net/API/prelevement/read_tissu.php?id_tissu=" + id_preopData;
-        return sendRequest(request);
-        // TODO : regarde ici Maxime !
-    }
 
 }
 

@@ -20,7 +20,6 @@ public class AdminListPreOpController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorPreOp;
-    @FXML private Text textDetails, textDetailsPrelev;
 
     public AdminListPreOpController(Main newMain){
         main = newMain;
@@ -38,8 +37,6 @@ public class AdminListPreOpController {
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorPreOp.setText("");
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
         adminListPreOpModel.removeItemList(laListe, (PreopData) laListe.getSelectionModel().getSelectedItem(), errorPreOp);
         laListe.getSelectionModel().clearSelection();
         } else {
@@ -55,18 +52,6 @@ public class AdminListPreOpController {
     public void goBackSettings(ActionEvent e ) throws IOException {
         Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
         main.tools.switchScene(stage ,"Administration/AdminPage.fxml", main.getAdminPageController());
-    }
-
-
-    public void getDetails() throws IOException {
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
-        if (laListe.getSelectionModel().getSelectedItem() != null) {
-            adminListPreOpModel.showDetails((PreopData) laListe.getSelectionModel().getSelectedItem(), textDetails, textDetailsPrelev);
-        } else {
-            textDetails.setText("Aucun élément n'a été sélectionné");
-        }
-
     }
 
 }
