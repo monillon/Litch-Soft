@@ -3,6 +3,8 @@ package LITCH;
 import Modules.Administration.*;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
+import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
+import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -58,6 +60,8 @@ public class Main extends Application {
     private AdminNewOrganeController adminNewOrganeController;
     private AdminListUnitController adminListUnitController;
     private AdminNewUnitController adminNewUnitController;
+    private AdminListPathologieController adminListPathologieController;
+    private AdminNewPathologieController adminNewPathologieController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -89,6 +93,8 @@ public class Main extends Application {
         adminNewOrganeController = new AdminNewOrganeController(this);
         adminListUnitController = new AdminListUnitController(this);
         adminNewUnitController = new AdminNewUnitController(this);
+        adminListPathologieController = new AdminListPathologieController(this);
+        adminNewPathologieController = new AdminNewPathologieController(this);
         tools = new Tools(this);
     }
 
@@ -287,9 +293,20 @@ public class Main extends Application {
         return adminNewOrganeController;
     }
 
-    public AdminListUnitController getAdminListUnitController() { return adminListUnitController; }
-
-    public AdminNewUnitController getAdminNewUnitController() { return adminNewUnitController; }
+    public AdminListUnitController getAdminListUnitController() { 
+      return adminListUnitController; 
     }
 
+    public AdminNewUnitController getAdminNewUnitController() { 
+      return adminNewUnitController; 
+    }
+
+    public AdminListPathologieController getAdminListPathologieController() {
+        return adminListPathologieController;
+    }
+
+    public AdminNewPathologieController getAdminNewPathologieController() {
+        return adminNewPathologieController;
+    }
+}
 
