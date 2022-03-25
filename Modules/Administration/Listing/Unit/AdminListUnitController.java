@@ -20,7 +20,6 @@ public class AdminListUnitController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorUnit;
-    @FXML private Text textDetails, textDetailsPrelev;
 
     public AdminListUnitController(Main newMain){
         main = newMain;
@@ -38,8 +37,6 @@ public class AdminListUnitController {
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorUnit.setText("");
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
         adminListUnitModel.removeItemList(laListe, (Unit) laListe.getSelectionModel().getSelectedItem(), errorUnit);
         laListe.getSelectionModel().clearSelection();
         } else {
@@ -55,18 +52,6 @@ public class AdminListUnitController {
     public void goBackSettings(ActionEvent e ) throws IOException {
         Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
         main.tools.switchScene(stage ,"Administration/AdminPage.fxml", main.getAdminPageController());
-    }
-
-
-    public void getDetails() throws IOException {
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
-        if (laListe.getSelectionModel().getSelectedItem() != null) {
-            adminListUnitModel.showDetails((Unit) laListe.getSelectionModel().getSelectedItem(), textDetails, textDetailsPrelev);
-        } else {
-            textDetails.setText("Aucun élément n'a été sélectionné");
-        }
-
     }
 
 }

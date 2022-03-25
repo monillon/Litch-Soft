@@ -60,40 +60,4 @@ public class AdminListUnitModel {
         }
     }
 
-    /**
-     * Permet d'aller chercher en BDD si l'unité est liée à un ou plusieurs prélèvements et d'afficher un message.
-     * @param lUnite l'unité à rechercher
-     * @param affichage le lieu de l'affichage pour le message d'erreur
-     * @param detailsPrelev le lieu d'affiche de la liste des prélèvements
-     */
-    public void showDetails(Unit lUnite, Text affichage, Text detailsPrelev) throws IOException {
-        ArrayList<JSONObject> retour = DataBase.getUtilisationUnit(lUnite.getIdUnit());
-
-        if (retour.get(0).isNull("message")) {
-            // L'unité est liée à des prélèvements afficher les prélèvements
-            affichage.setText("L'unité est liée à " + retour.size() + " prélèvements, il ne peut pas être supprimé");
-            ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(lUnite.getIdUnit());
-
-            // permet d'afficher les 5 premiers sujets où l'unité est utilisé.
-            int parcours;
-            if (details.size() >= 5 ) {
-                parcours = 5;
-            } else {
-                parcours = details.size();
-            }
-
-            String texte = "";
-            for (int i = 0; i < parcours; i++) {
-                texte += details.get(i).getString("CODE_SUJET") + " ";
-            }
-            detailsPrelev.setText("Cette unité est utilisée pour les sujets : " + texte);
-
-        } else {
-            // pas de prélèvement lié
-            affichage.setText("Cette unité n'est pas liée à des prélèvements, elle peut être supprimée");
-            detailsPrelev.setText("");
-        }
-
-    }
-
 }
