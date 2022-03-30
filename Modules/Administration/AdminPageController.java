@@ -4,8 +4,6 @@ import LITCH.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -44,7 +42,7 @@ public class AdminPageController {
 
     public void goToPrescri(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPrescription.fxml", main.getAdminPrescriptionController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPrescription.fxml", main.getAdminNewPrescriptionController());
     }
 
     public void goToUser(ActionEvent e) throws IOException {

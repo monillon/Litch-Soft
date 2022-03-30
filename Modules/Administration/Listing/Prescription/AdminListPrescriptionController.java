@@ -2,7 +2,6 @@ package Modules.Administration.Listing.Prescription;
 
 import LITCH.Main;
 import LITCH.Prescription;
-import LITCH.Tissue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -46,7 +45,7 @@ public class AdminListPrescriptionController {
 
     public void addNewPrescription(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/NewPrescription/AdminPrescription.fxml", main.getAdminPrescriptionController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/NewPrescription/AdminNewPrescription.fxml", main.getAdminNewPrescriptionController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

@@ -9,11 +9,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminPrescriptionModel {
+public class AdminNewPrescriptionModel {
 
     private Main main;
 
-    public AdminPrescriptionModel(Main newMain){
+    public AdminNewPrescriptionModel(Main newMain){
         main = newMain;
     }
 

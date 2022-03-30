@@ -9,18 +9,18 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class AdminPrescriptionController {
+public class AdminNewPrescriptionController {
 
     private Main main;
-    private AdminPrescriptionModel adminPrescriptionModel;
+    private AdminNewPrescriptionModel adminPrescriptionModel;
     @FXML private Button home;
     @FXML private TextField newPrescriName;
     @FXML private Button addPrescriButton;
     @FXML private Text errorPrescri;
 
-    public AdminPrescriptionController(Main newMain){
+    public AdminNewPrescriptionController(Main newMain){
         main = newMain;
-        adminPrescriptionModel = new AdminPrescriptionModel(newMain);
+        adminPrescriptionModel = new AdminNewPrescriptionModel(newMain);
     }
 
     public void goHome() throws IOException, SQLException {
