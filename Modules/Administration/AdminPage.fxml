@@ -61,15 +61,6 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPrescri" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(92,225,230); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text13" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PRESCRIPTIONS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="19.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToUser" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,87,87); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text14" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UTILISATEURS / ROLES" textAlignment="CENTER" wrappingWidth="150.0">

@@ -40,11 +40,6 @@ public class AdminPageController {
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPreopData.fxml", main.getAdminPreopDataController());
     }
 
-    public void goToPrescri(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPrescription.fxml", main.getAdminNewPrescriptionController());
-    }
-
     public void goToUser(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminUser.fxml", main.getAdminUserController());
