@@ -1,10 +1,12 @@
 package Modules.Administration.Listing.Prescription.NewPrescription;
 
 import LITCH.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -29,6 +31,11 @@ public class AdminNewPrescriptionController {
 
     public void addNewPrescri() throws IOException {
         adminPrescriptionModel.addNewPrescri(newPrescriName, addPrescriButton, errorPrescri);
+    }
+
+    public void goListBack(ActionEvent e) {
+        Button leBouton = (Button) e.getSource();
+        main.tools.previous((Stage) leBouton.getScene().getWindow());
     }
 
 
