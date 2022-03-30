@@ -29,24 +29,24 @@ public class AdminListPrescriptionModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param leTissu la prescription à supprimer
+     * @param laPrescription la prescription à supprimer
      */
-    public void removeItemList(ListView theListView, Tissue leTissu, Text errorText) throws IOException {
-        DataBase.deleteTissuRequest(leTissu.getIdTissue());
-        if (checkTissuDeleted(leTissu.getIdTissue())) {
-            theListView.getItems().remove(leTissu);
+    public void removeItemList(ListView theListView, Prescription laPrescription, Text errorText) throws IOException {
+        DataBase.deletePrescriptionRequest(laPrescription.getIdPresciption());
+        if (checkPrescriptionDeleted(laPrescription.getIdPresciption())) {
+            theListView.getItems().remove(laPrescription);
         } else {
-            errorText.setText("Elément non supprimé, cette prescription est encore lié à des prélèvements");
+            errorText.setText("Elément non supprimé, cette prescription est encore liée à des phénotypes");
         }
     }
 
     /**
      * Permet de vérifier si une prescription a bien été supprimée de la BDD en cas de clef étrangère
-     * @param id_tissu qui est supprimé
+     * @param id_prescription qui est supprimé
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
-    public boolean checkTissuDeleted(int id_tissu) throws IOException {
-        ArrayList<JSONObject> retour =  DataBase.getOneTissu(id_tissu);
+    public boolean checkPrescriptionDeleted(int id_prescription) throws IOException {
+        ArrayList<JSONObject> retour =  DataBase.getOnePrescription(id_prescription);
         if (retour.get(0).isNull("message")) {
             // erreur lors de la suppression, l'élément toujours présent dans la BDD
             return false;

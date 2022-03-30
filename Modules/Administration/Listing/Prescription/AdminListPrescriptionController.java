@@ -1,6 +1,7 @@
 package Modules.Administration.Listing.Prescription;
 
 import LITCH.Main;
+import LITCH.Prescription;
 import LITCH.Tissue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,7 +37,7 @@ public class AdminListPrescriptionController {
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorPrescription.setText("");
-        adminListPrescriptionModel.removeItemList(laListe, (Tissue) laListe.getSelectionModel().getSelectedItem(), errorPrescription);
+        adminListPrescriptionModel.removeItemList(laListe, (Prescription) laListe.getSelectionModel().getSelectedItem(), errorPrescription);
         laListe.getSelectionModel().clearSelection();
         } else {
             errorPrescription.setText("Aucun élément n'a été sélectionné");
