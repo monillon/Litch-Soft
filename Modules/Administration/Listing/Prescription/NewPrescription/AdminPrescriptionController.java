@@ -1,7 +1,6 @@
-package Modules.Administration;
+package Modules.Administration.Listing.Prescription.NewPrescription;
 
 import LITCH.Main;
-import Modules.Administration.AdminPrescriptionModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

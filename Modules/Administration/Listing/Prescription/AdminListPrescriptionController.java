@@ -45,7 +45,7 @@ public class AdminListPrescriptionController {
 
     public void addNewPrescription(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/NewPrescription/AdminPrescription.fxml", main.getAdminPrescriptionController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

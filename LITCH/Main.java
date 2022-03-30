@@ -8,6 +8,7 @@ import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
+import Modules.Administration.Listing.Prescription.NewPrescription.AdminPrescriptionController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;

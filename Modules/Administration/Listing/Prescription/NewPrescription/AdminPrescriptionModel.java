@@ -1,4 +1,4 @@
-package Modules.Administration;
+package Modules.Administration.Listing.Prescription.NewPrescription;
 
 import LITCH.DataBase;
 import LITCH.Main;
@@ -19,8 +19,9 @@ public class AdminPrescriptionModel {
 
     public void addNewPrescri(TextField newPrescriName, Button addPrescriButton, Text errorPrescri) throws IOException {
         if (!newPrescriName.getText().isEmpty()) {
-            DataBase.createPrescriRequest(main.tools.spaceToUnderscore(newPrescriName.getText()));
-            main.tools.switchScene((Stage) addPrescriButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
+            DataBase.createPrescriRequest(main.tools.spaceToUnderscore(newPrescriName.getText().toUpperCase()));
+            main.tools.switchScene((Stage) addPrescriButton.getScene().getWindow(),"Administration/Listing/Prescription/AdminListPrescription.fxml",main.getAdminListPrescriptionController());
+            main.getAdminListPrescriptionController().addElementList();
         }else{
             errorPrescri.setText("Veuillez renseigner le nom d'une prescription");
         }
