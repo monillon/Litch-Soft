@@ -2,6 +2,7 @@ package Tests;
 
 import LITCH.Prescription;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -108,5 +109,15 @@ public class PrescriptionTest {
             prescription.setPrescriptionName(null);}
     catch(IllegalArgumentException ise){}
 
+    }
+
+    /**
+     * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom de la prescription
+     * Condition nécessaire pour module listing
+     */
+    @Test
+    public void testToSting() {
+        Assert.assertEquals("test", prescription.toString());
+        Assert.assertEquals(prescription.getPrescriptionName(), prescription.toString());
     }
 }

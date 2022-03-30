@@ -7,6 +7,8 @@ import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
+import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
+import Modules.Administration.Listing.Prescription.NewPrescription.AdminNewPrescriptionController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -47,7 +49,7 @@ public class Main extends Application {
     private AdminOrganController adminOrganController;
     private AdminPathologyController adminPathologyController;
     private AdminPreopDataController adminPreopDataController;
-    private AdminPrescriptionController adminPrescriptionController;
+    private AdminNewPrescriptionController adminNewPrescriptionController;
     private AddSampleController addSampleController;
     private AdminUserController adminUserController;
     private AdminManageNewBoxController adminManageNewBoxController;
@@ -66,6 +68,7 @@ public class Main extends Application {
     private AdminNewUnitController adminNewUnitController;
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
+    private AdminListPrescriptionController adminListPrescriptionController;
 
     public Tools tools;
 
@@ -83,7 +86,7 @@ public class Main extends Application {
         adminOrganController = new AdminOrganController(this);
         adminPathologyController = new AdminPathologyController(this);
         adminPreopDataController = new AdminPreopDataController(this);
-        adminPrescriptionController = new AdminPrescriptionController(this);
+        adminNewPrescriptionController = new AdminNewPrescriptionController(this);
         addSampleController = new AddSampleController(this);
         adminUserController = new AdminUserController(this);
         adminManageNewBoxController = new AdminManageNewBoxController(this);
@@ -102,6 +105,7 @@ public class Main extends Application {
         adminNewUnitController = new AdminNewUnitController(this);
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
+        adminListPrescriptionController = new AdminListPrescriptionController(this);
         tools = new Tools(this);
     }
 
@@ -212,12 +216,12 @@ public class Main extends Application {
         this.adminPreopDataController = adminPreopDataController;
     }
 
-    public AdminPrescriptionController getAdminPrescriptionController() {
-        return adminPrescriptionController;
+    public AdminNewPrescriptionController getAdminNewPrescriptionController() {
+        return adminNewPrescriptionController;
     }
 
-    public void setAdminPrescriptionController(AdminPrescriptionController adminPrescriptionController) {
-        this.adminPrescriptionController = adminPrescriptionController;
+    public void setAdminNewPrescriptionController(AdminNewPrescriptionController adminNewPrescriptionController) {
+        this.adminNewPrescriptionController = adminNewPrescriptionController;
     }
 
     public AddSampleController getAddSampleController() {
@@ -323,6 +327,9 @@ public class Main extends Application {
     public AdminNewPathologieController getAdminNewPathologieController() {
         return adminNewPathologieController;
     }
-  
+
+    public AdminListPrescriptionController getAdminListPrescriptionController() {
+        return adminListPrescriptionController;
+    }
 }
 

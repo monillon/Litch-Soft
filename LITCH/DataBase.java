@@ -957,6 +957,35 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method getAllPrescriptionRequest
+     * Requête qui permet de chercher dans la bdd toutes les prescriptions
+     */
+    public static ArrayList<JSONObject> getAllPrescriptionRequest() throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/prescription/read_all.php";
+        return sendRequest(request);
+    }
+
+    /**
+     * Method deletePrescriptionRequest
+     * Requête qui permet de supprimer dans la bdd une prescription
+     * @param id_prescription id de la bdd correspondant à la prescription
+     */
+    public static void deletePrescriptionRequest(int id_prescription) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/prescription/delete_prescription.php?id_prescription=" + id_prescription;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une prescription grâce à son id
+     * @param id_prescription l'id de la prescription
+     * @return l'objet prescription de BDD
+     */
+    public static ArrayList<JSONObject> getOnePrescription(int id_prescription) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/prescription/read_one.php?id_prescription=" + id_prescription;
+        return sendRequest(request);
+    }
+
 }
 
 

@@ -4,8 +4,6 @@ import LITCH.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,11 +38,6 @@ public class AdminPageController {
     public void goToPreopData(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPreopData.fxml", main.getAdminPreopDataController());
-    }
-
-    public void goToPrescri(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPrescription.fxml", main.getAdminPrescriptionController());
     }
 
     public void goToUser(ActionEvent e) throws IOException {
@@ -86,6 +79,12 @@ public class AdminPageController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Pathologie/AdminListPathologie.fxml", main.getAdminListPathologieController());
         main.getAdminListPathologieController().addElementList();
+    }
+
+    public void goToListPrescription(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/AdminListPrescription.fxml", main.getAdminListPrescriptionController());
+        main.getAdminListPrescriptionController().addElementList();
     }
 
 }

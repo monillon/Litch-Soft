@@ -79,7 +79,7 @@ public class TissueTest {
 
     /**
      * Méthode testToString : vérifie que la méthode to string renvoi uniquement le nom du tissu
-     * Condition nécessaire pour module suppression
+     * Condition nécessaire pour module listing
      */
     @Test
     public void testToSting() {
