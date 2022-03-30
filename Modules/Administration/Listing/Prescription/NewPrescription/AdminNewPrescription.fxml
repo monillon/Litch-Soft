@@ -34,7 +34,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="newPrescriName" layoutX="549.0" layoutY="361.0" />
+      <TextField fx:id="newPrescriName" layoutX="549.0" layoutY="361.0" onKeyPressed="#onEnter" />
       <Text layoutX="369.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de la prescription" wrappingWidth="149.0">
          <font>
             <Font size="18.0" />
