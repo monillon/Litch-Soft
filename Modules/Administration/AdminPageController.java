@@ -88,4 +88,10 @@ public class AdminPageController {
         main.getAdminListPathologieController().addElementList();
     }
 
+    public void goToListPrescription(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/AdminListPrescription.fxml", main.getAdminListPrescriptionController());
+        main.getAdminListPrescriptionController().addElementList();
+    }
+
 }

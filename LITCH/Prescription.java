@@ -60,5 +60,13 @@ public class Prescription {
     public int getIdPresciption() {
         return idPresciption;
     }
+
+    /**
+     * @return le nom de la prescription
+     */
+    public String toString() {
+        return this.prescriptionName;
+    }
+
 }
 

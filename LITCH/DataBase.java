@@ -957,6 +957,15 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method getAllPrescriptionRequest
+     * Requête qui permet de chercher dans la bdd toutes les prescriptions
+     */
+    public static ArrayList<JSONObject> getAllPrescriptionRequest() throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/prescription/read_all.php";
+        return sendRequest(request);
+    }
+
 }
 
 

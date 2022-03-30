@@ -7,6 +7,7 @@ import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
+import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -66,6 +67,7 @@ public class Main extends Application {
     private AdminNewUnitController adminNewUnitController;
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
+    private AdminListPrescriptionController adminListPrescriptionController;
 
     public Tools tools;
 
@@ -102,6 +104,7 @@ public class Main extends Application {
         adminNewUnitController = new AdminNewUnitController(this);
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
+        adminListPrescriptionController = new AdminListPrescriptionController(this);
         tools = new Tools(this);
     }
 
@@ -323,6 +326,9 @@ public class Main extends Application {
     public AdminNewPathologieController getAdminNewPathologieController() {
         return adminNewPathologieController;
     }
-  
+
+    public AdminListPrescriptionController getAdminListPrescriptionController() {
+        return adminListPrescriptionController;
+    }
 }
 
