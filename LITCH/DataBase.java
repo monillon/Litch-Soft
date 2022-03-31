@@ -986,6 +986,37 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method getAllMutationRequest
+     * Requête qui permet de chercher dans la bdd toutes les mutations
+     */
+    public static ArrayList<JSONObject> getAllMutationRequest() throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/read_all.php";
+        return sendRequest(request);
+    }
+
+    /**
+     * Method deleteMutationRequest
+     * Requête qui permet de supprimer dans la bdd une mutation
+     * @param id_mutation id de la bdd correspondant à la mutation
+     */
+    public static void deleteMutationRequest(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/delete_mutation.php?id_mutation=" + id_mutation;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une mutation grâce à son id
+     * @param id_mutation l'id de la mutation
+     * @return l'objet mutation de BDD
+     */
+    public static ArrayList<JSONObject> getOneMutation(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/read_one.php?id_mutation=" + id_mutation;
+        return sendRequest(request);
+    }
+
+
+
 }
 
 

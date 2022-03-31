@@ -3,6 +3,7 @@ package LITCH;
 import Modules.Administration.*;
 import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
 import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
+import Modules.Administration.Listing.Mutation.AdminListMutationController;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
@@ -69,6 +70,7 @@ public class Main extends Application {
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
     private AdminListPrescriptionController adminListPrescriptionController;
+    private AdminListMutationController adminListMutationController;
 
     public Tools tools;
 
@@ -106,6 +108,7 @@ public class Main extends Application {
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
         adminListPrescriptionController = new AdminListPrescriptionController(this);
+        adminListMutationController = new AdminListMutationController(this);
         tools = new Tools(this);
     }
 
@@ -330,6 +333,10 @@ public class Main extends Application {
 
     public AdminListPrescriptionController getAdminListPrescriptionController() {
         return adminListPrescriptionController;
+    }
+
+    public AdminListMutationController getAdminListMutationController() {
+        return adminListMutationController;
     }
 }
 

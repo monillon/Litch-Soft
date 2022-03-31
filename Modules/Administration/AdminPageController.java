@@ -87,4 +87,11 @@ public class AdminPageController {
         main.getAdminListPrescriptionController().addElementList();
     }
 
+    public void goToListMutation(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Mutation/AdminListMutation.fxml", main.getAdminListMutationController());
+        main.getAdminListMutationController().addElementList();
+    }
+
+
 }
