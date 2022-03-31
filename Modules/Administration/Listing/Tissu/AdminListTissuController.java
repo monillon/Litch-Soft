@@ -48,7 +48,7 @@ public class AdminListTissuController {
 
     public void addNewTissu(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTissu.fxml", main.getAdminNewTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/NewTissu/AdminNewTechnic.fxml", main.getAdminNewTissuController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

@@ -9,6 +9,8 @@ import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
 import Modules.Administration.Listing.Prescription.NewPrescription.AdminNewPrescriptionController;
+import Modules.Administration.Listing.Technique.AdminListTechnicController;
+import Modules.Administration.Listing.Technique.NewTechnique.AdminNewTechnicController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -69,6 +71,8 @@ public class Main extends Application {
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
     private AdminListPrescriptionController adminListPrescriptionController;
+    private AdminNewTechnicController adminNewTechnicController;
+    private AdminListTechnicController adminListTechnicController;
 
     public Tools tools;
 
@@ -106,6 +110,8 @@ public class Main extends Application {
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
         adminListPrescriptionController = new AdminListPrescriptionController(this);
+        adminNewTechnicController = new AdminNewTechnicController(this);
+        adminListTechnicController = new AdminListTechnicController(this);
         tools = new Tools(this);
     }
 
@@ -330,6 +336,13 @@ public class Main extends Application {
 
     public AdminListPrescriptionController getAdminListPrescriptionController() {
         return adminListPrescriptionController;
+    }
+    public AdminNewTechnicController getAdminNewTechnicController() {
+        return adminNewTechnicController;
+    }
+
+    public AdminListTechnicController getAdminListTechnicController() {
+        return adminListTechnicController;
     }
 }
 

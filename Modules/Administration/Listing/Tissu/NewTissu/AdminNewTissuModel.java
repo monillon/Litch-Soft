@@ -21,7 +21,7 @@ public class AdminNewTissuModel {
     public void addNewTissue(TextField newTissueName, Button addTissueButton, Text errorTissue) throws IOException {
         if (!newTissueName.getText().isEmpty()) {
             DataBase.createTissueRequest(main.tools.spaceToUnderscore(newTissueName.getText().toUpperCase()));
-            main.tools.switchScene((Stage) addTissueButton.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
+            main.tools.switchScene((Stage) addTissueButton.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTechnic.fxml", main.getAdminListTissuController());
             main.getAdminListTissuController().addElementList();
 
         }else{
