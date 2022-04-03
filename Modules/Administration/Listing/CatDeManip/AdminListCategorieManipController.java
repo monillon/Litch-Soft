@@ -19,7 +19,6 @@ public class AdminListCategorieManipController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorCatDeManip;
-    @FXML private Text textDetails, textDetailsPrelev;
 
     public AdminListCategorieManipController(Main newMain){
         main = newMain;
@@ -37,8 +36,6 @@ public class AdminListCategorieManipController {
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorCatDeManip.setText("");
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
         AdminListCategorieManipModel.removeItemList(laListe, (ManipCategory) laListe.getSelectionModel().getSelectedItem(), errorCatDeManip);
         laListe.getSelectionModel().clearSelection();
         } else {
