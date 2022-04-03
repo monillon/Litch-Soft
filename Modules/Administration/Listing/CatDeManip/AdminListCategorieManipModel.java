@@ -37,7 +37,7 @@ public class AdminListCategorieManipModel {
         if (checkCatDeManipDeleted(LaCatManip.getIdManipCategory())) {
             theListView.getItems().remove(LaCatManip);
         } else {
-            errorText.setText("Elément non supprimé, cette catégorie est encore liée à des prélèvements");
+            errorText.setText("Elément non supprimé, cette catégorie est encore liée à des liste de manipulation");
         }
     }
 
