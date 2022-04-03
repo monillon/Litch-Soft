@@ -3,7 +3,7 @@ package LITCH;
 public class ManipCategory {
 
     /**
-     * Identifiant de la catégorie de manipulation. Ne peut être négatif ou nul.La vérification de l'unicité est laissée à la base de données
+     * Identifiant de la catégorie de manipulation. Ne peut être négatif ou nul. La vérification de l'unicité est laissée à la base de données
      */
     private int idManipCategory;
     /**
@@ -27,18 +27,18 @@ public class ManipCategory {
     }
 
     /**
-     * Getter de l'id du tissu
+     * Getter de l'id de la catégorie de manipulation
      *
-     * @return idTissue
+     * @return idManipCategory
      */
     public int getIdManipCategory() {
         return idManipCategory;
     }
 
     /**
-     * Getter du nom de l'organe
+     * Getter du nom de la catégorie de manipulation
      *
-     * @return nameTissue
+     * @return nameManipCategory
      */
     public String getNameManipCategory() {
         return nameManipCategory;
@@ -46,8 +46,8 @@ public class ManipCategory {
 
 
     /**
-     * La méthode toString est override pour retourner le nom du tissu
-     * @return le nom du tissu
+     * La méthode toString est override pour retourner le nom de la catégorie de manipulation
+     * @return le nom de la catégorie
      */
     public String toString() {
         return nameManipCategory;
