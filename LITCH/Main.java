@@ -4,6 +4,7 @@ import Modules.Administration.*;
 import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
 import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
 import Modules.Administration.Listing.Mutation.AdminListMutationController;
+import Modules.Administration.Listing.Mutation.NewMutation.AdminNewMutationController;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
@@ -71,6 +72,7 @@ public class Main extends Application {
     private AdminNewPathologieController adminNewPathologieController;
     private AdminListPrescriptionController adminListPrescriptionController;
     private AdminListMutationController adminListMutationController;
+    private AdminNewMutationController adminNewMutationController;
 
     public Tools tools;
 
@@ -109,6 +111,7 @@ public class Main extends Application {
         adminNewPathologieController = new AdminNewPathologieController(this);
         adminListPrescriptionController = new AdminListPrescriptionController(this);
         adminListMutationController = new AdminListMutationController(this);
+        adminNewMutationController = new AdminNewMutationController(this);
         tools = new Tools(this);
     }
 
@@ -338,5 +341,10 @@ public class Main extends Application {
     public AdminListMutationController getAdminListMutationController() {
         return adminListMutationController;
     }
+
+    public AdminNewMutationController getAdminNewMutationController() {
+        return adminNewMutationController;
+    }
+
 }
 

@@ -43,10 +43,10 @@ public class AdminListMutationController {
         }
     }
 
-
     public void addNewMutation(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Prescription/NewPrescription/AdminNewPrescription.fxml", main.getAdminNewPrescriptionController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Mutation/NewMutation/AdminNewMutation.fxml", main.getAdminNewMutationController());
+        main.getAdminNewMutationController().fillPatho();
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

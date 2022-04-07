@@ -515,8 +515,8 @@ public class DataBase {
      * Method createMutationRequest
      * Requête qui permet de créer dans la bdd une mutation avec son nom et de la relié à un identifiant pathologie
      */
-    public static void createMutationRequest(int idPatho, String newMutationName) throws IOException {
-        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName;
+    public static void createMutationRequest(int idPatho, String newMutationName, String newClassName) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName + "&&classe_mutation=" + newClassName;
         insertRequest(request);
     }
 
@@ -1001,7 +1001,7 @@ public class DataBase {
      * @param id_mutation id de la bdd correspondant à la mutation
      */
     public static void deleteMutationRequest(int id_mutation) throws IOException {
-        String request = "https://litch-dev.geniephy.net/API/mutation/delete_mutation.php?id_mutation=" + id_mutation;
+        String request = "https://litch-dev.geniephy.net/API/mutation/delete.php?id_mutation=" + id_mutation;
         insertRequest(request);
     }
 

@@ -22,7 +22,7 @@ public class AdminListMutationModel {
      */
     public void addItemList(ListView theListView) throws IOException {
         for (JSONObject i : DataBase.getAllMutationRequest()) {
-            theListView.getItems().add(new Prescription(i.getInt("ID_MUTATION"), Tools.underscoreToSpace(i.getString("NOM_MUTATION"))));
+            theListView.getItems().add(new Mutation(i.getInt("ID_MUTATION"), Tools.underscoreToSpace(i.getString("NOM_MUTATION")), Tools.underscoreToSpace(i.getString("CLASSE_MUTATION"))));
         }
     }
 

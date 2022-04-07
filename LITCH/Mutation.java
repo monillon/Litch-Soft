@@ -37,6 +37,7 @@ public class Mutation {
         if (newIdMutation <= 0) throw new IllegalArgumentException("Ne peut pas être nul ou négatif");
         if (newMutationName == null) throw new IllegalArgumentException("Ne peut pas être null");
         if (newMutationName.length() < 1) throw new IllegalArgumentException("Ne peut pas être vide");
+        if (newMutationClass == null) this.mutationClass = "";
 
         idMutation = newIdMutation;
         mutationName = newMutationName;
@@ -88,4 +89,9 @@ public class Mutation {
         this.mutationClass = mutationClass;
     }
 
+
+    @Override
+    public String toString() {
+        return mutationName;
+    }
 }
