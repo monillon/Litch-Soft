@@ -1,4 +1,4 @@
-package Modules.Administration;
+package Modules.Administration.Listing.Users.NewUser;
 
 import LITCH.DataBase;
 import LITCH.Main;
@@ -12,12 +12,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class AdminUserModel {
+public class AdminNewUserModel {
 
     private Main main;
 
 
-    public AdminUserModel(Main newMain){
+    public AdminNewUserModel(Main newMain){
         main = newMain;
     }
 
