@@ -37,8 +37,6 @@ public class AdminListTechnicController {
     public void delSelectedItem() throws IOException {
         if (laListe.getSelectionModel().getSelectedItem() != null ) {
         errorTechnic.setText("");
-        textDetails.setText("");
-        textDetailsPrelev.setText("");
         adminListTechnicModel.removeItemList(laListe, (Technic) laListe.getSelectionModel().getSelectedItem(), errorTechnic);
         laListe.getSelectionModel().clearSelection();
         } else {
@@ -48,7 +46,7 @@ public class AdminListTechnicController {
 
     public void addNewTechnic(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Technic/NewTechnic/AdminNewTechnic.fxml", main.getAdminNewTechnicController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Technique/NewTechnique/AdminNewTechnic.fxml", main.getAdminNewTechnicController());
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {

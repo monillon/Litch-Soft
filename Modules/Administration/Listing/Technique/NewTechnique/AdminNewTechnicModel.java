@@ -21,7 +21,7 @@ public class AdminNewTechnicModel {
     public void addNewTechnic(TextField newTechnicName, TextField newTechnicDescription, Button addTechnicButton, Text errorTechnic) throws IOException {
         if (!newTechnicName.getText().isEmpty()) {
             DataBase.createTechniqueRequest(main.tools.spaceToUnderscore(newTechnicName.getText().toUpperCase()),main.tools.spaceToUnderscore(newTechnicDescription.getText().toUpperCase()));
-            main.tools.switchScene((Stage) addTechnicButton.getScene().getWindow(), "Administration/Listing/Technic/AdminListTechnic.fxml", main.getAdminListTechnicController());
+            main.tools.switchScene((Stage) addTechnicButton.getScene().getWindow(), "Administration/Listing/Technique/AdminListTechnic.fxml", main.getAdminListTechnicController());
             main.getAdminListTechnicController().addElementList();
 
         }else{

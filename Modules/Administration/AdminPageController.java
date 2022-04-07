@@ -87,4 +87,10 @@ public class AdminPageController {
         main.getAdminListPrescriptionController().addElementList();
     }
 
+    public void goToListTechnic(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Technique/AdminListTechnic.fxml", main.getAdminListTechnicController());
+        main.getAdminListTechnicController().addElementList();
+    }
+
 }

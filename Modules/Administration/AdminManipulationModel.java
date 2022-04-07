@@ -34,14 +34,14 @@ public class AdminManipulationModel {
         }
     }
 
-    public void addNewTechnique(TextField newTechniqueName, Button addTechniqueButton, Text errorTechnique) throws IOException {
-        if (!newTechniqueName.getText().isEmpty()) {
-            DataBase.createTechniqueRequest(main.tools.spaceToUnderscore(newTechniqueName.getText()));
-            main.tools.switchScene((Stage) addTechniqueButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
-        }else{
-            errorTechnique.setText("Veuillez renseigner le nom de la technique");
-        }
-    }
+//    public void addNewTechnique(TextField newTechniqueName, TextField newTechnicDescription, Button addTechniqueButton, Text errorTechnique) throws IOException {
+//        if (!newTechniqueName.getText().isEmpty()) {
+//            DataBase.createTechniqueRequest(main.tools.spaceToUnderscore(newTechniqueName.getText()),main.tools.spaceToUnderscore(newTechnicDescription.getText()));
+//            main.tools.switchScene((Stage) addTechniqueButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
+//        }else{
+//            errorTechnique.setText("Veuillez renseigner le nom de la technique");
+//        }
+//    }
 
 
     public void setTechniqueList(ComboBox selectTechnique) throws IOException {

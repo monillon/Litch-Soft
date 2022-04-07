@@ -34,18 +34,18 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Text>
-      <TextField fx:id="newTissueName" layoutX="559.0" layoutY="339.0" onKeyPressed="#onEnter" prefHeight="26.0" prefWidth="257.0" />
+      <TextField fx:id="newTechnicName" layoutX="559.0" layoutY="339.0" onKeyPressed="#onEnter" prefHeight="26.0" prefWidth="257.0" />
       <Text layoutX="383.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de la technique">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="addTissueButton" layoutX="466.0" layoutY="517.0" mnemonicParsing="false" onAction="#addNewTissue" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter la technique" textFill="WHITE">
+      <Button fx:id="addTechnicButton" layoutX="466.0" layoutY="517.0" mnemonicParsing="false" onAction="#addNewTechnic" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Ajouter la technique" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Text fx:id="errorTissue" fill="RED" layoutX="291.0" layoutY="636.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="536.0" />
+      <Text fx:id="errorTechnic" fill="RED" layoutX="291.0" layoutY="636.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="536.0" />
       <Button layoutX="513.0" layoutY="565.0" mnemonicParsing="false" onAction="#goListBack" style="-fx-background-color: rgb(255,100,100); -fx-background-radius: 10px;" text="Annuler" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -56,6 +56,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="newTissueName1" layoutX="559.0" layoutY="378.0" onKeyPressed="#onEnter" prefHeight="111.0" prefWidth="257.0" />
+      <TextField fx:id="newTechnicDescription" layoutX="559.0" layoutY="378.0" onKeyPressed="#onEnter" prefHeight="111.0" prefWidth="257.0" />
    </children>
 </AnchorPane>
