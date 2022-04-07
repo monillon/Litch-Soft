@@ -22,7 +22,7 @@ public class AdminListTechnicModel {
      */
     public void addItemList(ListView theListView) throws IOException {
         for (JSONObject i : DataBase.getAllTechniqueRequest()) {
-            theListView.getItems().add(new Technic(i.getInt("ID_TECHNIQUE"), Tools.underscoreToSpace(i.getString("NOM_TECHNIQUE"))));
+            theListView.getItems().add(new Technic(i.getInt("ID_TECHNIQUE"), Tools.underscoreToSpace(i.getString("NOM_TECHNIQUE")),Tools.underscoreToSpace(i.getString("DESCRIPTION_TECHNIQUE"))));
         }
     }
 

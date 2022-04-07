@@ -2,10 +2,12 @@ package Modules.Administration.Listing.Technique;
 
 import LITCH.Main;
 import LITCH.Technic;
+import LITCH.Tissue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -19,7 +21,7 @@ public class AdminListTechnicController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorTechnic;
-    @FXML private Text textDetails, textDetailsPrelev;
+    @FXML private TextArea description;
 
     public AdminListTechnicController(Main newMain){
         main = newMain;
@@ -52,6 +54,16 @@ public class AdminListTechnicController {
     public void goBackSettings(ActionEvent e ) throws IOException {
         Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
         main.tools.switchScene(stage ,"Administration/AdminPage.fxml", main.getAdminPageController());
+    }
+
+    public void getDescription() throws IOException {
+        if (laListe.getSelectionModel().getSelectedItem() != null) {
+            Technic laTechnic = (Technic) laListe.getSelectionModel().getSelectedItem();
+            description.setText(laTechnic.getDescriptionTechnic());
+        } else {
+            description.setText("");
+        }
+
     }
 
 
