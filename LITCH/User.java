@@ -84,4 +84,13 @@ public class User {
     public String getRole() {
         return role;
     }
+
+    /**
+     * La méthode toString est override pour retourner le nom de l'utilisateur
+     * @return le nom de l'utilisateur
+     */
+    public String toString() {
+        return userName;
+    }
 }
+

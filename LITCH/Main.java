@@ -19,6 +19,8 @@ import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
 import Modules.Administration.Listing.Unit.NewUnit.AdminNewUnitController;
+import Modules.Administration.Listing.Users.AdminListUserController;
+import Modules.Administration.Listing.Users.NewUser.AdminNewUserController;
 import Modules.Connexion.ConnexionController;
 import Modules.ManagementFrigo.FridgeManagementController;
 import Modules.Menu.AjoutProjet.AddProjectController;
@@ -57,7 +59,6 @@ public class Main extends Application {
     private AdminPreopDataController adminPreopDataController;
     private AdminNewPrescriptionController adminNewPrescriptionController;
     private AddSampleController addSampleController;
-    private AdminUserController adminUserController;
     private AdminManageNewBoxController adminManageNewBoxController;
     private AddManipulationController addManipulationController;
     private AdminManipulationController adminManipulationController;
@@ -81,6 +82,8 @@ public class Main extends Application {
     private AdminNewCategorieManipController adminNewCategorieManipController;
     private AdminNewTechnicController adminNewTechnicController;
     private AdminListTechnicController adminListTechnicController;
+    private AdminListUserController adminListUserController;
+    private AdminNewUserController adminNewUserController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -99,7 +102,6 @@ public class Main extends Application {
         adminPreopDataController = new AdminPreopDataController(this);
         adminNewPrescriptionController = new AdminNewPrescriptionController(this);
         addSampleController = new AddSampleController(this);
-        adminUserController = new AdminUserController(this);
         adminManageNewBoxController = new AdminManageNewBoxController(this);
         addManipulationController = new AddManipulationController(this);
         adminManipulationController = new AdminManipulationController(this);
@@ -123,6 +125,8 @@ public class Main extends Application {
         adminNewCategorieManipController = new AdminNewCategorieManipController(this);
         adminNewTechnicController = new AdminNewTechnicController(this);
         adminListTechnicController = new AdminListTechnicController(this);
+        adminListUserController = new AdminListUserController(this);
+        adminNewUserController = new AdminNewUserController(this);
         tools = new Tools(this);
     }
 
@@ -257,14 +261,6 @@ public class Main extends Application {
         this.addSubjectPageController = addSubjectPageController;
     }
 
-    public AdminUserController getAdminUserController() {
-        return adminUserController;
-    }
-
-    public void setAdminUserController(AdminUserController adminUserController) {
-        this.adminUserController = adminUserController;
-    }
-
     public AdminManageNewBoxController getAdminManageNewBoxController() {
         return adminManageNewBoxController;
     }
@@ -328,13 +324,13 @@ public class Main extends Application {
     public AdminNewPreOpController getAdminNewPreOpController() {
         return adminNewPreOpController;
     }
-  
-    public AdminListUnitController getAdminListUnitController() { 
-      return adminListUnitController; 
+
+    public AdminListUnitController getAdminListUnitController() {
+        return adminListUnitController;
     }
 
-    public AdminNewUnitController getAdminNewUnitController() { 
-      return adminNewUnitController; 
+    public AdminNewUnitController getAdminNewUnitController() {
+        return adminNewUnitController;
     }
 
     public AdminListPathologieController getAdminListPathologieController() {
@@ -372,5 +368,12 @@ public class Main extends Application {
     public AdminListTechnicController getAdminListTechnicController() {
         return adminListTechnicController;
     }
-}
 
+    public AdminListUserController getAdminListUserController() {
+        return adminListUserController;
+    }
+
+    public AdminNewUserController getAdminNewUserController() {
+        return adminNewUserController;
+    }
+}

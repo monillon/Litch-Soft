@@ -42,8 +42,8 @@ public class AdminPageController {
 
     public void goToUser(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminUser.fxml", main.getAdminUserController());
-        main.getAdminUserController().setRoles();
+//        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminUser.fxml", main.getAdminUserController());
+//        main.getAdminUserController().setRoles();
     }
 
     public void goToManipulation(ActionEvent e) throws IOException {
@@ -105,4 +105,9 @@ public class AdminPageController {
         main.getAdminListTechnicController().addElementList();
     }
 
+    public void goToListUser(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Users/AdminListUsers.fxml", main.getAdminListUserController());
+        main.getAdminListUserController().addElementList();
+    }
 }

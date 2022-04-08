@@ -148,4 +148,10 @@ class UserTest {
         assertEquals("user",user.getUserName());
     }
 
+    @Test
+    public void testToString() {
+        assertEquals("user", user.getUserName());
+        assertEquals(user.getUserName(), user.toString());
+    }
+
 }

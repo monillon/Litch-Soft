@@ -1073,6 +1073,35 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method deleteUserRequest
+     * Requête qui permet de supprimer dans la bdd une prescription
+     * @param idUser id de la bdd correspondant à la prescription
+     */
+    public static void deleteUserRequest(int idUser) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/utilisateur/delete.php?id_user=" + idUser;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une unité grâce à son id
+     * @param ID_USER l'id de l'unité
+     * @return l'objet unité de BDD
+     */
+    public static ArrayList<JSONObject> getOneUser(int ID_USER) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/utilisateur/read_one_id.php?id_user=" + ID_USER;
+        return sendRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer les prélèvements liés à un user grâce à son id
+     * @return l'objet prélèvement de BDD
+     */
+    public static ArrayList<JSONObject> getUsersWithRoles() throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/utilisateur/read_with_roles.php";
+        return sendRequest(request);
+    }
+
 }
 
 

@@ -1,4 +1,4 @@
-package Modules.Administration;
+package Modules.Administration.Listing.Users.NewUser;
 
 import LITCH.DataBase;
 import LITCH.Main;
@@ -12,20 +12,20 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class AdminUserModel {
+public class AdminNewUserModel {
 
     private Main main;
 
 
-    public AdminUserModel(Main newMain){
+    public AdminNewUserModel(Main newMain){
         main = newMain;
     }
 
     public void addNewUser(TextField newUserName, TextField newUserPassword, ChoiceBox roles, Button addUserButton, Text errorUser) throws IOException, SQLException {
-        if (!newUserName.getText().isEmpty() & !newUserPassword.getText().isEmpty()) {
+        if (!newUserName.getText().isEmpty() && !newUserPassword.getText().isEmpty() && roles.getSelectionModel().getSelectedItem() != null) {
             boolean verif = true;
             for (JSONObject object : DataBase.getAllUserRequest()) {
-                if (newUserName.equals(object.getString("NOM_UTILISATEUR"))){
+                if (newUserName.getText().equals(object.getString("NOM_UTILISATEUR"))){
                     verif = false;
                 }
             }
@@ -37,7 +37,7 @@ public class AdminUserModel {
                 DataBase.createUserRequest(newUserName.getText(),newUserPassword.getText(), id_role);
                 main.tools.switchScene((Stage) addUserButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
             }else{
-                errorUser.setText("Nom d'utilisateur déja utilisé");
+                errorUser.setText("Nom d'utilisateur déjà utilisé");
             }
         }else{
             errorUser.setText("Veuillez remplir tous les champs");
