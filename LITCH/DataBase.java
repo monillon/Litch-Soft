@@ -1031,7 +1031,7 @@ public class DataBase {
      * @param idUser id de la bdd correspondant à la prescription
      */
     public static void deleteUserRequest(int idUser) throws IOException {
-        String request = "https://litch-dev.geniephy.net/API/prescription/delete_prescription.php?id_prescription=" + idUser;
+        String request = "https://litch-dev.geniephy.net/API/utilisateur/delete.php?id_user=" + idUser;
         insertRequest(request);
     }
 
