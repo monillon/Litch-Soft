@@ -5,6 +5,8 @@ import Modules.Administration.Listing.CatDeManip.AdminListCategorieManipControll
 import Modules.Administration.Listing.CatDeManip.NewCatManip.AdminNewCategorieManipController;
 import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
 import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
+import Modules.Administration.Listing.Mutation.AdminListMutationController;
+import Modules.Administration.Listing.Mutation.NewMutation.AdminNewMutationController;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
@@ -71,6 +73,8 @@ public class Main extends Application {
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
     private AdminListPrescriptionController adminListPrescriptionController;
+    private AdminListMutationController adminListMutationController;
+    private AdminNewMutationController adminNewMutationController;
     private AdminListCategorieManipController adminListCategorieManipController;
     private AdminNewCategorieManipController adminNewCategorieManipController;
 
@@ -112,9 +116,11 @@ public class Main extends Application {
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
         adminListPrescriptionController = new AdminListPrescriptionController(this);
-        tools = new Tools(this);
+        adminListMutationController = new AdminListMutationController(this);
+        adminNewMutationController = new AdminNewMutationController(this);
         adminListCategorieManipController = new AdminListCategorieManipController(this);
         adminNewCategorieManipController = new AdminNewCategorieManipController(this);
+        tools = new Tools(this);
     }
 
     @Override
@@ -338,6 +344,14 @@ public class Main extends Application {
 
     public AdminListPrescriptionController getAdminListPrescriptionController() {
         return adminListPrescriptionController;
+    }
+
+    public AdminListMutationController getAdminListMutationController() {
+        return adminListMutationController;
+    }
+
+    public AdminNewMutationController getAdminNewMutationController() {
+        return adminNewMutationController;
     }
 
     public AdminListCategorieManipController getAdminListCategorieManipController() {

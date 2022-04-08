@@ -515,8 +515,8 @@ public class DataBase {
      * Method createMutationRequest
      * Requête qui permet de créer dans la bdd une mutation avec son nom et de la relié à un identifiant pathologie
      */
-    public static void createMutationRequest(int idPatho, String newMutationName) throws IOException {
-        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName;
+    public static void createMutationRequest(int idPatho, String newMutationName, String newClassName) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName + "&&classe_mutation=" + newClassName;
         insertRequest(request);
     }
 
@@ -983,6 +983,35 @@ public class DataBase {
      */
     public static ArrayList<JSONObject> getOnePrescription(int id_prescription) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/prescription/read_one.php?id_prescription=" + id_prescription;
+        return sendRequest(request);
+    }
+
+    /**
+     * Method getAllMutationRequest
+     * Requête qui permet de chercher dans la bdd toutes les mutations
+     */
+    public static ArrayList<JSONObject> getAllMutationRequest() throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/read_all.php";
+        return sendRequest(request);
+    }
+
+    /**
+     * Method deleteMutationRequest
+     * Requête qui permet de supprimer dans la bdd une mutation
+     * @param id_mutation id de la bdd correspondant à la mutation
+     */
+    public static void deleteMutationRequest(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/delete.php?id_mutation=" + id_mutation;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une mutation grâce à son id
+     * @param id_mutation l'id de la mutation
+     * @return l'objet mutation de BDD
+     */
+    public static ArrayList<JSONObject> getOneMutation(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/read_one.php?id_mutation=" + id_mutation;
         return sendRequest(request);
     }
 

@@ -45,7 +45,7 @@ public class AdminPathologyModel {
                     id_patho = object.getInt("ID_PATHOLOGIE");
                 }
             }
-            DataBase.createMutationRequest(id_patho,main.tools.spaceToUnderscore(newMutationName.getText()));
+            DataBase.createMutationRequest(id_patho,main.tools.spaceToUnderscore(newMutationName.getText()), "");
             main.tools.switchScene((Stage) addMutationButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
         }else{
             errorMutation.setText("Veuillez renseigner le nom d'une mutation");
