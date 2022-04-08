@@ -37,7 +37,7 @@ public class AdminListTechnicModel {
         if (checkTechnicDeleted(laTechnique.getIdTechnic())) {
             theListView.getItems().remove(laTechnique);
         } else {
-            errorText.setText("Élément non supprimé, cette technique est encore liée à des prélèvements");
+            errorText.setText("Élément non supprimé, cette technique est encore liée à des modèles de manipulation");
         }
     }
 
