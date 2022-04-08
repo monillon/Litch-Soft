@@ -36,7 +36,7 @@ public class AdminListMutationModel {
         if (checkMutationDeleted(laMutation.getIdMutation())) {
             theListView.getItems().remove(laMutation);
         } else {
-            errorText.setText("Elément non supprimé, cette mutation est encore liée à des choses");
+            errorText.setText("Elément non supprimé, cette mutation est encore liée à des phénotypes");
         }
     }
 
