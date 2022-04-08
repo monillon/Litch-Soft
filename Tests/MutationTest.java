@@ -213,4 +213,11 @@ public class MutationTest {
         assertEquals("muttest",mut.getMutationName());
     }
 
+
+    @Test
+    public void testToString() {
+        assertEquals("muttest", mut.toString());
+        assertEquals(mut.getMutationName(), mut.toString());
+    }
+
 }
