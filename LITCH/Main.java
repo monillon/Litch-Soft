@@ -13,6 +13,8 @@ import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
 import Modules.Administration.Listing.Prescription.NewPrescription.AdminNewPrescriptionController;
+import Modules.Administration.Listing.Technique.AdminListTechnicController;
+import Modules.Administration.Listing.Technique.NewTechnique.AdminNewTechnicController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -77,9 +79,8 @@ public class Main extends Application {
     private AdminNewMutationController adminNewMutationController;
     private AdminListCategorieManipController adminListCategorieManipController;
     private AdminNewCategorieManipController adminNewCategorieManipController;
-
-
-
+    private AdminNewTechnicController adminNewTechnicController;
+    private AdminListTechnicController adminListTechnicController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -120,6 +121,8 @@ public class Main extends Application {
         adminNewMutationController = new AdminNewMutationController(this);
         adminListCategorieManipController = new AdminListCategorieManipController(this);
         adminNewCategorieManipController = new AdminNewCategorieManipController(this);
+        adminNewTechnicController = new AdminNewTechnicController(this);
+        adminListTechnicController = new AdminListTechnicController(this);
         tools = new Tools(this);
     }
 
@@ -360,6 +363,14 @@ public class Main extends Application {
 
     public AdminNewCategorieManipController getAdminNewCategorieManipController() {
         return adminNewCategorieManipController;
+    }
+
+    public AdminNewTechnicController getAdminNewTechnicController() {
+        return adminNewTechnicController;
+    }
+
+    public AdminListTechnicController getAdminListTechnicController() {
+        return adminListTechnicController;
     }
 }
 

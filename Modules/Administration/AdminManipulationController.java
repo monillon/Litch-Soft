@@ -46,9 +46,9 @@ public class AdminManipulationController {
         adminManipulationModel.addNewProtocole(newManipulationName, addProtocoleButton, errorProtocole);
     }
 
-    public void addNewTechnique() throws IOException {
-        adminManipulationModel.addNewTechnique(newTechniqueName, addTechniqueButton, errorTechnique);
-    }
+//    public void addNewTechnique() throws IOException {
+//        adminManipulationModel.addNewTechnique(newTechniqueName, addTechniqueButton, errorTechnique);
+//    }
 
 
     public void setTechniqueList() throws IOException {

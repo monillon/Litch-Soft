@@ -717,8 +717,8 @@ public class DataBase {
      * Method createTechniqueRequest
      * Requête qui permet d'insérer à la bdd une technique grâce à un nom
      */
-    public static void createTechniqueRequest(String newTechniqueName) throws IOException {
-        String request = "http://litch-dev.geniephy.net/API/technique/create.php?nom_technique=" + newTechniqueName;
+    public static void createTechniqueRequest(String newTechniqueName, String newTechnicDescription) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/technique/create.php?nom_technique=" + newTechniqueName + "&&description_technique=" + newTechnicDescription;
         insertRequest(request);
     }
 
@@ -1051,6 +1051,26 @@ public class DataBase {
     public static void createCatDeManipRequest(String idCatDeManip) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/insert.php?nom_catManip=" + idCatDeManip;
         insertRequest(request);
+    }
+
+    /**
+     * Method deleteTechnicRequest
+     * Requête qui permet de supprimer dans la bdd une technique
+     * @param ID_TECHNIQUE id de la bdd correspondant à la technique"
+     */
+    public static void deleteTechnicRequest(int ID_TECHNIQUE) throws IOException {
+        String request ="https://litch-dev.geniephy.net/API/technique/delete.php?id_technique=" + ID_TECHNIQUE;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une technique grâce à son id
+     * @param id_Technique l'id de la technique
+     * @return l'objet technique de BDD
+     */
+    public static ArrayList<JSONObject> getOneTechnic(int id_Technique) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/technique/read_one.php?id_technique=" + id_Technique;
+        return sendRequest(request);
     }
 
 }
