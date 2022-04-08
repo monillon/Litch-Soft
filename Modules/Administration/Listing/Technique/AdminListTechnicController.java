@@ -34,6 +34,7 @@ public class AdminListTechnicController {
 
     public void addElementList() throws IOException {
         adminListTechnicModel.addItemList(laListe);
+        description.setEditable(false);
     }
 
     public void delSelectedItem() throws IOException {
