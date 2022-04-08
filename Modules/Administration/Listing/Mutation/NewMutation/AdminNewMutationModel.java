@@ -21,7 +21,7 @@ public class AdminNewMutationModel {
         main = newMain;
     }
 
-    public void addNewMuta(ComboBox newPathoName, TextField newClassName, TextField newMutaName,  Button addMutaButton, Text errorMuta) throws IOException {
+    public void addNewMuta(ComboBox newPathoName, TextField newMutaName, TextField newClassName,  Button addMutaButton, Text errorMuta) throws IOException {
         if (!newMutaName.getText().isEmpty() && newPathoName.getSelectionModel().getSelectedItem() != null && !newClassName.getText().isEmpty()) {
             Pathology laPatho = (Pathology) newPathoName.getSelectionModel().getSelectedItem();
             DataBase.createMutationRequest(laPatho.getIdPathology(), main.tools.spaceToUnderscore(newMutaName.getText().toUpperCase()), main.tools.spaceToUnderscore(newClassName.getText().toUpperCase()));
