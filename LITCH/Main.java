@@ -5,12 +5,16 @@ import Modules.Administration.Listing.CatDeManip.AdminListCategorieManipControll
 import Modules.Administration.Listing.CatDeManip.NewCatManip.AdminNewCategorieManipController;
 import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
 import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
+import Modules.Administration.Listing.Mutation.AdminListMutationController;
+import Modules.Administration.Listing.Mutation.NewMutation.AdminNewMutationController;
 import Modules.Administration.Listing.Organe.AdminListOrganeController;
 import Modules.Administration.Listing.Organe.NewOrgane.AdminNewOrganeController;
 import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
 import Modules.Administration.Listing.Prescription.NewPrescription.AdminNewPrescriptionController;
+import Modules.Administration.Listing.Technique.AdminListTechnicController;
+import Modules.Administration.Listing.Technique.NewTechnique.AdminNewTechnicController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
@@ -72,12 +76,14 @@ public class Main extends Application {
     private AdminListPathologieController adminListPathologieController;
     private AdminNewPathologieController adminNewPathologieController;
     private AdminListPrescriptionController adminListPrescriptionController;
+    private AdminListMutationController adminListMutationController;
+    private AdminNewMutationController adminNewMutationController;
     private AdminListCategorieManipController adminListCategorieManipController;
     private AdminNewCategorieManipController adminNewCategorieManipController;
+    private AdminNewTechnicController adminNewTechnicController;
+    private AdminListTechnicController adminListTechnicController;
     private AdminListUserController adminListUserController;
     private AdminNewUserController adminNewUserController;
-
-
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -113,11 +119,15 @@ public class Main extends Application {
         adminListPathologieController = new AdminListPathologieController(this);
         adminNewPathologieController = new AdminNewPathologieController(this);
         adminListPrescriptionController = new AdminListPrescriptionController(this);
-        tools = new Tools(this);
+        adminListMutationController = new AdminListMutationController(this);
+        adminNewMutationController = new AdminNewMutationController(this);
         adminListCategorieManipController = new AdminListCategorieManipController(this);
         adminNewCategorieManipController = new AdminNewCategorieManipController(this);
+        adminNewTechnicController = new AdminNewTechnicController(this);
+        adminListTechnicController = new AdminListTechnicController(this);
         adminListUserController = new AdminListUserController(this);
         adminNewUserController = new AdminNewUserController(this);
+        tools = new Tools(this);
     }
 
     @Override
@@ -251,7 +261,6 @@ public class Main extends Application {
         this.addSubjectPageController = addSubjectPageController;
     }
 
-
     public AdminManageNewBoxController getAdminManageNewBoxController() {
         return adminManageNewBoxController;
     }
@@ -336,12 +345,28 @@ public class Main extends Application {
         return adminListPrescriptionController;
     }
 
+    public AdminListMutationController getAdminListMutationController() {
+        return adminListMutationController;
+    }
+
+    public AdminNewMutationController getAdminNewMutationController() {
+        return adminNewMutationController;
+    }
+
     public AdminListCategorieManipController getAdminListCategorieManipController() {
         return adminListCategorieManipController;
     }
 
     public AdminNewCategorieManipController getAdminNewCategorieManipController() {
         return adminNewCategorieManipController;
+    }
+
+    public AdminNewTechnicController getAdminNewTechnicController() {
+        return adminNewTechnicController;
+    }
+
+    public AdminListTechnicController getAdminListTechnicController() {
+        return adminListTechnicController;
     }
 
     public AdminListUserController getAdminListUserController() {

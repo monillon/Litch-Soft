@@ -515,8 +515,8 @@ public class DataBase {
      * Method createMutationRequest
      * Requête qui permet de créer dans la bdd une mutation avec son nom et de la relié à un identifiant pathologie
      */
-    public static void createMutationRequest(int idPatho, String newMutationName) throws IOException {
-        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName;
+    public static void createMutationRequest(int idPatho, String newMutationName, String newClassName) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName + "&&classe_mutation=" + newClassName;
         insertRequest(request);
     }
 
@@ -717,8 +717,8 @@ public class DataBase {
      * Method createTechniqueRequest
      * Requête qui permet d'insérer à la bdd une technique grâce à un nom
      */
-    public static void createTechniqueRequest(String newTechniqueName) throws IOException {
-        String request = "http://litch-dev.geniephy.net/API/technique/create.php?nom_technique=" + newTechniqueName;
+    public static void createTechniqueRequest(String newTechniqueName, String newTechnicDescription) throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/technique/create.php?nom_technique=" + newTechniqueName + "&&description_technique=" + newTechnicDescription;
         insertRequest(request);
     }
 
@@ -987,6 +987,35 @@ public class DataBase {
     }
 
     /**
+     * Method getAllMutationRequest
+     * Requête qui permet de chercher dans la bdd toutes les mutations
+     */
+    public static ArrayList<JSONObject> getAllMutationRequest() throws IOException {
+        String request = "http://litch-dev.geniephy.net/API/mutation/read_all.php";
+        return sendRequest(request);
+    }
+
+    /**
+     * Method deleteMutationRequest
+     * Requête qui permet de supprimer dans la bdd une mutation
+     * @param id_mutation id de la bdd correspondant à la mutation
+     */
+    public static void deleteMutationRequest(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/delete.php?id_mutation=" + id_mutation;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une mutation grâce à son id
+     * @param id_mutation l'id de la mutation
+     * @return l'objet mutation de BDD
+     */
+    public static ArrayList<JSONObject> getOneMutation(int id_mutation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/mutation/read_one.php?id_mutation=" + id_mutation;
+        return sendRequest(request);
+    }
+
+    /**
      * Method getAllCatDeManipRequest
      * Requête qui permet de chercher dans la bdd toutes les catégories
      */
@@ -1024,6 +1053,25 @@ public class DataBase {
         insertRequest(request);
     }
 
+    /**
+     * Method deleteTechnicRequest
+     * Requête qui permet de supprimer dans la bdd une technique
+     * @param ID_TECHNIQUE id de la bdd correspondant à la technique"
+     */
+    public static void deleteTechnicRequest(int ID_TECHNIQUE) throws IOException {
+        String request ="https://litch-dev.geniephy.net/API/technique/delete.php?id_technique=" + ID_TECHNIQUE;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une technique grâce à son id
+     * @param id_Technique l'id de la technique
+     * @return l'objet technique de BDD
+     */
+    public static ArrayList<JSONObject> getOneTechnic(int id_Technique) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/technique/read_one.php?id_technique=" + id_Technique;
+        return sendRequest(request);
+    }
 
     /**
      * Method deleteUserRequest
@@ -1045,8 +1093,6 @@ public class DataBase {
         return sendRequest(request);
     }
 
-
-
     /**
      * Permet de faire une requête pour récupérer les prélèvements liés à un user grâce à son id
      * @return l'objet prélèvement de BDD
@@ -1055,8 +1101,6 @@ public class DataBase {
         String request = "https://litch-dev.geniephy.net/API/utilisateur/read_with_roles.php";
         return sendRequest(request);
     }
-
-
 
 }
 
