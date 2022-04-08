@@ -87,6 +87,18 @@ public class AdminPageController {
         main.getAdminListPrescriptionController().addElementList();
     }
 
+    public void goToListCatDeManip(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/CatDeManip/AdminListCategorieManip.fxml", main.getAdminListCategorieManipController());
+        main.getAdminListCategorieManipController().addElementList();
+    }
+
+    public void goToListMutation(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Mutation/AdminListMutation.fxml", main.getAdminListMutationController());
+        main.getAdminListMutationController().addElementList();
+    }
+
     public void goToListTechnic(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Technique/AdminListTechnic.fxml", main.getAdminListTechnicController());
