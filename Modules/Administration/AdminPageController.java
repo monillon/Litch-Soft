@@ -24,28 +24,6 @@ public class AdminPageController {
         main.tools.goHome(home);
     }
 
-    public void goToOrgan(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminOrgan.fxml", main.getAdminOrganController());
-    }
-
-    public void goToPathology(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPathology.fxml", main.getAdminPathologyController());
-        main.getAdminPathologyController().setPathoList();
-    }
-
-    public void goToPreopData(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminPreopData.fxml", main.getAdminPreopDataController());
-    }
-
-    public void goToUser(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-//        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminUser.fxml", main.getAdminUserController());
-//        main.getAdminUserController().setRoles();
-    }
-
     public void goToManipulation(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminManipulation.fxml", main.getAdminManipulationController());

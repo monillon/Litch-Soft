@@ -34,42 +34,6 @@
          <content>
             <FlowPane hgap="70.0" prefHeight="528.0" prefWidth="895.0" vgap="40.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToOrgan" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="ORGANES / TISSUS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPathology" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(203,108,230); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text11" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PATHOLOGIES / MUTATIONS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToPreopData" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(126,217,87); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text12" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNEES PRE OPERATOIRES" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToUser" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,87,87); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text14" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UTILISATEURS / ROLES" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="22.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToManipulation" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(166,166,166); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text15" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MODELE DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">

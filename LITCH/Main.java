@@ -54,9 +54,6 @@ public class Main extends Application {
     private GroupViewController groupViewController;
     private AddSubjectPageController addSubjectPageController;
     private AdminPageController adminPageController;
-    private AdminOrganController adminOrganController;
-    private AdminPathologyController adminPathologyController;
-    private AdminPreopDataController adminPreopDataController;
     private AdminNewPrescriptionController adminNewPrescriptionController;
     private AddSampleController addSampleController;
     private AdminManageNewBoxController adminManageNewBoxController;
@@ -97,9 +94,6 @@ public class Main extends Application {
         groupViewController = new GroupViewController(this);
         addSubjectPageController = new AddSubjectPageController(this);
         adminPageController = new AdminPageController(this);
-        adminOrganController = new AdminOrganController(this);
-        adminPathologyController = new AdminPathologyController(this);
-        adminPreopDataController = new AdminPreopDataController(this);
         adminNewPrescriptionController = new AdminNewPrescriptionController(this);
         addSampleController = new AddSampleController(this);
         adminManageNewBoxController = new AdminManageNewBoxController(this);
@@ -211,30 +205,6 @@ public class Main extends Application {
 
     public void setAdminPageController(AdminPageController adminPageController) {
         this.adminPageController = adminPageController;
-    }
-
-    public AdminOrganController getAdminOrganController() {
-        return adminOrganController;
-    }
-
-    public void setAdminOrganController(AdminOrganController adminOrganController) {
-        this.adminOrganController = adminOrganController;
-    }
-
-    public AdminPathologyController getAdminPathologyController() {
-        return adminPathologyController;
-    }
-
-    public void setAdminPathologyController(AdminPathologyController adminPathologyController) {
-        this.adminPathologyController = adminPathologyController;
-    }
-
-    public AdminPreopDataController getAdminPreopDataController() {
-        return adminPreopDataController;
-    }
-
-    public void setAdminPreopDataController(AdminPreopDataController adminPreopDataController) {
-        this.adminPreopDataController = adminPreopDataController;
     }
 
     public AdminNewPrescriptionController getAdminNewPrescriptionController() {
