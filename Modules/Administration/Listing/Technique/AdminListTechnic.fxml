@@ -31,7 +31,7 @@
             </Button>
          </children>
       </Pane>
-      <ListView fx:id="laListe" layoutX="103.0" layoutY="134.0" onMouseClicked="#getDescription" prefHeight="488.0" prefWidth="548.0" />
+      <ListView fx:id="laListe" layoutX="103.0" layoutY="134.0" onKeyPressed="#getDescription" onMouseClicked="#getDescription" prefHeight="488.0" prefWidth="548.0" />
       <Button layoutX="781.0" layoutY="278.0" mnemonicParsing="false" onAction="#delSelectedItem" style="-fx-background-color: rgb(92,225, 230); -fx-background-radius: 10px;" text="Supprimer" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
