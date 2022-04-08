@@ -1,6 +1,8 @@
 package LITCH;
 
 import Modules.Administration.*;
+import Modules.Administration.Listing.CatDeManip.AdminListCategorieManipController;
+import Modules.Administration.Listing.CatDeManip.NewCatManip.AdminNewCategorieManipController;
 import Modules.Administration.Listing.DonneesPreOp.AdminListPreOpController;
 import Modules.Administration.Listing.DonneesPreOp.NewPreOp.AdminNewPreOpController;
 import Modules.Administration.Listing.Mutation.AdminListMutationController;
@@ -73,6 +75,10 @@ public class Main extends Application {
     private AdminListPrescriptionController adminListPrescriptionController;
     private AdminListMutationController adminListMutationController;
     private AdminNewMutationController adminNewMutationController;
+    private AdminListCategorieManipController adminListCategorieManipController;
+    private AdminNewCategorieManipController adminNewCategorieManipController;
+
+
 
     public Tools tools;
 
@@ -112,6 +118,8 @@ public class Main extends Application {
         adminListPrescriptionController = new AdminListPrescriptionController(this);
         adminListMutationController = new AdminListMutationController(this);
         adminNewMutationController = new AdminNewMutationController(this);
+        adminListCategorieManipController = new AdminListCategorieManipController(this);
+        adminNewCategorieManipController = new AdminNewCategorieManipController(this);
         tools = new Tools(this);
     }
 
@@ -346,5 +354,12 @@ public class Main extends Application {
         return adminNewMutationController;
     }
 
+    public AdminListCategorieManipController getAdminListCategorieManipController() {
+        return adminListCategorieManipController;
+    }
+
+    public AdminNewCategorieManipController getAdminNewCategorieManipController() {
+        return adminNewCategorieManipController;
+    }
 }
 

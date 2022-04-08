@@ -1015,7 +1015,43 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method getAllCatDeManipRequest
+     * Requête qui permet de chercher dans la bdd toutes les catégories
+     */
+    public static ArrayList<JSONObject> getAllCatDeManipRequest() throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/read_all.php";
+        return sendRequest(request);
+    }
 
+    /**
+     * Method deletePrescriptionRequest
+     * Requête qui permet de supprimer dans la bdd une prescription
+     * @param  ID_CATEGORIE_MANIP de la bdd correspondant à la catégorie de la manipulation
+     */
+    public static void deleteCatDeManipRequest(int ID_CATEGORIE_MANIP) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/delete.php?id_catManip=" + ID_CATEGORIE_MANIP;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer une manipulation grâce à son id
+     * @param idManipulation la catégorie de la manipulation
+     * @return l'objet de la catégorie de la manipulation de BDD
+     */
+    public static ArrayList<JSONObject> getOneCatDeManip(int idManipulation) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/read_one.php?id_catManip=" + idManipulation;
+        return sendRequest(request);
+    }
+
+    /**
+     * Method createCatDeManipRequest
+     * Requête qui permet de créer dans la bdd un type de tissu grâce à un nom
+     */
+    public static void createCatDeManipRequest(String idCatDeManip) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/insert.php?nom_catManip=" + idCatDeManip;
+        insertRequest(request);
+    }
 
 }
 

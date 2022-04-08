@@ -6,19 +6,19 @@ package LITCH;
 public class Tissue {
 
     /**
-     * Identifiant de l'organe. Ne peut être négatif ou nul.La vérification de l'unicité est laissée à la base de données
+     * Identifiant du tissu. Ne peut être négatif ou nul.La vérification de l'unicité est laissée à la base de données
      */
     private int idTissue;
     /**
-     * Nom de l'organe. Ne peut être nul ou vide.
+     * Nom du tissu. Ne peut être nul ou vide.
      */
     private String nameTissue;
 
     /**
      * Constructeur du tissu
      *
-     * @param newIdTissue   id de l'organe
-     * @param newNameTissue nom de l'organe
+     * @param newIdTissue   id du tissu
+     * @param newNameTissue nom du tissu
      * @throws IllegalArgumentException si l'ID est nul ou négatif, le user name nul ou vide
      */
     public Tissue(int newIdTissue, String newNameTissue) {
@@ -39,7 +39,7 @@ public class Tissue {
     }
 
     /**
-     * Getter du nom de l'organe
+     * Getter du nom du tissu
      *
      * @return nameTissue
      */
