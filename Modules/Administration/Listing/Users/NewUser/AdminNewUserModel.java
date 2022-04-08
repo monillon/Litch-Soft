@@ -22,10 +22,10 @@ public class AdminNewUserModel {
     }
 
     public void addNewUser(TextField newUserName, TextField newUserPassword, ChoiceBox roles, Button addUserButton, Text errorUser) throws IOException, SQLException {
-        if (!newUserName.getText().isEmpty() & !newUserPassword.getText().isEmpty()) {
+        if (!newUserName.getText().isEmpty() && !newUserPassword.getText().isEmpty() && roles.getSelectionModel().getSelectedItem() != null) {
             boolean verif = true;
             for (JSONObject object : DataBase.getAllUserRequest()) {
-                if (newUserName.equals(object.getString("NOM_UTILISATEUR"))){
+                if (newUserName.getText().equals(object.getString("NOM_UTILISATEUR"))){
                     verif = false;
                 }
             }
@@ -37,7 +37,7 @@ public class AdminNewUserModel {
                 DataBase.createUserRequest(newUserName.getText(),newUserPassword.getText(), id_role);
                 main.tools.switchScene((Stage) addUserButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
             }else{
-                errorUser.setText("Nom d'utilisateur déja utilisé");
+                errorUser.setText("Nom d'utilisateur déjà utilisé");
             }
         }else{
             errorUser.setText("Veuillez remplir tous les champs");
