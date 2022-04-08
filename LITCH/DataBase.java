@@ -1041,7 +1041,7 @@ public class DataBase {
      * @return l'objet unité de BDD
      */
     public static ArrayList<JSONObject> getOneUser(int ID_USER) throws IOException {
-        String request = "https://litch-dev.geniephy.net/API/unite/read_one.php?id_unite=" + ID_USER;
+        String request = "https://litch-dev.geniephy.net/API/utilisateur/read_one_id.php?id_user=" + ID_USER;
         return sendRequest(request);
     }
 
