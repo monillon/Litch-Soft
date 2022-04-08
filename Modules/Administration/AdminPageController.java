@@ -53,7 +53,7 @@ public class AdminPageController {
 
     public void goToListTissu(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTechnic.fxml", main.getAdminListTissuController());
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
         main.getAdminListTissuController().addElementList();
     }
 
