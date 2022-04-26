@@ -36,7 +36,7 @@
                <children>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToManipulation" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(166,166,166); -fx-background-radius: 20px;">
                      <graphic>
-                        <Text fx:id="text15" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MODELE DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
+                        <Text fx:id="text15" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MODÈLE DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
                               <Font name="System Bold" size="19.0" />
                            </font>
@@ -81,7 +81,7 @@
                   </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPreopData" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
                      <graphic>
-                        <Text fx:id="text1611" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNEES PRE-OPERATOIRES" textAlignment="CENTER" wrappingWidth="150.0">
+                        <Text fx:id="text1611" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNÉES PRÉ-OPÉRATOIRES" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -99,7 +99,7 @@
                   </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListCatDeManip" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
                      <graphic>
-                        <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CATEGORIES DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
+                        <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CATÉGORIES DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
                               <Font name="System Bold" size="19.0" />
                            </font>
@@ -135,7 +135,7 @@
                   </Button>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTraceability" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
                      <graphic>
-                        <Text fx:id="text16111111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TRACABILITE" textAlignment="CENTER" wrappingWidth="150.0">
+                        <Text fx:id="text16111111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAÇABILITÉ" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
                               <Font name="System Bold" size="19.0" />
                            </font>
