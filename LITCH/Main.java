@@ -61,7 +61,6 @@ public class Main extends Application {
     private AddSampleController addSampleController;
     private AdminManageNewBoxController adminManageNewBoxController;
     private AddManipulationController addManipulationController;
-    private AdminManipulationController adminManipulationController;
     private ManipulationViewController manipulationViewController;
     private SearchPageController searchPageController;
     private FridgeManagementController fridgeManagementController;
@@ -104,7 +103,6 @@ public class Main extends Application {
         addSampleController = new AddSampleController(this);
         adminManageNewBoxController = new AdminManageNewBoxController(this);
         addManipulationController = new AddManipulationController(this);
-        adminManipulationController = new AdminManipulationController(this);
         manipulationViewController = new ManipulationViewController(this);
         searchPageController = new SearchPageController(this);
         fridgeManagementController = new FridgeManagementController(this);
@@ -254,14 +252,6 @@ public class Main extends Application {
 
     public void setAddManipulationController(AddManipulationController addManipulationController) {
         this.addManipulationController = addManipulationController;
-    }
-
-    public AdminManipulationController getAdminManipulationController() {
-        return adminManipulationController;
-    }
-
-    public void setAdminManipulationController(AdminManipulationController adminManipulationController) {
-        this.adminManipulationController = adminManipulationController;
     }
 
     public ManipulationViewController getManipulationViewController() {

@@ -25,11 +25,6 @@ public class AdminPageController {
         main.tools.goHome(home);
     }
 
-    public void goToManipulation(ActionEvent e) throws IOException {
-        Button button = (Button) e.getSource();
-        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/AdminManipulation.fxml", main.getAdminManipulationController());
-    }
-
     public void goToListTissu(ActionEvent e) throws IOException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
