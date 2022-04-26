@@ -1122,6 +1122,10 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Méthode qui permet de récupérer les traces depuis la BDD
+     * @return l'objet de retour avec les traces
+     */
     public static ArrayList<JSONObject> getAllTraces() throws IOException {
         String request = "https://litch-dev.geniephy.net/API/tracabilite/read_all.php";
         return sendRequest(request);
