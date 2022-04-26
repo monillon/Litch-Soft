@@ -35,6 +35,9 @@ public class AdminListPrescriptionModel {
         DataBase.deletePrescriptionRequest(laPrescription.getIdPresciption());
         if (checkPrescriptionDeleted(laPrescription.getIdPresciption())) {
             theListView.getItems().remove(laPrescription);
+
+            //tracabilité
+            main.tools.applyTraceability(laPrescription.getPrescriptionName().toUpperCase() + " à été supprimé des prescriptions");
         } else {
             errorText.setText("Elément non supprimé, cette prescription est encore liée à des phénotypes");
         }

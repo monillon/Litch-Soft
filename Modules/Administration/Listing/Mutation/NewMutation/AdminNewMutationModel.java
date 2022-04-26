@@ -27,6 +27,12 @@ public class AdminNewMutationModel {
             DataBase.createMutationRequest(laPatho.getIdPathology(), main.tools.spaceToUnderscore(newMutaName.getText().toUpperCase()), main.tools.spaceToUnderscore(newClassName.getText().toUpperCase()));
             main.tools.switchScene((Stage) addMutaButton.getScene().getWindow(),"Administration/Listing/Mutation/AdminListMutation.fxml",main.getAdminListMutationController());
             main.getAdminListMutationController().addElementList();
+
+            //tracabilité
+            main.tools.applyTraceability(newMutaName.getText().toUpperCase() + " à été ajouté aux mutations lié à la pathologie " + newPathoName.getSelectionModel().getSelectedItem().toString().toUpperCase());
+
+
+
         }else{
             errorMuta.setText("Veuillez renseigner une mutation, une pathologie et une classe");
         }

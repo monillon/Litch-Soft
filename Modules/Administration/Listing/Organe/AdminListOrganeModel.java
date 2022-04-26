@@ -37,6 +37,9 @@ public class AdminListOrganeModel {
         DataBase.deleteOrganeRequest(leOrgane.getIdOrgan());
         if (checkTissuDeleted(leOrgane.getIdOrgan())) {
             theListView.getItems().remove(leOrgane);
+
+            //tracabilité
+            main.tools.applyTraceability(leOrgane.getNameOrgan().toUpperCase() + " à été suprimé des organes");
         } else {
             errorText.setText("Elément non supprimé, ce tissu est encore lié à des prélèvements");
         }

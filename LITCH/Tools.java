@@ -230,7 +230,7 @@ public class Tools {
     public void applyTraceability(String action) throws IOException {
         java.util.Date utilDate = new java.util.Date();
         java.sql.Date sqlDate = new Date(utilDate.getTime());
-        Traceability traceability = new Traceability(main.getCurrentUser(), sqlDate, action);
+        Traceability traceability = new Traceability(main.getCurrentUser(), sqlDate, spaceToUnderscore(action));
         traceability.send();
     }
 

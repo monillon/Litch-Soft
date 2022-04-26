@@ -36,6 +36,9 @@ public class AdminListPathologieModel {
         DataBase.deletePathologie(laPathologie.getIdPathology());
         if (checkTissuDeleted(laPathologie.getIdPathology())) {
             theListView.getItems().remove(laPathologie);
+
+            //tracabilité
+            main.tools.applyTraceability(laPathologie.getNamePathology().toUpperCase() + " à été supprimé des pathologies");
         } else {
             errorText.setText("Elément non supprimé, cette pathologie est encore liée à des mutations ou phénotypes");
         }

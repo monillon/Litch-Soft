@@ -35,6 +35,9 @@ public class AdminListMutationModel {
         DataBase.deleteMutationRequest(laMutation.getIdMutation());
         if (checkMutationDeleted(laMutation.getIdMutation())) {
             theListView.getItems().remove(laMutation);
+
+            //tracabilité
+            main.tools.applyTraceability(laMutation.getMutationName().toUpperCase() + " à été supprimé des mutations");
         } else {
             errorText.setText("Elément non supprimé, cette mutation est encore liée à des phénotypes");
         }

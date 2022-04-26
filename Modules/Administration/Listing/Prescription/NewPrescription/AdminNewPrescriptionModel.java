@@ -22,6 +22,9 @@ public class AdminNewPrescriptionModel {
             DataBase.createPrescriRequest(main.tools.spaceToUnderscore(newPrescriName.getText().toUpperCase()));
             main.tools.switchScene((Stage) addPrescriButton.getScene().getWindow(),"Administration/Listing/Prescription/AdminListPrescription.fxml",main.getAdminListPrescriptionController());
             main.getAdminListPrescriptionController().addElementList();
+
+            //tracabilité
+            main.tools.applyTraceability(newPrescriName.getText().toUpperCase() + " à été ajouté aux prescriptions");
         }else{
             errorPrescri.setText("Veuillez renseigner le nom d'une prescription");
         }

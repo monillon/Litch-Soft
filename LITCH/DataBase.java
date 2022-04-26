@@ -1121,6 +1121,12 @@ public class DataBase {
         String request = "https://litch-dev.geniephy.net/API/protocole/read_one.php?id_protocole=" + id_Protocole;
         return sendRequest(request);
     }
+
+    public static ArrayList<JSONObject> getAllTraces() throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/tracabilite/read_all.php";
+        return sendRequest(request);
+    }
+
 }
 
 
