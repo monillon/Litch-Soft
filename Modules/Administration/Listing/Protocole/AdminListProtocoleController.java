@@ -20,7 +20,6 @@ public class AdminListProtocoleController {
     @FXML private Button home;
     @FXML private ListView laListe;
     @FXML private Text errorProtocole;
-    @FXML private TextArea description;
 
     public AdminListProtocoleController(Main newMain){
         main = newMain;

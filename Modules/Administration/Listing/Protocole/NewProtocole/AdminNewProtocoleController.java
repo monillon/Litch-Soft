@@ -21,7 +21,6 @@ public class AdminNewProtocoleController {
     @FXML private Button addProtocoleButton;
     @FXML private Text errorProtocole;
     @FXML private TextField newProtocoleName;
-    @FXML private TextField newProtocoleDescription;
 
     public AdminNewProtocoleController(Main newMain){
         main = newMain;
