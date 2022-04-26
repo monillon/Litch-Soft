@@ -1,9 +1,11 @@
 package Modules.Administration.Listing.Traceability;
 
 import LITCH.Main;
+import LITCH.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -17,9 +19,9 @@ public class AdminListTraceabilityController {
     private AdminListTraceabilityModel adminListTraceabilityModel;
 
 
-    @FXML
-    private Button home;
+    @FXML private Button home;
     @FXML private ListView laListe;
+    @FXML private ComboBox choixUser;
 
     public AdminListTraceabilityController(Main newMain){
         main = newMain;
@@ -31,7 +33,8 @@ public class AdminListTraceabilityController {
     }
 
     public void addElementList() throws IOException, ParseException {
-        adminListTraceabilityModel.addItemList(laListe);
+        adminListTraceabilityModel.addUsers(choixUser);
+        adminListTraceabilityModel.addItemList(laListe, null);
     }
 
     public void goBackSettings(ActionEvent e ) throws IOException {
@@ -39,5 +42,14 @@ public class AdminListTraceabilityController {
         main.tools.switchScene(stage ,"Administration/AdminPage.fxml", main.getAdminPageController());
     }
 
+
+    public void filterSelection() throws IOException, ParseException {
+        if (choixUser.getSelectionModel().getSelectedItem().toString().equals("Tous les utilisateurs")) {
+            adminListTraceabilityModel.addItemList(laListe, null);
+        } else {
+            User theUser = (User) choixUser.getSelectionModel().getSelectedItem();
+            adminListTraceabilityModel.addItemList(laListe, theUser);
+        }
+    }
 
 }
