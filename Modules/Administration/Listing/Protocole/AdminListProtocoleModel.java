@@ -39,6 +39,9 @@ public class AdminListProtocoleModel {
         DataBase.deleteProtocoleRequest(leProtocole.getIdProtocole());
         if (checkProtocoleDeleted(leProtocole.getIdProtocole())) {
             theListView.getItems().remove(leProtocole);
+
+            //tracabilité
+            main.tools.applyTraceability(leProtocole.getNameProtocole().toUpperCase() + " à été supprimé des protocoles");
         } else {
             errorText.setText("Élément non supprimé, ce protocole est encore lié à des modèles de manipulation");
         }
