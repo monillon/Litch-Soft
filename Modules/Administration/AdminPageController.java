@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 public class AdminPageController {
 
@@ -87,5 +88,11 @@ public class AdminPageController {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Users/AdminListUsers.fxml", main.getAdminListUserController());
         main.getAdminListUserController().addElementList();
+    }
+
+    public void goToTraceability(ActionEvent e) throws IOException, ParseException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Traceability/AdminListTraceability.fxml", main.getAdminListTraceabilityController());
+        main.getAdminListTraceabilityController().addElementList();
     }
 }

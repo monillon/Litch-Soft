@@ -2,6 +2,7 @@ package LITCH;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 
 public class Traceability {
@@ -90,5 +91,10 @@ public class Traceability {
         DataBase.insertTrace(this.user.getIdUser(), this.date, this.action);
     }
 
+    @Override
+    public String toString() {
+        SimpleDateFormat formatHumain = new SimpleDateFormat("dd/MM/yyyy");
 
+        return formatHumain.format(date.getTime()) + " - " + user.getUserName() + " - " + action;
+    }
 }

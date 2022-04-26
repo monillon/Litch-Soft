@@ -17,6 +17,7 @@ import Modules.Administration.Listing.Technique.AdminListTechnicController;
 import Modules.Administration.Listing.Technique.NewTechnique.AdminNewTechnicController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
 import Modules.Administration.Listing.Tissu.NewTissu.AdminNewTissuController;
+import Modules.Administration.Listing.Traceability.AdminListTraceabilityController;
 import Modules.Administration.Listing.Unit.AdminListUnitController;
 import Modules.Administration.Listing.Unit.NewUnit.AdminNewUnitController;
 import Modules.Administration.Listing.Users.AdminListUserController;
@@ -81,6 +82,7 @@ public class Main extends Application {
     private AdminListTechnicController adminListTechnicController;
     private AdminListUserController adminListUserController;
     private AdminNewUserController adminNewUserController;
+    private AdminListTraceabilityController adminListTraceabilityController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -121,6 +123,7 @@ public class Main extends Application {
         adminListTechnicController = new AdminListTechnicController(this);
         adminListUserController = new AdminListUserController(this);
         adminNewUserController = new AdminNewUserController(this);
+        adminListTraceabilityController = new AdminListTraceabilityController(this);
         tools = new Tools(this);
     }
 
@@ -345,5 +348,9 @@ public class Main extends Application {
 
     public AdminNewUserController getAdminNewUserController() {
         return adminNewUserController;
+    }
+
+    public AdminListTraceabilityController getAdminListTraceabilityController() {
+        return adminListTraceabilityController;
     }
 }

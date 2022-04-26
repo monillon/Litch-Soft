@@ -1102,6 +1102,11 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    public static ArrayList<JSONObject> getAllTraces() throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/tracabilite/read_all.php";
+        return sendRequest(request);
+    }
+
 }
 
 
