@@ -13,6 +13,8 @@ import Modules.Administration.Listing.Pathologie.AdminListPathologieController;
 import Modules.Administration.Listing.Pathologie.NewPathologie.AdminNewPathologieController;
 import Modules.Administration.Listing.Prescription.AdminListPrescriptionController;
 import Modules.Administration.Listing.Prescription.NewPrescription.AdminNewPrescriptionController;
+import Modules.Administration.Listing.Protocole.AdminListProtocoleController;
+import Modules.Administration.Listing.Protocole.NewProtocole.AdminNewProtocoleController;
 import Modules.Administration.Listing.Technique.AdminListTechnicController;
 import Modules.Administration.Listing.Technique.NewTechnique.AdminNewTechnicController;
 import Modules.Administration.Listing.Tissu.AdminListTissuController;
@@ -81,6 +83,8 @@ public class Main extends Application {
     private AdminListTechnicController adminListTechnicController;
     private AdminListUserController adminListUserController;
     private AdminNewUserController adminNewUserController;
+    private AdminNewProtocoleController adminNewProtocoleController;
+    private AdminListProtocoleController adminListProtocoleController;
     public Tools tools;
 
     public static String[] roles = {"Admin", "Gestionnaire", "Utilisateur", "Stagiaire"};
@@ -121,6 +125,8 @@ public class Main extends Application {
         adminListTechnicController = new AdminListTechnicController(this);
         adminListUserController = new AdminListUserController(this);
         adminNewUserController = new AdminNewUserController(this);
+        adminNewProtocoleController = new AdminNewProtocoleController(this);
+        adminListProtocoleController = new AdminListProtocoleController(this);
         tools = new Tools(this);
     }
 
@@ -345,5 +351,13 @@ public class Main extends Application {
 
     public AdminNewUserController getAdminNewUserController() {
         return adminNewUserController;
+    }
+
+    public AdminNewProtocoleController getAdminNewProtocoleController() {
+        return adminNewProtocoleController;
+    }
+
+    public AdminListProtocoleController getAdminListProtocoleController() {
+        return adminListProtocoleController;
     }
 }
