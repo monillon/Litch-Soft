@@ -1102,6 +1102,30 @@ public class DataBase {
         return sendRequest(request);
     }
 
+    /**
+     * Method deleteProtocoleRequest
+     * Requête qui permet de supprimer dans la bdd un protocole
+     * @param ID_PROTOCOLE id de la bdd correspondant au protocole"
+     */
+    public static void deleteProtocoleRequest(int ID_PROTOCOLE) throws IOException {
+        String request ="https://litch-dev.geniephy.net/API/protocole/delete.php?id_protocole=" + ID_PROTOCOLE;
+        insertRequest(request);
+    }
+
+    /**
+     * Permet de faire une requête pour récupérer un protocole grâce à son id
+     * @param id_Protocole l'id du protocole
+     * @return l'objet protocole de BDD
+     */
+    public static ArrayList<JSONObject> getOneProtocole(int id_Protocole) throws IOException {
+        String request = "https://litch-dev.geniephy.net/API/protocole/read_one.php?id_protocole=" + id_Protocole;
+        return sendRequest(request);
+    }
+
+    /**
+     * Méthode qui permet de récupérer les traces depuis la BDD
+     * @return l'objet de retour avec les traces
+     */
     public static ArrayList<JSONObject> getAllTraces() throws IOException {
         String request = "https://litch-dev.geniephy.net/API/tracabilite/read_all.php";
         return sendRequest(request);

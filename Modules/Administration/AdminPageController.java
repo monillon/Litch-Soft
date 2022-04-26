@@ -90,6 +90,12 @@ public class AdminPageController {
         main.getAdminListUserController().addElementList();
     }
 
+    public void goToListProtocole(ActionEvent e) throws IOException {
+        Button button = (Button) e.getSource();
+        main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Protocole/AdminListProtocole.fxml", main.getAdminListProtocoleController());
+        main.getAdminListProtocoleController().addElementList();
+    }
+
     public void goToTraceability(ActionEvent e) throws IOException, ParseException {
         Button button = (Button) e.getSource();
         main.tools.switchScene((Stage) button.getScene().getWindow(), "Administration/Listing/Traceability/AdminListTraceability.fxml", main.getAdminListTraceabilityController());
