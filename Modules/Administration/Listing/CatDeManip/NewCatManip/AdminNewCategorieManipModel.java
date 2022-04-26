@@ -24,6 +24,10 @@ public class AdminNewCategorieManipModel {
             main.tools.switchScene((Stage) addCatDeManipButton.getScene().getWindow(), "Administration/Listing/CatDeManip/AdminListCategorieManip.fxml", main.getAdminListCategorieManipController());
             main.getAdminListCategorieManipController().addElementList();
 
+            //tracabilité
+            main.tools.applyTraceability(newNameCatDeManip.getText().toUpperCase() + " à été ajouté des catégories de manipulation");
+
+
         }else{
             errorCatDeManip.setText("Veuillez renseigner le nom de la catégorie de manipulation");
         }

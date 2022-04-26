@@ -25,6 +25,10 @@ public class AdminNewPreOpModel {
             main.tools.switchScene((Stage) addPreOpButton.getScene().getWindow(), "Administration/Listing/DonneesPreOp/AdminListPreOp.fxml", main.getAdminListPreOpController());
             main.getAdminListPreOpController().addElementList();
 
+            //tracabilité
+            main.tools.applyTraceability(newPreOpName.getText().toUpperCase() + " à été ajouté des données pré-opératoire");
+
+
         }else{
             errorPreOp.setText("Veuillez renseigner le nom de la nouvelle donnée pré-opératoire");
         }

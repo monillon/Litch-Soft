@@ -36,6 +36,10 @@ public class AdminListCategorieManipModel {
         DataBase.deleteCatDeManipRequest(LaCatManip.getIdManipCategory());
         if (checkCatDeManipDeleted(LaCatManip.getIdManipCategory())) {
             theListView.getItems().remove(LaCatManip);
+
+            //tracabilité
+            main.tools.applyTraceability(LaCatManip.getNameManipCategory().toUpperCase() + " à été supprimé des catégories de manipulation");
+
         } else {
             errorText.setText("Elément non supprimé, cette catégorie est encore liée à des liste de manipulation");
         }

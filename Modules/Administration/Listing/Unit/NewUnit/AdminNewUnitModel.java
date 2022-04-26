@@ -24,6 +24,9 @@ public class AdminNewUnitModel {
             main.tools.switchScene((Stage) addUnitButton.getScene().getWindow(), "Administration/Listing/Unit/AdminListUnit.fxml", main.getAdminListUnitController());
             main.getAdminListUnitController().addElementList();
 
+            //tracabilité
+            main.tools.applyTraceability(newUnitName.getText().toUpperCase() + " à été ajouté aux unités");
+
         }else{
             errorUnit.setText("Veuillez renseigner le nom d'une unité");
         }

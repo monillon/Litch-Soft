@@ -39,6 +39,9 @@ public class AdminListUnitModel {
         DataBase.deleteUnitRequest(lUnite.getIdUnit());
         if (checkUnitDeleted(lUnite.getIdUnit())) {
             theListView.getItems().remove(lUnite);
+
+            //tracabilité
+            main.tools.applyTraceability(lUnite.getNameUnit().toUpperCase() + " à été supprimé des unités");
         } else {
             errorText.setText("Élément non supprimé, cette unité est encore liée à des phénotypes ou sujets");
         }

@@ -35,6 +35,10 @@ public class AdminNewUserModel {
                     id_role = object.getInt("ID_ROLE");
                 }
                 DataBase.createUserRequest(newUserName.getText(),newUserPassword.getText(), id_role);
+
+                //tracabilité
+                main.tools.applyTraceability(newUserName.getText().toUpperCase() + " à été ajouté aux utilisateurs avec le role" + roles.getValue().toString().toUpperCase());
+
                 main.tools.switchScene((Stage) addUserButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
             }else{
                 errorUser.setText("Nom d'utilisateur déjà utilisé");

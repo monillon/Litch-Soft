@@ -40,6 +40,10 @@ public class AdminListUserModel {
         DataBase.deleteUserRequest(LeUser.getIdUser());
         if (checkUserDeleted(LeUser.getIdUser())) {
             theListView.getItems().remove(LeUser);
+
+            //tracabilité
+            main.tools.applyTraceability(LeUser.getUserName().toUpperCase() + " à été supprimé des utilisateurs");
+
         } else {
             errorText.setText("Elément non supprimé, cet utilisateur est encore associé à un projet");
         }

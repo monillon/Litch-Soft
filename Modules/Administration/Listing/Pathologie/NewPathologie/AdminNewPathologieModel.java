@@ -24,6 +24,9 @@ public class AdminNewPathologieModel {
             main.tools.switchScene((Stage) addPathologyButton.getScene().getWindow(), "Administration/Listing/Pathologie/AdminListPathologie.fxml", main.getAdminListPathologieController());
             main.getAdminListPathologieController().addElementList();
 
+            //tracabilité
+            main.tools.applyTraceability(newPathologyName.getText().toUpperCase() + " à été ajouté aux pathologies");
+
         }else{
             errorPathology.setText("Veuillez renseigner le nom d'un tissu");
         }

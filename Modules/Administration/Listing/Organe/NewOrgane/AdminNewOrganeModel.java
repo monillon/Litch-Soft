@@ -24,6 +24,10 @@ public class AdminNewOrganeModel {
             main.tools.switchScene((Stage) addOrganeButton.getScene().getWindow(), "Administration/Listing/Organe/AdminListOrgane.fxml", main.getAdminListOrganeController());
             main.getAdminListOrganeController().addElementList();
 
+            //tracabilité
+            main.tools.applyTraceability(newOrganeName.getText().toUpperCase() + " à été ajouté aux organes");
+
+
         }else{
             errorOrgane.setText("Veuillez renseigner le nom d'un tissu");
         }

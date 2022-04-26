@@ -39,6 +39,10 @@ public class AdminListTissuModel {
         DataBase.deleteTissuRequest(leTissu.getIdTissue());
         if (checkTissuDeleted(leTissu.getIdTissue())) {
             theListView.getItems().remove(leTissu);
+
+            //tracabilité
+            main.tools.applyTraceability(leTissu.getNameTissue().toUpperCase() + " à été supprimé des tissus");
+
         } else {
             errorText.setText("Elément non supprimé, ce tissu est encore lié à des prélèvements");
         }
