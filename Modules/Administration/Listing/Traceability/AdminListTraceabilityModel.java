@@ -21,7 +21,7 @@ public class AdminListTraceabilityModel {
     }
 
     /**
-     * Permet de faire la requête des tracability dans la BDD et de l'ajouter dans la ListView
+     * Permet de faire la requête des traceability dans la BDD et de l'ajouter dans la ListView
      * @param theListView
      */
     public void addItemList(ListView theListView) throws IOException, ParseException {
@@ -44,6 +44,10 @@ public class AdminListTraceabilityModel {
             theListView.getItems().add(new Traceability(i.getInt("ID_TRACE"), dicoUser.get(i.getInt("ID_UTILISATEUR")), dateAction, Tools.underscoreToSpace(i.getString("ACTION"))));
         }
 
+    }
+
+    public void addItemListOneUser(ListView theListView) throws IOException, ParseException {
+//cc je suis inutile
     }
 
 }
