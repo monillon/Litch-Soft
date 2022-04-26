@@ -13,7 +13,7 @@
    <children>
       <Pane prefHeight="89.0" prefWidth="1080.0" style="-fx-background-color: rgb(255,87,87);">
          <children>
-            <Text fx:id="welcome" fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES CATEGORIES DE MANIPULATION" textAlignment="RIGHT" wrappingWidth="1060.0">
+            <Text fx:id="welcome" fill="WHITE" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES CATÉGORIES DE MANIPULATION" textAlignment="RIGHT" wrappingWidth="1060.0">
                <font>
                   <Font name="System Bold" size="29.0" />
                </font>
