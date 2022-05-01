@@ -52,7 +52,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPathology" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPathology" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(203,108,230); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text1611" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PATHOLOGIES" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
@@ -61,43 +61,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListUnit" prefHeight="150.0" prefWidth="112.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text162" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITÉS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPreopData" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text1611" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNÉES PRÉ-OPÉRATOIRES" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPrescription" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text16111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PRESCRIPTIONS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="19.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListCatDeManip" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CATÉGORIES DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="19.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListMutation" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListMutation" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(203,108,230); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MUTATIONS" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
@@ -106,7 +70,43 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListTechnic" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListUnit" prefHeight="150.0" prefWidth="112.0" style="-fx-background-color: rgb(126,217,87); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text162" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UNITÉS" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPreopData" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(126,217,87); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text1611" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DONNÉES PRÉ-OPÉRATOIRES" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListPrescription" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(92,225,230); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text16111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PRESCRIPTIONS" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListCatDeManip" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(166,166,166); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CATÉGORIES DE MANIPULATION" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListTechnic" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(166,166,166); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text161111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TECHNIQUES" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
@@ -115,16 +115,7 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListUser" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
-                     <graphic>
-                        <Text fx:id="text1611111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UTILISATEURS" textAlignment="CENTER" wrappingWidth="150.0">
-                           <font>
-                              <Font name="System Bold" size="19.0" />
-                           </font>
-                        </Text>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListProtocole" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListProtocole" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(166,166,166); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text16111111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="PROTOCOLES" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
@@ -133,7 +124,16 @@
                         </Text>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTraceability" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,145, 77); -fx-background-radius: 20px;">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToListUser" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(255,87,87); -fx-background-radius: 20px;">
+                     <graphic>
+                        <Text fx:id="text1611111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="UTILISATEURS" textAlignment="CENTER" wrappingWidth="150.0">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToTraceability" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: rgb(77,107,255); -fx-background-radius: 20px;">
                      <graphic>
                         <Text fx:id="text16111111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="TRAÇABILITÉ" textAlignment="CENTER" wrappingWidth="150.0">
                            <font>
