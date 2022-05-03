@@ -25,7 +25,7 @@ public class AdminNewTechnicModel {
             main.getAdminListTechnicController().addElementList();
 
             //tracabilité
-            main.tools.applyTraceability(newTechnicName.getText().toUpperCase() + " à été ajouté aux techniques");
+            main.tools.applyTraceability(newTechnicName.getText().toUpperCase() + " a été ajouté aux techniques");
 
         }else{
             errorTechnic.setText("Veuillez renseigner le nom d'une technique");

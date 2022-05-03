@@ -25,7 +25,7 @@ public class AdminNewCategorieManipModel {
             main.getAdminListCategorieManipController().addElementList();
 
             //tracabilité
-            main.tools.applyTraceability(newNameCatDeManip.getText().toUpperCase() + " à été ajouté des catégories de manipulation");
+            main.tools.applyTraceability(newNameCatDeManip.getText().toUpperCase() + " a été ajouté des catégories de manipulation");
 
 
         }else{

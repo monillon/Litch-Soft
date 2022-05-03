@@ -61,7 +61,7 @@ public class AdminManageNewBoxController {
     {
         adminManageNewBoxModel.setBoxListAdd(boxListAdd, shelfListAdd);
     }
-    //Permet d'ajouter une boite dans l'emplacent sélectionné et donc d'ajouter 100 emplacements dans la BDD correspondant aux emplacements de la boite
+    //Permet d'ajouter une boite dans l'emplacement sélectionné et donc d'ajouter 100 emplacements dans la BDD correspondant aux emplacements de la boite
     public void addSampleToBdd() throws IOException, SQLException
     {
         adminManageNewBoxModel.addSampleToBdd(boxListAdd, shelfListAdd, fridgeListAdd, fridgeListRemove, shelfListRemove, boxListRemove, errorRemove, errorAdd);

@@ -37,7 +37,7 @@ public class AdminListPrescriptionModel {
             theListView.getItems().remove(laPrescription);
 
             //tracabilité
-            main.tools.applyTraceability(laPrescription.getPrescriptionName().toUpperCase() + " à été supprimé des prescriptions");
+            main.tools.applyTraceability(laPrescription.getPrescriptionName().toUpperCase() + " a été supprimé des prescriptions");
         } else {
             errorText.setText("Elément non supprimé, cette prescription est encore liée à des phénotypes");
         }
@@ -59,40 +59,5 @@ public class AdminListPrescriptionModel {
         }
     }
 
-    /**
-     * Permet d'aller chercher en BDD si la prescription est liée à un ou plusieurs prélèvements et d'afficher un message.
-     * @param leTissu la prescription à rechercher
-     * @param affichage le lieu de l'affichage pour le message d'erreur
-     * @param detailsPrelev le lieu d'affiche de la liste des prélèvements
-     */
-    public void showDetails(Tissue leTissu, Text affichage, Text detailsPrelev) throws IOException {
-        ArrayList<JSONObject> retour = DataBase.getPrelevementLieTissu(leTissu.getIdTissue());
-
-        if (retour.get(0).isNull("message")) {
-            // La prescription est liée à des prélèvements afficher les prélèvements
-            affichage.setText("Le tissu est lié à " + retour.size() + " prélèvements, il ne peut pas être supprimé");
-            ArrayList<JSONObject> details = DataBase.getSujetLiePrelevment(leTissu.getIdTissue());
-
-            // permet d'afficher les 5 premiers sujets où le tissu est utilisé.
-            int parcours;
-            if (details.size() >= 5 ) {
-                parcours = 5;
-            } else {
-                parcours = details.size();
-            }
-
-            String texte = "";
-            for (int i = 0; i < parcours; i++) {
-                texte += details.get(i).getString("CODE_SUJET") + " ";
-            }
-            detailsPrelev.setText("Ce tissu est utilisé pour les sujets : " + texte);
-
-        } else {
-            // pas de prélèvement lié
-            affichage.setText("Ce tissu n'est pas lié à des prélèvements, il peut être supprimé");
-            detailsPrelev.setText("");
-        }
-
-    }
 
 }

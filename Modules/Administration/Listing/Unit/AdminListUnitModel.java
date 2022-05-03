@@ -40,8 +40,8 @@ public class AdminListUnitModel {
         if (checkUnitDeleted(lUnite.getIdUnit())) {
             theListView.getItems().remove(lUnite);
 
-            //tracabilité
-            main.tools.applyTraceability(lUnite.getNameUnit().toUpperCase() + " à été supprimé des unités");
+            //traçabilité
+            main.tools.applyTraceability(lUnite.getNameUnit().toUpperCase() + " a été supprimé des unités");
         } else {
             errorText.setText("Élément non supprimé, cette unité est encore liée à des phénotypes ou sujets");
         }
