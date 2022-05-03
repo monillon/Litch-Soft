@@ -96,7 +96,7 @@ public class Sample {
     }
 
     /**
-     * Method setTime
+     * Method setSampleOrgan
      *
      * @param sampleOrgan le nouvel organ de l'échantillon
      * @throws IllegalArgumentException si le nom est vide ou null

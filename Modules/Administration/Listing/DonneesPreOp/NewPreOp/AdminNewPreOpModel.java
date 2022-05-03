@@ -26,7 +26,7 @@ public class AdminNewPreOpModel {
             main.getAdminListPreOpController().addElementList();
 
             //tracabilité
-            main.tools.applyTraceability(newPreOpName.getText().toUpperCase() + " à été ajouté des données pré-opératoire");
+            main.tools.applyTraceability(newPreOpName.getText().toUpperCase() + " a été ajouté des données pré-opératoire");
 
 
         }else{

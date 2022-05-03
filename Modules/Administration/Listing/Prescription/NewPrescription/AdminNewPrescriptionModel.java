@@ -24,7 +24,7 @@ public class AdminNewPrescriptionModel {
             main.getAdminListPrescriptionController().addElementList();
 
             //tracabilité
-            main.tools.applyTraceability(newPrescriName.getText().toUpperCase() + " à été ajouté aux prescriptions");
+            main.tools.applyTraceability(newPrescriName.getText().toUpperCase() + " a été ajouté aux prescriptions");
         }else{
             errorPrescri.setText("Veuillez renseigner le nom d'une prescription");
         }

@@ -24,8 +24,8 @@ public class AdminNewTissuModel {
             main.tools.switchScene((Stage) addTissueButton.getScene().getWindow(), "Administration/Listing/Tissu/AdminListTissu.fxml", main.getAdminListTissuController());
             main.getAdminListTissuController().addElementList();
 
-            //tracabilité
-            main.tools.applyTraceability(newTissueName.getText().toUpperCase() + " à été ajouté aux tissus");
+            //traçabilité
+            main.tools.applyTraceability(newTissueName.getText().toUpperCase() + " a été ajouté aux tissus");
 
         }else{
             errorTissue.setText("Veuillez renseigner le nom d'un tissu");

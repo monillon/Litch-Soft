@@ -30,15 +30,15 @@ public class AdminListPathologieModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param laPathologie le tissu à supprimer
+     * @param laPathologie la pathologie à supprimer
      */
     public void removeItemList(ListView theListView, Pathology laPathologie, Text errorText) throws IOException {
         DataBase.deletePathologie(laPathologie.getIdPathology());
-        if (checkTissuDeleted(laPathologie.getIdPathology())) {
+        if (checkPathologyDeleted(laPathologie.getIdPathology())) {
             theListView.getItems().remove(laPathologie);
 
             //tracabilité
-            main.tools.applyTraceability(laPathologie.getNamePathology().toUpperCase() + " à été supprimé des pathologies");
+            main.tools.applyTraceability(laPathologie.getNamePathology().toUpperCase() + " a été supprimé des pathologies");
         } else {
             errorText.setText("Elément non supprimé, cette pathologie est encore liée à des mutations ou phénotypes");
         }
@@ -49,7 +49,7 @@ public class AdminListPathologieModel {
      * @param id_patho qui est supprimé
      * @return un boolean true si l'élément n'est plus présent en BDD
      */
-    public boolean checkTissuDeleted(int id_patho) throws IOException {
+    public boolean checkPathologyDeleted(int id_patho) throws IOException {
         ArrayList<JSONObject> retour =  DataBase.getOnePathologie(id_patho);
         if (retour.get(0).isNull("message")) {
             // erreur lors de la suppression, l'élément toujours présent dans la BDD

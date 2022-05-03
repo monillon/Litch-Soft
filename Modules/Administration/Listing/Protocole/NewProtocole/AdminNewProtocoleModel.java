@@ -24,8 +24,8 @@ public class AdminNewProtocoleModel {
             main.tools.switchScene((Stage) addProtocoleButton.getScene().getWindow(), "Administration/Listing/Protocole/AdminListProtocole.fxml", main.getAdminListProtocoleController());
             main.getAdminListProtocoleController().addElementList();
 
-            //tracabilité
-            main.tools.applyTraceability(newProtocoleName.getText().toUpperCase() + " à été ajouté aux protocoles");
+            //traçabilité
+            main.tools.applyTraceability(newProtocoleName.getText().toUpperCase() + " a été ajouté aux protocoles");
 
         }else{
             errorProtocole.setText("Veuillez renseigner le nom d'un protocole");

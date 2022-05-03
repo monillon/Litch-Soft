@@ -49,7 +49,7 @@ public class DataBase {
 
     /**
      * Method sendRequest
-     * Permet d'envoyer les méthode contenant les requêtes à la bdd
+     * Permet d'envoyer les méthodes contenant les requêtes à la bdd
      */
     public static ArrayList<JSONObject> sendRequest(String request) throws IOException {
         ArrayList<JSONObject> listOfResults = null;
@@ -171,7 +171,7 @@ public class DataBase {
 
     /**
      * Method getLocationRequest
-     * Requête qui permet de chercher dans la bdd tous les prélèvement d'un sujet
+     * Requête qui permet de chercher dans la bdd tous les prélèvements d'un sujet
      */
     public static ArrayList<JSONObject> getSubjectSampleRequest(int subjectId) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/prelevement/read_sujet.php?s=" + subjectId;
@@ -279,7 +279,7 @@ public class DataBase {
 
     /**
      * Method getAllOrganRequest
-     * Requête qui permet de chercher dans la bdd tous les types d'organ
+     * Requête qui permet de chercher dans la bdd tous les types d'organes
      */
     public static ArrayList<JSONObject> getAllOrganRequest() throws IOException {
         String request = "http://litch-dev.geniephy.net/API/organe/read_all.php";
@@ -513,7 +513,7 @@ public class DataBase {
 
     /**
      * Method createMutationRequest
-     * Requête qui permet de créer dans la bdd une mutation avec son nom et de la relié à un identifiant pathologie
+     * Requête qui permet de créer dans la bdd une mutation avec son nom et de la relier à un identifiant pathologie
      */
     public static void createMutationRequest(int idPatho, String newMutationName, String newClassName) throws IOException {
         String request = "http://litch-dev.geniephy.net/API/mutation/insert.php?id_pathologie=" + idPatho + "&&nom_mutation=" + newMutationName + "&&classe_mutation=" + newClassName;
@@ -540,7 +540,7 @@ public class DataBase {
 
     /**
      * Method createPrescriRequest
-     * Requête qui permet de créer dans la bdd une prescription grâce a un nom de prescription
+     * Requête qui permet de créer dans la bdd une prescription grâce à un nom de prescription
      */
     public static void createPrescriRequest(String prescriName) throws IOException {
         String request = "http://litch-dev.geniephy.net/API/prescription/insert.php?nom_prescription=" + prescriName;
@@ -603,7 +603,7 @@ public class DataBase {
 
     /**
      * Method getRackExistantRequest
-     * Requête qui permet de chercher dans la bdd tous les racks d'une meme étagère grâce a l'idrentifiant de l'étagere
+     * Requête qui permet de chercher dans la bdd tous les racks d'une meme étagère grâce a l'identifiant de l'étagere
      */
     public static ArrayList<JSONObject> getRackExistantRequest(int getShelfIDAdd) throws IOException {
         String request = "http://litch-dev.geniephy.net/API/emplacement/read_rack_existant.php?id_etagere=" + getShelfIDAdd;
@@ -612,7 +612,7 @@ public class DataBase {
 
     /**
      * Method getRackExistantRequest
-     * Requête qui permet de chercher dans la bdd tous les racks d'une meme étagère grâce a l'idrentifiant de l'étagere
+     * Requête qui permet de chercher dans la bdd tous les racks d'une meme étagère grâce a l'identifiant de l'étagere
      *
      * @param getShelfIDAdd
      * @param getRackId
@@ -669,7 +669,7 @@ public class DataBase {
 
     /**
      * Method deleteManipRequest
-     * Requête qui permet de supprimer de la bdd une manipulaion grâce à l'identifiant d'un prélèvement
+     * Requête qui permet de supprimer de la bdd une manipulation grâce à l'identifiant d'un prélèvement
      */
     public static void deleteManipRequest(int prelevementId) throws IOException {
         String request = "http://litch-dev.geniephy.net/API/manipulation/delete_manip.php?id_prelevement=" + prelevementId;
@@ -862,7 +862,7 @@ public class DataBase {
 
 
     /**
-     * Method deleteTissuRequest
+     * Method deleteOrganeRequest
      * Requête qui permet de supprimer dans la bdd un organe
      * @param id_organe id de la bdd correspondant à l'organe
      */
@@ -883,7 +883,7 @@ public class DataBase {
 
     /**
      * Permet de faire une requête pour récupérer les prélèvements liés à un organe grâce à son id
-     * @param id_organe l'id du tissu
+     * @param id_organe l'id de l'organe
      * @return l'objet prélèvement de BDD
      */
     public static ArrayList<JSONObject> getPrelevementLieOrgane(int id_organe) throws IOException {
@@ -898,7 +898,7 @@ public class DataBase {
     /**
      * Method deleteUnitRequest
      * Requête qui permet de supprimer dans la bdd une unité
-     * @param ID_UNITE id de la bdd correspondant à l'unit"
+     * @param ID_UNITE id de la bdd correspondant à l'unité
      */
     public static void deleteUnitRequest(int ID_UNITE) throws IOException {
         String request ="https://litch-dev.geniephy.net/API/unite/delete_unite.php?id_unite=" + ID_UNITE;
@@ -948,9 +948,9 @@ public class DataBase {
     }
 
     /**
-     * Permet de faire une requête pour récupérer un tissu grâce à son id
-     * @param id_PreopData l'id du tissu
-     * @return l'objet tissu de BDD
+     * Permet de faire une requête pour récupérer une donnée pré-opératoire tissu grâce à son id
+     * @param id_PreopData l'id de la donnée pré-opératoire
+     * @return l'objet donnée pré-opératoire de BDD
      */
     public static ArrayList<JSONObject> getOnePreopData(int id_PreopData) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/donnees_preop/read_one.php?id_preop=" + id_PreopData;
@@ -1025,8 +1025,8 @@ public class DataBase {
     }
 
     /**
-     * Method deletePrescriptionRequest
-     * Requête qui permet de supprimer dans la bdd une prescription
+     * Method deleteCatDeManipRequest
+     * Requête qui permet de supprimer dans la bdd une catégorie de manipulation
      * @param  ID_CATEGORIE_MANIP de la bdd correspondant à la catégorie de la manipulation
      */
     public static void deleteCatDeManipRequest(int ID_CATEGORIE_MANIP) throws IOException {
@@ -1046,7 +1046,7 @@ public class DataBase {
 
     /**
      * Method createCatDeManipRequest
-     * Requête qui permet de créer dans la bdd un type de tissu grâce à un nom
+     * Requête qui permet de créer dans la bdd un type de manipulation grâce à un nom
      */
     public static void createCatDeManipRequest(String idCatDeManip) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/categorie_manipulation/insert.php?nom_catManip=" + idCatDeManip;
@@ -1075,8 +1075,8 @@ public class DataBase {
 
     /**
      * Method deleteUserRequest
-     * Requête qui permet de supprimer dans la bdd une prescription
-     * @param idUser id de la bdd correspondant à la prescription
+     * Requête qui permet de supprimer dans la bdd un utilisateur
+     * @param idUser id de la bdd correspondant à l'utilisateur
      */
     public static void deleteUserRequest(int idUser) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/utilisateur/delete.php?id_user=" + idUser;
@@ -1084,9 +1084,9 @@ public class DataBase {
     }
 
     /**
-     * Permet de faire une requête pour récupérer une unité grâce à son id
-     * @param ID_USER l'id de l'unité
-     * @return l'objet unité de BDD
+     * Permet de faire une requête pour récupérer un utilisateur grâce à son id
+     * @param ID_USER l'id de l'utilisateur
+     * @return l'objet utilisateur de BDD
      */
     public static ArrayList<JSONObject> getOneUser(int ID_USER) throws IOException {
         String request = "https://litch-dev.geniephy.net/API/utilisateur/read_one_id.php?id_user=" + ID_USER;
@@ -1094,7 +1094,7 @@ public class DataBase {
     }
 
     /**
-     * Permet de faire une requête pour récupérer les prélèvements liés à un user grâce à son id
+     * Permet de faire une requête pour récupérer les informations de tous les utilisateurs
      * @return l'objet prélèvement de BDD
      */
     public static ArrayList<JSONObject> getUsersWithRoles() throws IOException {

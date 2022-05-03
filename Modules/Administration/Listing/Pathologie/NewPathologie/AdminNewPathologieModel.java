@@ -25,10 +25,10 @@ public class AdminNewPathologieModel {
             main.getAdminListPathologieController().addElementList();
 
             //tracabilité
-            main.tools.applyTraceability(newPathologyName.getText().toUpperCase() + " à été ajouté aux pathologies");
+            main.tools.applyTraceability(newPathologyName.getText().toUpperCase() + " a été ajouté aux pathologies");
 
         }else{
-            errorPathology.setText("Veuillez renseigner le nom d'un tissu");
+            errorPathology.setText("Veuillez renseigner le nom d'une pathologie");
         }
     }
 

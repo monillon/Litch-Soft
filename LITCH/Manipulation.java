@@ -67,7 +67,7 @@ public class Manipulation {
     }
 
     /**
-     * Method setIdSample
+     * Method setIdManipulation
      *
      * @param idManipulation le nouvel id de la manipulation
      * @throws IllegalArgumentException si le nom est vide ou null

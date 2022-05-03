@@ -41,7 +41,7 @@ public class AdminListProtocoleModel {
             theListView.getItems().remove(leProtocole);
 
             //tracabilité
-            main.tools.applyTraceability(leProtocole.getNameProtocole().toUpperCase() + " à été supprimé des protocoles");
+            main.tools.applyTraceability(leProtocole.getNameProtocole().toUpperCase() + " a été supprimé des protocoles");
         } else {
             errorText.setText("Élément non supprimé, ce protocole est encore lié à des modèles de manipulation");
         }

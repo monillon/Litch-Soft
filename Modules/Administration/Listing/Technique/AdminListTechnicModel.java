@@ -38,7 +38,7 @@ public class AdminListTechnicModel {
             theListView.getItems().remove(laTechnique);
 
             //tracabilité
-            main.tools.applyTraceability(laTechnique.getNameTechnic().toUpperCase() + " à été supprimé des techniques");
+            main.tools.applyTraceability(laTechnique.getNameTechnic().toUpperCase() + " a été supprimé des techniques");
         } else {
             errorText.setText("Élément non supprimé, cette technique est encore liée à des modèles de manipulation");
         }

@@ -29,15 +29,15 @@ public class AdminListMutationModel {
     /**
      * Permet d'envoyer la requête de suppression et de retirer l'élément de la ListView
      * @param theListView
-     * @param laMutation la prescription à supprimer
+     * @param laMutation la mutation à supprimer
      */
     public void removeItemList(ListView theListView, Mutation laMutation, Text errorText) throws IOException {
         DataBase.deleteMutationRequest(laMutation.getIdMutation());
         if (checkMutationDeleted(laMutation.getIdMutation())) {
             theListView.getItems().remove(laMutation);
 
-            //tracabilité
-            main.tools.applyTraceability(laMutation.getMutationName().toUpperCase() + " à été supprimé des mutations");
+            //traçabilité
+            main.tools.applyTraceability(laMutation.getMutationName().toUpperCase() + " a été supprimé des mutations");
         } else {
             errorText.setText("Elément non supprimé, cette mutation est encore liée à des phénotypes");
         }

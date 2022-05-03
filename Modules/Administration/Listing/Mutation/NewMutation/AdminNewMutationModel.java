@@ -28,8 +28,8 @@ public class AdminNewMutationModel {
             main.tools.switchScene((Stage) addMutaButton.getScene().getWindow(),"Administration/Listing/Mutation/AdminListMutation.fxml",main.getAdminListMutationController());
             main.getAdminListMutationController().addElementList();
 
-            //tracabilité
-            main.tools.applyTraceability(newMutaName.getText().toUpperCase() + " à été ajouté aux mutations lié à la pathologie " + newPathoName.getSelectionModel().getSelectedItem().toString().toUpperCase());
+            //traçabilité
+            main.tools.applyTraceability(newMutaName.getText().toUpperCase() + " a été ajouté aux mutations lié à la pathologie " + newPathoName.getSelectionModel().getSelectedItem().toString().toUpperCase());
 
 
 

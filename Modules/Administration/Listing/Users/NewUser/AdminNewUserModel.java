@@ -36,7 +36,7 @@ public class AdminNewUserModel {
                 }
                 DataBase.createUserRequest(newUserName.getText(),newUserPassword.getText(), id_role);
 
-                //tracabilité
+                //traçabilité
                 main.tools.applyTraceability(newUserName.getText().toUpperCase() + " à été ajouté aux utilisateurs avec le role" + roles.getValue().toString().toUpperCase());
 
                 main.tools.switchScene((Stage) addUserButton.getScene().getWindow(),"Administration/AdminPage.fxml",main.getAdminPageController());
