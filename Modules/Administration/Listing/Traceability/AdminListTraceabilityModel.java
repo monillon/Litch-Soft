@@ -58,9 +58,4 @@ public class AdminListTraceabilityModel {
         choixUser.getSelectionModel().select(0);
     }
 
-    public void addItemListOneUser(ListView theListView) {
-        //cc je suis inutile
-
-    }
-
 }
